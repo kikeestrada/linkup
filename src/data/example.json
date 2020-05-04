@@ -3,44 +3,19 @@
 		[
 			{
 				"img": "assets/img/img1.jpg",
-				"title": "Company",
-				"subtitle": "Subtitle",
-				"description": "Description.",
-				"url": "#",
-				"user": "no",
-				"imageUser": "",
-				"linkUser": ""
+				"title": "Company"
 			},
 			{
 				"img": "assets/img/img2.jpg",
-				"title": "Company",
-				"subtitle": "Subtitle",
-				"description": "Description.",
-				"url": "#",
-				"user": "no",
-				"imageUser": "",
-				"linkUser": ""
+				"title": "Company"
 			},
-			{
+			{ 
 				"img": "assets/img/img3.jpg",
-				"title": "Company",
-				"subtitle": "Subtitle",
-				"description": "Description.",
-				"url": "#",
-				"user": "no",
-				"imageUser": "",
-				"linkUser": ""
+				"title": "Company"
 			},
 			{
 				"img": "assets/img/img4.jpg",
-				"title": "Company",
-				"subtitle": "Subtitle",
-				"description": "Description.",
-				"url": "#",
-				"user": "no",
-				"imageUser": "",
-				"linkUser": ""
+				"title": "Company"
 			}
-
 		]
 }

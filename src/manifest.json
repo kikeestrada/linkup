@@ -1,7 +1,7 @@
 {
-	"name": "myStyleGuide",
-	"short_name": "myStyleGuide",
-	"description": "Bienvenid@s a #myStyleGuide",
+	"name": "gulp-boilerplate",
+	"short_name": "gulp-boilerplate",
+	"description": "Bienvenid@s a #gulp-boilerplate",
 	"background_color": "#2B2B2B",
 	"theme_color": "#007BDF",
 	"orientation": "portrait",

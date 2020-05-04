@@ -1,59 +1,28 @@
 block config
 	include vars
-	include mixins/mixins
+	include mixins/mixins 
 doctype html
 html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
-	include utilis/bodyElements/IEtags
+	<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+	<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+	<!--[if IE 8]><html class="no-js lt-ie9" lang=""> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 	head
-		include utilis/head/metatags
-		include utilis/head/metaTagsPWA
-		include utilis/head/HTML5Shiv
-		include utilis/head/openGraph
-		include utilis/head/twetterCard
-		include utilis/head/cdnFonts
-		include utilis/head/cdnStyles
+		include utilis/metatags 
 		link(rel="stylesheet" href="assets/css/styles.css")
 		title= currentPage.slice(0,1).toUpperCase() + currentPage.slice(1) + " | " + siteName
 	body(class=currentPage, itemscope itemtype="http://schema.org/WebPage")
-		include utilis/bodyElements/upBrowser
-		//here start the Main Header
+		//- here start the Main Header
 		header(class='main-header')
-			include ../components/top-nav
 			block main-header
-		//here ends the Main Header
-		//here start the Main Container
+		//- here ends the Main Header
+		//- here start the Main Container
 		main(class='main-container')
 			block main-container
-		//here ends the Main Container
-		//here start the Main Footer
+		//- here ends the Main Container
+		//- here start the Main Footer
 		footer(class='main-footer')
-			div(class='ed-grid m-grid-2 lg-grid-4 row-gap')
-				div
-					h2(class='t6') lorem
-					div(class='footer-info')
-						ul
-							li: a(href='#', class='myclass') Item list 1
-							li: a(href='#', class='myclass') Item list 2
-				div
-					h2(class='t6') lorem
-					div(class='footer-info')
-						ul
-							li: a(href='#', class='myclass') Item list 1
-							li: a(href='#', class='myclass') Item list 2
-				div
-					h2(class='t6') lorem
-					div(class='footer-info')
-						ul
-							li: a(href='#', class='myclass') Item list 1
-							li: a(href='#', class='myclass') Item list 2
-				div
-					h2(class='t6') lorem
-					div(class='footer-info')
-						ul
-							li: a(href='#', class='myclass') Item list 1
-							li: a(href='#', class='myclass') Item list 2
 			block main-footer
-		//here ends the Main Footer
-		include utilis/bodyElements/cdnLibraries
+		//- here ends the Main Footer
 		script(src="assets/js/scripts-min.js")
 		block scripts
