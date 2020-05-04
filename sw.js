@@ -1,6 +1,6 @@
 ;
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'v1_cache_myStyleGuide',
+const CACHE_NAME = 'v1_cache_gulp-boilerplate',
 	urlsToCache = [
 		'./',
 		'./assets/css/styles.css',
