@@ -1,0 +1,49 @@
+/**
+*   @fileoverview
+*     Componente para incrustar un video de YouTube en nuestro sitio web cuando la resolución es mayor a 64em (1024px), cuando es menor se agrega un enlace al video
+*     Dependencias: font-awesome
+*
+*   @param {String} id, id del video de YouTube, se define en el archivo pug
+*   @param {String} $video-width, anchura del contenedor del video, se define en el archivo scss
+*
+*   @returns {void} no retorna nada
+*
+*   @author Jonathan MirCha <jonmircha@gmail.com>
+*   @version 1.0.0
+*/
+
+$video-width: 100%;
+
+.Youtube {
+  width: $video-width;
+  height: auto;
+  display: block;
+  margin: auto;
+
+  &-wrapper {
+    position: relative;
+    height: auto;
+
+    @media screen and (min-width: 64em) {
+      padding-bottom: 56.25%; /* 16:9 */
+    }
+  }
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  & a {
+    display: block;
+    margin: 2rem auto;
+    text: {
+      align: center;
+      decoration: none;
+    }
+    font-size: 3.5vw;
+  }
+}
