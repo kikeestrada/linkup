@@ -212,7 +212,7 @@ gulp.task('sitemap', () => {
 		read: false
 	})
 		.pipe(sitemap({
-			siteUrl: 'https://kikeestrada.github.io/gulp-boilerplate/' // remplazar por tu dominio
+			siteUrl: 'https://kikeestrada.github.io/myStyleGuide/' // remplazar por tu dominio
 		}))
 		.pipe(gulp.dest('./public'))
 });

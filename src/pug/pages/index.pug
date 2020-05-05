@@ -1,14 +1,22 @@
 extends ../config/template
 append config
 	-currentPage		= "home"
-	-siteName			= 'Layouts'
+	-siteName			= 'Layouts' 
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
+	+banner(
+		"https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+		'Home',
+		'' 
+	)
 block main-container
-	h1 Gulp Boilerplate
+	include ../components/img-gallery
 	include ../components/json-data
 	include ../components/markdown
+	include ../components/search-filter
+	include ../components/rwd-images
+	include ../components/tables
 block main-footer
 block scripts 
 

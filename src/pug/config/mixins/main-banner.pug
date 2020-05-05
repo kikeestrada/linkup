@@ -1,0 +1,7 @@
+mixin banner(img, title, clase)
+	.main-banner.img-container.diagonal(class=`main-banner--`+ `${clase}`)
+		div(class='ed-grid lg-grid-6')
+			div(class='lg-cols-4 lg-x-2')
+				img(src=img class='main-banner__img')
+				div(class='main-banner__data s-center')
+					h1= title
