@@ -217,7 +217,17 @@ gulp.task('sitemap', () => {
 		.pipe(gulp.dest('./public'))
 });
 
-gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev','audios-dev', 'videos-dev', 'fonts-dev', 'manifest', 'sw'], () => {
+gulp.task('dev', [
+	'styles-dev', 
+	'pug-dev', 
+	'scripts-dev', 
+	'images-dev',
+	'audios-dev', 
+	'videos-dev', 
+	'fonts-dev', 
+	'manifest', 
+	'sw'
+], () => {
 	server.init({
 		server: {
 			baseDir: './public'
@@ -258,7 +268,15 @@ gulp.task('humans', function () {
 });
 
 
-gulp.task('build', ['pug-build', 'scripts-build', 'images-build', 'cache', 'sitemap', 'humans', 'styles-build'], () => {
+gulp.task('build', [
+	'pug-build', 
+	'scripts-build', 
+	'images-build', 
+	'cache', 
+	'sitemap', 
+	'humans', 
+	'styles-build'
+], () => {
 	server.init({
 		server: {
 			baseDir: './public'
