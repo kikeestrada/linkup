@@ -38,14 +38,77 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="./sitemap.xml"><!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-    <link rel="stylesheet" href="assets/css/styles.css?t=1588639262073">
+    <script src="https://kit.fontawesome.com/20f3c29ee8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/styles.css?t=1588662184461">
     <title>Home | Layouts</title>
   </head>
   <body class="home" itemscope itemtype="http://schema.org/WebPage">
     <header class="main-header">
+      <nav class="top-nav">
+        <div class="top-nav__container"><a class="top-nav__link" href="./"><img class="top-nav__logo" src="assets/img/img1.jpg" alt=""></a>
+          <ul class="top-nav__menu">
+            <li class="top-nav__li"><a class="top-nav__anchor" href="./">home</a></li>
+            <li class="top-nav__li"><a class="top-nav__anchor" href="page2.html">page2</a></li>
+            <li class="top-nav__li"><a class="top-nav__anchor" href="page3.html">page3</a></li>
+          </ul>
+          <button class="top-nav__mb-iconMenu hamburger hamburger--slider-r" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        </div>
+      </nav>
+      <div class="main-banner img-container diagonal main-banner--">
+        <div class="ed-grid lg-grid-6">
+          <div class="lg-cols-4 lg-x-2"><img class="main-banner__img" src="https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb"/>
+            <div class="main-banner__data s-center">
+              <h1>Home</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <main class="main-container">
-      <h1>Gulp Boilerplate</h1>
+      <section class="section-divider">
+        <div class="ed-container">
+          <div class="ed-item">
+            <h2>Image gallery No Using API</h2>
+          </div>
+          <div class="ed-item">
+            <!--Gallery Container-->
+            <div class="gallery">
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+              <!--Gallery Item-->
+              <div class="gallery-item">
+                <!--gallery Image--><img src="assets/img/img1.jpg"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
             <div><img src="assets/img/img1.jpg" style="width:100px">
               <p>Company</p>
             </div>
@@ -58,14 +121,20 @@
             <div><img src="assets/img/img4.jpg" style="width:100px">
               <p>Company</p>
             </div>
-      <h1>Write Markdown in the html file</h1><ul>
+      <div class="ed-container">
+        <div class="ed-item"> 
+          <h1>Write Markdown in the html file</h1><ul>
 <li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
 <li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
 <li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
 <li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
 </ul>
 
-      <h1>Write Markdown in the html file (html)</h1><pre><code class="language-html">	&lt;!DOCTYPE html&gt;
+        </div>
+      </div>
+      <div class="ed-container">
+        <div class="ed-item">			
+          <h1>Write Markdown in the html file (html)</h1><pre><code class="language-html">	&lt;!DOCTYPE html&gt;
 	&lt;html lang=&quot;en&quot;&gt;
 	&lt;head&gt;
 		&lt;title&gt;Pug&lt;/title&gt;
@@ -85,7 +154,11 @@
 	&lt;/html&gt;
 </code></pre>
 
-      <h1>Importing Markdown files in the html </h1><h1>This is a Markdown Example</h1>
+        </div>
+      </div>
+      <div class="ed-container">
+        <div class="ed-item">			
+          <h1>Importing Markdown files in the html </h1><h1>This is a Markdown Example</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 <pre><code class="language-html">&lt;a class=&quot;button&quot;&gt;.button.first-color&lt;/a&gt;
 &lt;a class=&quot;button second-color&quot;&gt;.button.second-color&lt;/a&gt;
@@ -104,9 +177,207 @@
 }
 </code></pre>
 
+        </div>
+      </div>
+      <div class="ed-container">
+        <div class="ed-item">
+          <h1>Search Filter</h1>
+        </div>
+        <div class="ed-item">
+          <input type="search" id="searchInput" placeholder="search">
+        </div>
+      </div>
+      <div class="ed-grid s-grid-1 m-grid-2 l-grid-4">
+        <article class="class-item">
+          <h1 class="class-item__title">Article 1</h1>
+          <ul class="class-item__fragments-container">
+            <li class="class-item__fragment">Presentacion e historia de JavaScript</li>
+            <li class="class-item__fragment">Como Utilizar JavaScript</li>
+            <li class="class-item__fragment">Sintaxis</li>
+            <li class="class-item__fragment">Espacios en Blanco</li>
+            <li class="class-item__fragment">Variables y Constantes</li>
+            <li class="class-item__fragment">tipos de Datos</li>
+            <li class="class-item__fragment">Operadores</li>
+          </ul>
+        </article>
+        <article class="class-item">
+          <h1 class="class-item__title">Article 2</h1>
+          <ul class="class-item__fragments-container">
+            <li class="class-item__fragment">Length y metodos de String</li>
+            <li class="class-item__fragment">If - Else</li>
+            <li class="class-item__fragment">Valores trutly</li>
+            <li class="class-item__fragment">switch</li>
+            <li class="class-item__fragment">Entorno de desarrollo</li>
+            <li class="class-item__fragment">Estucturas de Datos</li>
+            <li class="class-item__fragment">Eventos</li>
+          </ul>
+        </article>
+        <article class="class-item">
+          <h1 class="class-item__title">Article 3</h1>
+          <ul class="class-item__fragments-container">
+            <li class="class-item__fragment">Configurando entorno de desarrollo</li>
+            <li class="class-item__fragment">LightBox: Estructura y Pug</li>
+            <li class="class-item__fragment">Scroll animado en reverso</li>
+            <li class="class-item__fragment">El objeto window</li>
+            <li class="class-item__fragment">Coordenadas Scroll y Storage</li>
+            <li class="class-item__fragment">Date y metodos Set</li>
+            <li class="class-item__fragment">Ejercicio Date con formato personalizado</li>
+          </ul>
+        </article>
+        <article class="class-item">
+          <h1 class="class-item__title">Article 4</h1>
+          <ul class="class-item__fragments-container">
+            <li class="class-item__fragment">Arrays</li>
+            <li class="class-item__fragment">Metodos pop, shift, join, slice</li>
+            <li class="class-item__fragment">Metodos ES6 - find y findindex</li>
+            <li class="class-item__fragment">Iteradores</li>
+            <li class="class-item__fragment">Objetos</li>
+            <li class="class-item__fragment">Copiar expresiones</li>
+            <li class="class-item__fragment">Undefined</li>
+          </ul>
+        </article>
+      </div>
+      <div class="ed-container">
+        <div class="ed-item">
+          <h2>Media query image inline</h2>
+        </div>
+        <div class="ed-item"> 
+          <picture>
+            <source srcset="assets/img/img4.jpg" alt="alt-image3" media="(min-width:1280px)"/>
+            <source srcset="assets/img/img3.jpg" alt="alt-image3" media="(min-width:960px)"/>
+            <source srcset="assets/img/img2.jpg" alt="alt-image2" media="(min-width:640px)"/><img src="assets/img/img1.jpg" alt="alt-image1"/>
+          </picture>
+        </div>
+      </div>
+      <section class="section-divider">
+        <div class="ed-tables">
+          <div class="ed-container">
+            <div class="ed-item">
+              <h2>Table Component</h2>
+            </div>
+            <div class="ed-item">
+              <div class="table-container">
+                <table class="ed-table first-column">
+                  <tr>
+                    <th></th>
+                    <th>Enero</th>
+                    <th>Febrero</th>
+                    <th>Marzo</th>
+                    <th>Abril</th>
+                    <th>Mayo</th>
+                    <th>Junio</th>
+                    <th>Julio</th>
+                    <th>Agosto</th>
+                    <th>Setiembre</th>
+                    <th>Octubre</th>
+                    <th>Noviembre</th>
+                    <th>Diciembre</th>
+                  </tr>
+                  <tr>
+                    <td>Ventas</td>
+                                  <td>50</td>
+                                  <td>100</td>
+                                  <td>150</td>
+                                  <td>200</td>
+                                  <td>250</td>
+                                  <td>300</td>
+                                  <td>350</td>
+                                  <td>400</td>
+                                  <td>450</td>
+                                  <td>500</td>
+                                  <td>550</td>
+                                  <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>Gastos</td>
+                                  <td>50</td>
+                                  <td>100</td>
+                                  <td>150</td>
+                                  <td>200</td>
+                                  <td>250</td>
+                                  <td>300</td>
+                                  <td>350</td>
+                                  <td>400</td>
+                                  <td>450</td>
+                                  <td>500</td>
+                                  <td>550</td>
+                                  <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>Impuestos</td>
+                                  <td>50</td>
+                                  <td>100</td>
+                                  <td>150</td>
+                                  <td>200</td>
+                                  <td>250</td>
+                                  <td>300</td>
+                                  <td>350</td>
+                                  <td>400</td>
+                                  <td>450</td>
+                                  <td>500</td>
+                                  <td>550</td>
+                                  <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>Ventas</td>
+                                  <td>50</td>
+                                  <td>100</td>
+                                  <td>150</td>
+                                  <td>200</td>
+                                  <td>250</td>
+                                  <td>300</td>
+                                  <td>350</td>
+                                  <td>400</td>
+                                  <td>450</td>
+                                  <td>500</td>
+                                  <td>550</td>
+                                  <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>Gastos</td>
+                                  <td>50</td>
+                                  <td>100</td>
+                                  <td>150</td>
+                                  <td>200</td>
+                                  <td>250</td>
+                                  <td>300</td>
+                                  <td>350</td>
+                                  <td>400</td>
+                                  <td>450</td>
+                                  <td>500</td>
+                                  <td>550</td>
+                                  <td>600</td>
+                  </tr>
+                  <tr>
+                    <td>Impuestos</td>
+                                  <td>50</td>
+                                  <td>100</td>
+                                  <td>150</td>
+                                  <td>200</td>
+                                  <td>250</td>
+                                  <td>300</td>
+                                  <td>350</td>
+                                  <td>400</td>
+                                  <td>450</td>
+                                  <td>500</td>
+                                  <td>550</td>
+                                  <td>600</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="App-video">
+        <article class="Youtube" id="nyC6vSwwtEs">
+          <div class="Youtube-wrapper"></div>
+        </article>
+      </div>
     </main>
     <footer class="main-footer">
     </footer>
-    <script src="assets/js/scripts-min.js?t=1588639262073"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
+    <script src="assets/js/scripts-min.js?t=1588662184461"></script>
   </body>
 </html>
