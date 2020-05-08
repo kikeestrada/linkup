@@ -15,10 +15,12 @@
 	"author": "Enrique Estrada",
 	"license": "GPL-2.0",
 	"dependencies": {
+		"animate.css": "^3.7.2",
 		"blueimp-md5": "^2.10.0",
 		"ed-grid": "^2.8.1",
 		"ed-ui": "0.0.5",
 		"edteam-style-guides": "0.0.3",
+		"firebase": "^7.14.2",
 		"gh-pages": "^2.1.1",
 		"hamburgers": "^0.7.0",
 		"normalize.css": "^8.0.1",

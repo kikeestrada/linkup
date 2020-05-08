@@ -10,6 +10,7 @@ html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
 	head
 		include utilis/metatags 
 		script(src="https://kit.fontawesome.com/20f3c29ee8.js" crossorigin="anonymous")
+		//- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css')
 		link(rel="stylesheet" href="assets/css/styles.css")
 		title= currentPage.slice(0,1).toUpperCase() + currentPage.slice(1) + " | " + siteName
 	body(class=currentPage, itemscope itemtype="http://schema.org/WebPage")
@@ -20,13 +21,13 @@ html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
 		//- here ends the Main Header
 		//- here start the Main Container
 		main(class='main-container')
-			block main-container
+			block main-container 
 		//- here ends the Main Container
 		//- here start the Main Footer
 		footer(class='main-footer')
 			block main-footer
 		//- include ../components/bottom-nav
 		//- here ends the Main Footer
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js')
+		//- script(src='https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js')
 		script(src="assets/js/scripts-min.js")
 		block scripts

@@ -1,6 +1,8 @@
 // Libraries
 @import "~normalize.css/normalize.css";
 @import "libraries/prism"; 
+@import "~tiny-slider/src/tiny-slider.scss";
+@import "libraries/animate";
 // Configuraciones
 $fractions : 1,2,3,4,5,6,7,8,9,10;
 $breakpoints 		: 
@@ -12,12 +14,12 @@ $breakpoints 		:
 		xl	: 1600px
 	);
 @import "~ed-grid/ed-grid";
-@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss"; 
  
 // Config
 @import "config/functions"; 
 @import "config/vars";
-@import "config/mixins";
+@import "config/mixins"; 
 
 
 // LAYOUT

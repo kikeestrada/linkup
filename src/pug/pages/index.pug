@@ -11,14 +11,17 @@ block main-header
 		'' 
 	)
 block main-container
+	include ../components/tns-slider
+	include ../components/accordion
+	include ../components/tabs
 	include ../components/img-gallery
 	include ../components/json-data
 	include ../components/markdown
 	include ../components/search-filter
 	include ../components/rwd-images
 	include ../components/tables
-	div.App-video
-		+youtubeVideo('nyC6vSwwtEs') 
+	include ../components/rrwd-youtube-video 
+	include ../components/video-youtube-iframe
 block main-footer
 block scripts 
 

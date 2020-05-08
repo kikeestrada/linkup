@@ -2,10 +2,21 @@ import {swDetecter} from './modules/swDetecter';
 import topNav from './modules/topNav'
 import searchFilter from './modules/searchFilter'
 import youtubeVideo from './modules/youtube-video'
+import {Prism} from '../../node_modules/prismjs/prism'
+import tabs from './modules/tabs'
+import accordion from './modules/accordion' 
+import {tnsCarousell, tnsVertical, tnsSingle, tnsNavThumbnails} from "./modules/tns-slider";
 
 	swDetecter();
+	
 (()=>{
 	topNav();
+	tabs();
+	accordion();
+	tnsCarousell(); 
+	tnsVertical();
+	tnsSingle();
+	tnsNavThumbnails();
 	if (document.body.classList.contains('home')) {
 		// functions here
 		searchFilter();
