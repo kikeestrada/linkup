@@ -5109,7 +5109,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	(0, _accordion2.default)();
 	(0, _tnsSlider.tnsCarousell)();
 	(0, _tnsSlider.tnsSingle)();
-	(0, _tnsSlider.tnsNavThumbnails)();
 	if (document.body.classList.contains('home')) {
 		// functions here
 		(0, _searchFilter2.default)();
@@ -5224,7 +5223,7 @@ exports.default = tabs;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tnsNavThumbnails = exports.tnsSingle = exports.tnsCarousell = undefined;
+exports.tnsSingle = exports.tnsCarousell = undefined;
 
 var _tinySlider = require('../../../node_modules/tiny-slider/src/tiny-slider');
 
@@ -5233,13 +5232,11 @@ var tnsCarousell = exports.tnsCarousell = function tnsCarousell() {
     container: '#tnsCarousell',
     items: 1,
     slideBy: 1,
-    autoplay: false,
-    mouseDrag: true,
-    swipeAngle: true,
+    swipeAngle: false,
     speed: 400,
-    nav: false,
     edgePadding: 40,
-    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+    nav: false,
+    controlsText: ['<i class="tns-carousell__prev fas fa-chevron-left"></i>', '<i class="tns-carousell__next fas fa-chevron-right"></i>'],
     responsive: {
       480: {
         items: 2
@@ -5268,52 +5265,11 @@ var tnsSingle = exports.tnsSingle = function tnsSingle() {
     container: '#tnsSingle',
     items: 1,
     slideBy: 1,
-    mouseDrag: true,
-    speed: 1000,
-    mode: "gallery",
-    animateIn: 'fadeIn',
-    animateOut: 'fadeIn',
-    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
-  });
-};
-
-var tnsNavThumbnails = exports.tnsNavThumbnails = function tnsNavThumbnails() {
-  var slider = (0, _tinySlider.tns)({
-    container: '#tnsNavThumbnails',
-    items: 1,
-    slideBy: 1,
-    autoplay: false,
-    mouseDrag: true,
-    swipeAngle: true,
     speed: 1000,
     mode: "gallery",
     animateIn: 'fadeIn',
     animateOut: 'fadeOut',
-    navContainer: "#tnsThumbnails",
-    navAsThumbnails: true,
-    controls: false
-  });
-
-  var tnsThumbnails = (0, _tinySlider.tns)({
-    container: '#tnsThumbnails',
-    items: 1,
-    slideBy: 1,
-    autoplay: false,
-    mouseDrag: true,
-    speed: 400,
-    nav: false,
-    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
-    responsive: {
-      480: {
-        items: 2
-      },
-      640: {
-        items: 3
-      },
-      800: {
-        items: 4
-      }
-    }
+    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
   });
 };
 
