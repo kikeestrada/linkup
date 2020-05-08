@@ -48,6 +48,7 @@ export const tnsSingle = () =>{
     speed           : 1000,
     mode            : "gallery",
     animateIn       : 'fadeIn',
+    animateOut      : 'fadeIn',  
     controlsText: [ 
       '<i class="fas fa-chevron-left"></i>',
       '<i class="fas fa-chevron-right"></i>'
@@ -57,7 +58,7 @@ export const tnsSingle = () =>{
 
 export const tnsNavThumbnails = () =>{
   let slider = tns({ 
-    container       : '#tnsNav',
+    container       : '#tnsNavThumbnails',
     items           : 1,
     slideBy         : 1,
     autoplay        : false,
