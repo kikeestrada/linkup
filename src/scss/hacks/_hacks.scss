@@ -35,3 +35,12 @@ a {
 ::-webkit-scrollbar {
 	display: none;
 }
+
+*:focus {
+    outline: none;
+  }
+  .no-padding{
+	padding-left: 0;
+	padding-right: 0;
+  }
+  
