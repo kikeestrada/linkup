@@ -5109,6 +5109,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	(0, _accordion2.default)();
 	(0, _tnsSlider.tnsCarousell)();
 	(0, _tnsSlider.tnsSingle)();
+	(0, _tnsSlider.tnsVertical)();
+	(0, _tnsSlider.tnsSyncing)();
 	if (document.body.classList.contains('home')) {
 		// functions here
 		(0, _searchFilter2.default)();
@@ -5223,7 +5225,7 @@ exports.default = tabs;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.tnsSingle = exports.tnsCarousell = undefined;
+exports.tnsSyncing = exports.tnsSingle = exports.tnsVertical = exports.tnsCarousell = undefined;
 
 var _tinySlider = require('../../../node_modules/tiny-slider/src/tiny-slider');
 
@@ -5260,12 +5262,44 @@ var tnsCarousell = exports.tnsCarousell = function tnsCarousell() {
   });
 };
 
+var tnsVertical = exports.tnsVertical = function tnsVertical() {
+  var slider = (0, _tinySlider.tns)({
+    container: '#tnsVertical',
+    items: 3,
+    axis: "vertical",
+    swipeAngle: false,
+    speed: 1000,
+    nav: false,
+    controlsText: ['<i class="fas fa-chevron-down"></i>', '<i class="fas fa-chevron-up"></i>']
+  });
+};
+
 var tnsSingle = exports.tnsSingle = function tnsSingle() {
   var slider = (0, _tinySlider.tns)({
     container: '#tnsSingle',
     items: 1,
     slideBy: 1,
     speed: 1000,
+    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
+  });
+};
+
+var tnsSyncing = exports.tnsSyncing = function tnsSyncing() {
+  var sliderFor = (0, _tinySlider.tns)({
+    container: "#tnsSyncingFor",
+    items: 1,
+    mode: 'gallery',
+    navContainer: "#tnsSyncingNav",
+    navAsThumbnails: true,
+    controls: false,
+    swipeAngle: false,
+    speed: 400
+  });
+
+  var sliderNav = (0, _tinySlider.tns)({
+    container: "#tnsSyncingNav",
+    items: 4,
+    speed: 400,
     controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
   });
 };
