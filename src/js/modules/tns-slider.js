@@ -10,6 +10,11 @@ export const tnsCarousell = () =>{
         swipeAngle      : true,
         speed           : 400,
         nav             : false,
+        edgePadding     : 40,
+        controlsText: [ 
+          '<i class="fas fa-chevron-left"></i>',
+          '<i class="fas fa-chevron-right"></i>'
+        ],
         responsive: {
             480: {
                 items   : 2
@@ -33,38 +38,26 @@ export const tnsCarousell = () =>{
     }); 
 };
 
-export const tnsVertical = () =>{
-  let slider = tns({ 
-    container           : '#tnsVertical',
-    items               : 3,
-    axis                : "vertical",
-    swipeAngle          : false,
-    speed               : 400,
-    nav                 :false,
-  }); 
-};
-
 
 export const tnsSingle = () =>{
   let slider = tns({ 
     container       : '#tnsSingle',
     items           : 1,
     slideBy         : 1,
-    autoplay        : false,
     mouseDrag       : true,
-    swipeAngle      : true,
     speed           : 1000,
     mode            : "gallery",
     animateIn       : 'fadeIn',
-    animateOut      : 'fadeOut',
-    swipeAngle      : false,
-    controls        : false
+    controlsText: [ 
+      '<i class="fas fa-chevron-left"></i>',
+      '<i class="fas fa-chevron-right"></i>'
+    ]
   }); 
 };
 
 export const tnsNavThumbnails = () =>{
   let slider = tns({ 
-    container           : '#tnsNav',
+    container       : '#tnsNav',
     items           : 1,
     slideBy         : 1,
     autoplay        : false,
@@ -85,10 +78,12 @@ export const tnsNavThumbnails = () =>{
         slideBy         : 1,
         autoplay        : false,
         mouseDrag       : true,
-        swipeAngle      : true,
         speed           : 400,
-        nav             : false,
-        controls        : false,
+        nav : false,
+        controlsText: [ 
+          '<i class="fas fa-chevron-left"></i>',
+          '<i class="fas fa-chevron-right"></i>'
+        ],
         responsive: {
             480: {
                 items   : 2

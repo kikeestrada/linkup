@@ -5,7 +5,7 @@ import youtubeVideo from './modules/youtube-video'
 import {Prism} from '../../node_modules/prismjs/prism'
 import tabs from './modules/tabs'
 import accordion from './modules/accordion' 
-import {tnsCarousell, tnsVertical, tnsSingle, tnsNavThumbnails} from "./modules/tns-slider";
+import {tnsCarousell, tnsSingle, tnsNavThumbnails} from "./modules/tns-slider";
 
 	swDetecter();
 	
@@ -14,7 +14,6 @@ import {tnsCarousell, tnsVertical, tnsSingle, tnsNavThumbnails} from "./modules/
 	tabs();
 	accordion();
 	tnsCarousell(); 
-	tnsVertical();
 	tnsSingle();
 	tnsNavThumbnails();
 	if (document.body.classList.contains('home')) {

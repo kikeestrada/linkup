@@ -1,35 +1,61 @@
-.tns-controls { 
-    text-align: center; 
-    margin-bottom: 10px; 
-    > [aria-controls] {
-        font-size: 15px;
-        margin: 0 5px;
-        padding: 0 1em;
-        height: 2.5em;
-        color: #000;
-        background: #66CCFF;
-        border-radius: 3px;
-        border: 0;
-        [disabled] { 
-            color: #999999;
-            background: #B3B3B3; 
-            cursor: not-allowed !important;  
-          }
-    }
+.items-config{
+  background        : transparent;
+  display           : flex;
+  justify-content   : center;
+  flex-direction    : column;
+  align-items       : center;
+  span{
+    color           : white;
+  }
 }
-[data-action] {
-  display: block;
-  margin: 10px auto;
-  font-size: 17px;
-  min-width: 3em;
-  text-align: center;
-  background: transparent;
-  border: 0;
-}
-.tns-nav {
-  text-align: center;
-  margin: 10px 0;
 
+.position-config{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.tns-outer{  
+  position: relative;
+  .tns-controls{
+    @extend .position-config;    
+    top: 50%;
+    >button {
+      position: absolute;
+      top: 50%;
+      z-index: 100;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: 0;
+      color: #FFF;
+      font-size: 24px;
+      opacity: 0.8;
+      transition: opacity .3s ease;
+    }
+
+    > button:hover {
+      opacity: 0.3;
+    }
+    
+    
+    > button:focus {
+      outline: 0;
+    }
+    
+    > button:first-child {
+      left: 10px;
+    }
+    
+    > button:last-child {
+      right: 10px;
+    }
+  }
+  
+  .tns-nav{
+    @extend .position-config;
+    bottom: 0;
+    text-align: center;
+  margin: 10px 0;
   [aria-controls] {
     width: 9px;
     height: 9px;
@@ -39,41 +65,45 @@
     background: #ddd;
     border: 0;
   }
-
   > .tns-nav-active { background: #999; }
-}
-
-.tns-slider, .tns-thumbnails{
-    &__item{
-        height: 100px;
-        span{
-            color: white;
-        }
-    }
-    &__item:nth-child(odd){
-        background: var(--color-first);
-    }
-    &__item:nth-child(even){ 
-        background:var(--color-third);
-    }
-    
-}
-.tns-thumbnails{
-  &__item{
-    border: 1px solid #eee;
   }
 }
 
+.no-padding{
+  padding-left: 0;
+  padding-right: 0;
+}
+.tns-carousell, .tns-vertical, .tns-nav-thumbnails{
+  &__content{
+    height: 100px;
+    @extend .items-config
+  }
+}
 
-.controls { text-align: center; }
-.controls li {
-  display: block;
-  position: absolute;
-  top: 50%;
-  height: 60px;
-  line-height: 60px;
-  margin-top: -30px;
-  padding: 0 15px;
-  cursor: pointer;
-  transition: background 0.3s;
+.tns-nav-thumbnails{
+  margin-top: 2px;
+  &__content{
+    border-right: 1px solid #eee;
+  }
+}
+
+.tns-nav-single{
+  &__content{
+    height: 50vh;
+    @extend .items-config;
+  }
+}
+.tns-single{
+  &__content{
+    height: 50vh;
+    @extend .items-config
+  }
+
+}
+
+.tns-item:nth-child(odd){
+  background: var(--color-first);
+}
+.tns-item:nth-child(even){
+ background:var(--color-third);
 }
