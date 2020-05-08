@@ -5266,9 +5266,6 @@ var tnsSingle = exports.tnsSingle = function tnsSingle() {
     items: 1,
     slideBy: 1,
     speed: 1000,
-    mode: "gallery",
-    animateIn: 'fadeIn',
-    animateOut: 'fadeOut',
     controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
   });
 };
