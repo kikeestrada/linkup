@@ -5272,13 +5272,14 @@ var tnsSingle = exports.tnsSingle = function tnsSingle() {
     speed: 1000,
     mode: "gallery",
     animateIn: 'fadeIn',
+    animateOut: 'fadeIn',
     controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
   });
 };
 
 var tnsNavThumbnails = exports.tnsNavThumbnails = function tnsNavThumbnails() {
   var slider = (0, _tinySlider.tns)({
-    container: '#tnsNav',
+    container: '#tnsNavThumbnails',
     items: 1,
     slideBy: 1,
     autoplay: false,
