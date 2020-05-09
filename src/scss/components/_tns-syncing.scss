@@ -1,3 +1,12 @@
+.content-config{   
+  background        : transparent;
+  display           : flex;
+  justify-content   : center;
+  flex-direction    : column;
+  align-items       : center;
+  span{color        : white;}
+}
+
 .tns-syncing-for, .tns-syncing-nav{
   & > div:nth-child(odd){
     background        : var(--color-first);
@@ -5,16 +14,32 @@
   & > div:nth-child(even){
     background        :var(--color-third);
   }
-  &__content{
-    height            : 100px;
-    background        : transparent;
-    display           : flex;
-    justify-content   : center;
-    flex-direction    : column;
-    align-items       : center;
-    span{color        : white;}
-  }
 }
 
-
-  
+.tns-syncing-for{
+  &__top-item{
+    @extend .content-config;
+    height            : 60vh;
+  }
+  &__bottom-item{
+    @extend .content-config;
+    height            : 100px;
+    @include from (m){ 
+      display       : none;
+    }
+  }  
+}
+.tns-syncing-nav{   
+  @include fromTo(s,m){
+    display: none;
+  } 
+  border-top          : 1px solid #eee;
+  &__content{
+    @extend .content-config;
+    height            : 100px;
+    border-right      : 1px solid #eee;
+    &.is-active{
+      border: 2px solid green;
+    }
+  }
+}  

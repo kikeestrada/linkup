@@ -42,14 +42,21 @@ section(class='slider-container')
         div(class='ed-item')
             h1 tns Syncing
     div(class='tns-syncing-for' id='tnsSyncingFor')
-        div: div(class='tns-syncing-for__content'): span 1 for
-        div: div(class='tns-syncing-for__content'): span 2 for
-        div: div(class='tns-syncing-for__content'): span 3 for
-        div: div(class='tns-syncing-for__content'): span 4 for
-    div(class='ed-container')
-        div(class='ed-item no-padding') 
-            div(class='tns-syncing-nav' id='tnsSyncingNav')
-                div: div(class='tns-syncing-nav__content'): span 1 nav
-                div: div(class='tns-syncing-nav__content'): span 2 nav
-                div: div(class='tns-syncing-nav__content'): span 3 nav
-                div: div(class='tns-syncing-nav__content'): span 4 nav
+        div: div(class='tns-syncing-for__content')
+            div(class='tns-syncing-for__top-item'):     span main 1
+            div(class='tns-syncing-for__bottom-item'):  span sub content 1
+        div: div(class='tns-syncing-for__content')
+            div(class='tns-syncing-for__top-item'):     span main 2
+            div(class='tns-syncing-for__bottom-item'):  span sub content 2
+        div: div(class='tns-syncing-for__content')
+            div(class='tns-syncing-for__top-item'):     span main 3
+            div(class='tns-syncing-for__bottom-item'):  span sub content 3
+        div: div(class='tns-syncing-for__content')
+            div(class='tns-syncing-for__top-item'):     span main 4
+            div(class='tns-syncing-for__bottom-item'):  span sub content 4
+
+    div(class='ed-container tns-syncing-nav' id='tnsSyncingNav')
+        div(class='ed-item s-25 tns-syncing-nav__content'): span 1 nav
+        div(class='ed-item s-25 tns-syncing-nav__content'): span 2 nav
+        div(class='ed-item s-25 tns-syncing-nav__content'): span 3 nav
+        div(class='ed-item s-25 tns-syncing-nav__content'): span 4 nav

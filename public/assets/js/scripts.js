@@ -5238,6 +5238,7 @@ var tnsCarousell = exports.tnsCarousell = function tnsCarousell() {
     speed: 400,
     edgePadding: 40,
     nav: false,
+    mouseDrag: true,
     controlsText: ['<i class="tns-carousell__prev fas fa-chevron-left"></i>', '<i class="tns-carousell__next fas fa-chevron-right"></i>'],
     responsive: {
       480: {
@@ -5280,27 +5281,29 @@ var tnsSingle = exports.tnsSingle = function tnsSingle() {
     items: 1,
     slideBy: 1,
     speed: 1000,
+    mode: 'gallery',
+    mouseDrag: true,
     controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
   });
 };
 
 var tnsSyncing = exports.tnsSyncing = function tnsSyncing() {
-  var sliderFor = (0, _tinySlider.tns)({
+  var tnsSyncingFor = (0, _tinySlider.tns)({
     container: "#tnsSyncingFor",
     items: 1,
     mode: 'gallery',
+    speed: 400,
     navContainer: "#tnsSyncingNav",
     navAsThumbnails: true,
-    controls: false,
-    swipeAngle: false,
-    speed: 400
-  });
+    mouseDrag: true,
+    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+    responsive: {
+      640: {
+        controls: false,
+        mouseDrag: false
 
-  var sliderNav = (0, _tinySlider.tns)({
-    container: "#tnsSyncingNav",
-    items: 4,
-    speed: 400,
-    controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
+      }
+    }
   });
 };
 
