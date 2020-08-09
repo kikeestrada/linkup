@@ -1,0 +1,21 @@
+details {
+	display: block;
+	width: 100%;
+	margin-bottom: 1rem;
+	border: 1px solid gray;
+	padding: 15px;
+	border-radius: 5px;
+	summary::-webkit-details-marker {
+		color: #B6B6B6;
+		font-size: 20px;
+	}
+	>p{
+		margin: 10px 0;
+		padding: 0 15px;
+	}
+}
+
+
+//summary::-webkit-details-marker:hover {
+//	color: red;
+//}
