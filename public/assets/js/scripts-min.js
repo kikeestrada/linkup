@@ -1,2 +1,1879 @@
-!function(){return function e(t,n,r){function a(i,o){if(!n[i]){if(!t[i]){var l="function"==typeof require&&require;if(!o&&l)return l(i,!0);if(s)return s(i,!0);var u=new Error("Cannot find module '"+i+"'");throw u.code="MODULE_NOT_FOUND",u}var c=n[i]={exports:{}};t[i][0].call(c.exports,function(e){return a(t[i][1][e]||e)},c,c.exports,e,t,n,r)}return n[i].exports}for(var s="function"==typeof require&&require,i=0;i<r.length;i++)a(r[i]);return a}}()({1:[function(e,t,n){(function(e){"use strict";var n=function(e){var t=/\blang(?:uage)?-([\w-]+)\b/i,n=0,r={manual:e.Prism&&e.Prism.manual,disableWorkerMessageHandler:e.Prism&&e.Prism.disableWorkerMessageHandler,util:{encode:function e(t){return t instanceof a?new a(t.type,e(t.content),t.alias):Array.isArray(t)?t.map(e):t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).slice(8,-1)},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++n}),e.__id},clone:function e(t,n){var a,s,i=r.util.type(t);switch(n=n||{},i){case"Object":if(s=r.util.objId(t),n[s])return n[s];for(var o in a={},n[s]=a,t)t.hasOwnProperty(o)&&(a[o]=e(t[o],n));return a;case"Array":return s=r.util.objId(t),n[s]?n[s]:(a=[],n[s]=a,t.forEach(function(t,r){a[r]=e(t,n)}),a);default:return t}},getLanguage:function(e){for(;e&&!t.test(e.className);)e=e.parentElement;return e?(e.className.match(t)||[,"none"])[1].toLowerCase():"none"},currentScript:function(){if("undefined"==typeof document)return null;if("currentScript"in document)return document.currentScript;try{throw new Error}catch(r){var e=(/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(r.stack)||[])[1];if(e){var t=document.getElementsByTagName("script");for(var n in t)if(t[n].src==e)return t[n]}return null}}},languages:{extend:function(e,t){var n=r.util.clone(r.languages[e]);for(var a in t)n[a]=t[a];return n},insertBefore:function(e,t,n,a){var s=(a=a||r.languages)[e],i={};for(var o in s)if(s.hasOwnProperty(o)){if(o==t)for(var l in n)n.hasOwnProperty(l)&&(i[l]=n[l]);n.hasOwnProperty(o)||(i[o]=s[o])}var u=a[e];return a[e]=i,r.languages.DFS(r.languages,function(t,n){n===u&&t!=e&&(this[t]=i)}),i},DFS:function e(t,n,a,s){s=s||{};var i=r.util.objId;for(var o in t)if(t.hasOwnProperty(o)){n.call(t,o,t[o],a||o);var l=t[o],u=r.util.type(l);"Object"!==u||s[i(l)]?"Array"!==u||s[i(l)]||(s[i(l)]=!0,e(l,n,o,s)):(s[i(l)]=!0,e(l,n,null,s))}}},plugins:{},highlightAll:function(e,t){r.highlightAllUnder(document,e,t)},highlightAllUnder:function(e,t,n){var a={callback:n,container:e,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};r.hooks.run("before-highlightall",a),a.elements=Array.prototype.slice.apply(a.container.querySelectorAll(a.selector)),r.hooks.run("before-all-elements-highlight",a);for(var s,i=0;s=a.elements[i++];)r.highlightElement(s,!0===t,a.callback)},highlightElement:function(n,a,s){var i=r.util.getLanguage(n),o=r.languages[i];n.className=n.className.replace(t,"").replace(/\s+/g," ")+" language-"+i;var l=n.parentNode;l&&"pre"===l.nodeName.toLowerCase()&&(l.className=l.className.replace(t,"").replace(/\s+/g," ")+" language-"+i);var u={element:n,language:i,grammar:o,code:n.textContent};function c(e){u.highlightedCode=e,r.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r.hooks.run("after-highlight",u),r.hooks.run("complete",u),s&&s.call(u.element)}if(r.hooks.run("before-sanity-check",u),!u.code)return r.hooks.run("complete",u),void(s&&s.call(u.element));if(r.hooks.run("before-highlight",u),u.grammar)if(a&&e.Worker){var d=new Worker(r.filename);d.onmessage=function(e){c(e.data)},d.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else c(r.highlight(u.code,u.grammar,u.language));else c(r.util.encode(u.code))},highlight:function(e,t,n){var s={code:e,grammar:t,language:n};return r.hooks.run("before-tokenize",s),s.tokens=r.tokenize(s.code,s.grammar),r.hooks.run("after-tokenize",s),a.stringify(r.util.encode(s.tokens),s.language)},tokenize:function(e,t){var n=t.rest;if(n){for(var l in n)t[l]=n[l];delete t.rest}var u=new s;return i(u,u.head,e),function e(t,n,s,l,u,c,d){for(var f in s)if(s.hasOwnProperty(f)&&s[f]){var p=s[f];p=Array.isArray(p)?p:[p];for(var v=0;v<p.length;++v){if(d&&d==f+","+v)return;var h=p[v],g=h.inside,m=!!h.lookbehind,y=!!h.greedy,b=0,x=h.alias;if(y&&!h.pattern.global){var j=h.pattern.toString().match(/[imsuy]*$/)[0];h.pattern=RegExp(h.pattern.source,j+"g")}h=h.pattern||h;for(var E=l.next,w=u;E!==n.tail;w+=E.value.length,E=E.next){var C=E.value;if(n.length>t.length)return;if(!(C instanceof a)){var S=1;if(y&&E!=n.tail.prev){h.lastIndex=w;var A=h.exec(t);if(!A)break;var k=A.index+(m&&A[1]?A[1].length:0),_=A.index+A[0].length,M=w;for(M+=E.value.length;k>=M;)E=E.next,M+=E.value.length;if(M-=E.value.length,w=M,E.value instanceof a)continue;for(var F=E;F!==n.tail&&(M<_||"string"==typeof F.value&&!F.prev.value.greedy);F=F.next)S++,M+=F.value.length;S--,C=t.slice(w,M),A.index-=w}else{h.lastIndex=0;var A=h.exec(C)}if(A){m&&(b=A[1]?A[1].length:0);var k=A.index+b,A=A[0].slice(b),_=k+A.length,L=C.slice(0,k),O=C.slice(_),P=E.prev;L&&(P=i(n,P,L),w+=L.length),o(n,P,S);var T=new a(f,g?r.tokenize(A,g):A,x,A,y);if(E=i(n,P,T),O&&i(n,E,O),S>1&&e(t,n,s,E.prev,w,!0,f+","+v),c)break}else if(c)break}}}}}(e,u,t,u.head,0),function(e){var t=[],n=e.head.next;for(;n!==e.tail;)t.push(n.value),n=n.next;return t}(u)},hooks:{all:{},add:function(e,t){var n=r.hooks.all;n[e]=n[e]||[],n[e].push(t)},run:function(e,t){var n=r.hooks.all[e];if(n&&n.length)for(var a,s=0;a=n[s++];)a(t)}},Token:a};function a(e,t,n,r,a){this.type=e,this.content=t,this.alias=n,this.length=0|(r||"").length,this.greedy=!!a}function s(){var e={value:null,prev:null,next:null},t={value:null,prev:e,next:null};e.next=t,this.head=e,this.tail=t,this.length=0}function i(e,t,n){var r=t.next,a={value:n,prev:t,next:r};return t.next=a,r.prev=a,e.length++,a}function o(e,t,n){for(var r=t.next,a=0;a<n&&r!==e.tail;a++)r=r.next;t.next=r,r.prev=t,e.length-=a}if(e.Prism=r,a.stringify=function e(t,n){if("string"==typeof t)return t;if(Array.isArray(t)){var a="";return t.forEach(function(t){a+=e(t,n)}),a}var s={type:t.type,content:e(t.content,n),tag:"span",classes:["token",t.type],attributes:{},language:n},i=t.alias;i&&(Array.isArray(i)?Array.prototype.push.apply(s.classes,i):s.classes.push(i)),r.hooks.run("wrap",s);var o="";for(var l in s.attributes)o+=" "+l+'="'+(s.attributes[l]||"").replace(/"/g,"&quot;")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'"'+o+">"+s.content+"</"+s.tag+">"},!e.document)return e.addEventListener?(r.disableWorkerMessageHandler||e.addEventListener("message",function(t){var n=JSON.parse(t.data),a=n.language,s=n.code,i=n.immediateClose;e.postMessage(r.highlight(s,r.languages[a],a)),i&&e.close()},!1),r):r;var l=r.util.currentScript();function u(){r.manual||r.highlightAll()}if(l&&(r.filename=l.src,l.hasAttribute("data-manual")&&(r.manual=!0)),!r.manual){var c=document.readyState;"loading"===c||"interactive"===c&&l&&l.defer?document.addEventListener("DOMContentLoaded",u):window.requestAnimationFrame?window.requestAnimationFrame(u):window.setTimeout(u,16)}return r}("undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{});void 0!==t&&t.exports&&(t.exports=n),void 0!==e&&(e.Prism=n),n.languages.markup={comment:/<!--[\s\S]*?-->/,prolog:/<\?[\s\S]+?\?>/,doctype:{pattern:/<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:(?!<!--)[^"'\]]|"[^"]*"|'[^']*'|<!--[\s\S]*?-->)*\]\s*)?>/i,greedy:!0},cdata:/<!\[CDATA\[[\s\S]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s\/>])))+)?\s*\/?>/i,greedy:!0,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/i,inside:{punctuation:[/^=/,{pattern:/^(\s*)["']|["']$/,lookbehind:!0}]}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},n.languages.markup.tag.inside["attr-value"].inside.entity=n.languages.markup.entity,n.hooks.add("wrap",function(e){"entity"===e.type&&(e.attributes.title=e.content.replace(/&amp;/,"&"))}),Object.defineProperty(n.languages.markup.tag,"addInlined",{value:function(e,t){var r={};r["language-"+t]={pattern:/(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,lookbehind:!0,inside:n.languages[t]},r.cdata=/^<!\[CDATA\[|\]\]>$/i;var a={"included-cdata":{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,inside:r}};a["language-"+t]={pattern:/[\s\S]+/,inside:n.languages[t]};var s={};s[e]={pattern:RegExp(/(<__[\s\S]*?>)(?:<!\[CDATA\[[\s\S]*?\]\]>\s*|[\s\S])*?(?=<\/__>)/.source.replace(/__/g,function(){return e}),"i"),lookbehind:!0,greedy:!0,inside:a},n.languages.insertBefore("markup","cdata",s)}}),n.languages.xml=n.languages.extend("markup",{}),n.languages.html=n.languages.markup,n.languages.mathml=n.languages.markup,n.languages.svg=n.languages.markup,function(e){var t=/("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/;e.languages.css={comment:/\/\*[\s\S]*?\*\//,atrule:{pattern:/@[\w-]+[\s\S]*?(?:;|(?=\s*\{))/,inside:{rule:/^@[\w-]+/,"selector-function-argument":{pattern:/(\bselector\s*\((?!\s*\))\s*)(?:[^()]|\((?:[^()]|\([^()]*\))*\))+?(?=\s*\))/,lookbehind:!0,alias:"selector"}}},url:{pattern:RegExp("url\\((?:"+t.source+"|[^\n\r()]*)\\)","i"),greedy:!0,inside:{function:/^url/i,punctuation:/^\(|\)$/}},selector:RegExp("[^{}\\s](?:[^{};\"']|"+t.source+")*?(?=\\s*\\{)"),string:{pattern:t,greedy:!0},property:/[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i,important:/!important\b/i,function:/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:,]/},e.languages.css.atrule.inside.rest=e.languages.css;var n=e.languages.markup;n&&(n.tag.addInlined("style","css"),e.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:n.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:e.languages.css}},alias:"language-css"}},n.tag))}(n),n.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0,greedy:!0}],string:{pattern:/(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/(\b(?:class|interface|extends|implements|trait|instanceof|new)\s+|\bcatch\s+\()[\w.\\]+/i,lookbehind:!0,inside:{punctuation:/[.\\]/}},keyword:/\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,boolean:/\b(?:true|false)\b/,function:/\w+(?=\()/,number:/\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,operator:/[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*\/~^%]/,punctuation:/[{}[\];(),.:]/},n.languages.javascript=n.languages.extend("clike",{"class-name":[n.languages.clike["class-name"],{pattern:/(^|[^$\w\xA0-\uFFFF])[_$A-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\.(?:prototype|constructor))/,lookbehind:!0}],keyword:[{pattern:/((?:^|})\s*)(?:catch|finally)\b/,lookbehind:!0},{pattern:/(^|[^.]|\.\.\.\s*)\b(?:as|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,lookbehind:!0}],number:/\b(?:(?:0[xX](?:[\dA-Fa-f](?:_[\dA-Fa-f])?)+|0[bB](?:[01](?:_[01])?)+|0[oO](?:[0-7](?:_[0-7])?)+)n?|(?:\d(?:_\d)?)+n|NaN|Infinity)\b|(?:\b(?:\d(?:_\d)?)+\.?(?:\d(?:_\d)?)*|\B\.(?:\d(?:_\d)?)+)(?:[Ee][+-]?(?:\d(?:_\d)?)+)?/,function:/#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,operator:/--|\+\+|\*\*=?|=>|&&|\|\||[!=]==|<<=?|>>>?=?|[-+*\/%&|^!=<>]=?|\.{3}|\?[.?]?|[~:]/}),n.languages.javascript["class-name"][0].pattern=/(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/,n.languages.insertBefore("javascript","keyword",{regex:{pattern:/((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^\/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*[\s\S]*?\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/,lookbehind:!0,greedy:!0},"function-variable":{pattern:/#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/,alias:"function"},parameter:[{pattern:/(function(?:\s+[_$A-Za-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)?\s*\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\))/,lookbehind:!0,inside:n.languages.javascript},{pattern:/[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=>)/i,inside:n.languages.javascript},{pattern:/(\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\)\s*=>)/,lookbehind:!0,inside:n.languages.javascript},{pattern:/((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:[_$A-Za-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*\s*)\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\)\s*\{)/,lookbehind:!0,inside:n.languages.javascript}],constant:/\b[A-Z](?:[A-Z_]|\dx?)*\b/}),n.languages.insertBefore("javascript","string",{"template-string":{pattern:/`(?:\\[\s\S]|\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}|(?!\${)[^\\`])*`/,greedy:!0,inside:{"template-punctuation":{pattern:/^`|`$/,alias:"string"},interpolation:{pattern:/((?:^|[^\\])(?:\\{2})*)\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}/,lookbehind:!0,inside:{"interpolation-punctuation":{pattern:/^\${|}$/,alias:"punctuation"},rest:n.languages.javascript}},string:/[\s\S]+/}}}),n.languages.markup&&n.languages.markup.tag.addInlined("script","javascript"),n.languages.js=n.languages.javascript,"undefined"!=typeof self&&self.Prism&&self.document&&document.querySelector&&(self.Prism.fileHighlight=function(e){e=e||document;var t={js:"javascript",py:"python",rb:"ruby",ps1:"powershell",psm1:"powershell",sh:"bash",bat:"batch",h:"c",tex:"latex"};Array.prototype.slice.call(e.querySelectorAll("pre[data-src]")).forEach(function(e){if(!e.hasAttribute("data-src-loaded")){for(var r,a=e.getAttribute("data-src"),s=e,i=/\blang(?:uage)?-([\w-]+)\b/i;s&&!i.test(s.className);)s=s.parentNode;if(s&&(r=(e.className.match(i)||[,""])[1]),!r){var o=(a.match(/\.(\w+)$/)||[,""])[1];r=t[o]||o}var l=document.createElement("code");l.className="language-"+r,e.textContent="",l.textContent="Loading…",e.appendChild(l);var u=new XMLHttpRequest;u.open("GET",a,!0),u.onreadystatechange=function(){4==u.readyState&&(u.status<400&&u.responseText?(l.textContent=u.responseText,n.highlightElement(l),e.setAttribute("data-src-loaded","")):u.status>=400?l.textContent="✖ Error "+u.status+" while fetching file: "+u.statusText:l.textContent="✖ Error: File does not exist or is empty")},u.send(null)}})},document.addEventListener("DOMContentLoaded",function(){self.Prism.fileHighlight()}))}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{}],2:[function(e,t,n){"use strict";Object.keys||(Object.keys=function(e){var t=[];for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&t.push(n);return t})},{}],3:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.addCSSRule=function(e,t,n,r){"insertRule"in e?e.insertRule(t+"{"+n+"}",r):e.addRule(t,n,r)};e("./raf.js")},{"./raf.js":33}],4:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.addClass=void 0;var r=e("./hasClass.js"),a=r.classListSupport?function(e,t){(0,r.hasClass)(e,t)||e.classList.add(t)}:function(e,t){(0,r.hasClass)(e,t)||(e.className+=" "+t)};n.addClass=a},{"./hasClass.js":25}],5:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.addEvents=function(e,t,n){for(var a in t){var s=["touchstart","touchmove"].indexOf(a)>=0&&!n&&r.passiveOption;e.addEventListener(a,t[a],s)}};var r=e("./passiveOption.js")},{"./passiveOption.js":31}],6:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.arrayFromNodeList=function(e){for(var t=[],n=0,r=e.length;n<r;n++)t.push(e[n]);return t}},{}],7:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=window;n.caf=r.cancelAnimationFrame||r.mozCancelAnimationFrame||function(e){clearTimeout(e)}},{}],8:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.calc=function(){var e=document,t=(0,r.getBody)(),n=(0,a.setFakeBody)(t),i=e.createElement("div"),o=!1;t.appendChild(i);try{for(var l,u="(10px * 10)",c=["calc"+u,"-moz-calc"+u,"-webkit-calc"+u],d=0;d<3;d++)if(l=c[d],i.style.width=l,100===i.offsetWidth){o=l.replace(u,"");break}}catch(e){}return t.fake?(0,s.resetFakeBody)(t,n):i.remove(),o};var r=e("./getBody.js"),a=e("./setFakeBody.js"),s=e("./resetFakeBody.js")},{"./getBody.js":18,"./resetFakeBody.js":38,"./setFakeBody.js":40}],9:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.checkStorageValue=function(e){return["true","false"].indexOf(e)>=0?JSON.parse(e):e}},{}],10:[function(e,t,n){"use strict";"remove"in Element.prototype||(Element.prototype.remove=function(){this.parentNode&&this.parentNode.removeChild(this)})},{}],11:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.classListSupport="classList"in document.createElement("_")},{}],12:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.createStyleSheet=function(e){var t=document.createElement("style");e&&t.setAttribute("media",e);return document.querySelector("head").appendChild(t),t.sheet?t.sheet:t.styleSheet}},{}],13:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.docElement=document.documentElement},{}],14:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.Events=function(){return{topics:{},on:function(e,t){this.topics[e]=this.topics[e]||[],this.topics[e].push(t)},off:function(e,t){if(this.topics[e])for(var n=0;n<this.topics[e].length;n++)if(this.topics[e][n]===t){this.topics[e].splice(n,1);break}},emit:function(e,t){t.type=e,this.topics[e]&&this.topics[e].forEach(function(n){n(t,e)})}}}},{}],15:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.extend=function(){for(var e,t,n,r=arguments[0]||{},a=1,s=arguments.length;a<s;a++)if(null!==(e=arguments[a]))for(t in e)n=e[t],r!==n&&void 0!==n&&(r[t]=n);return r}},{}],16:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.forEach=function(e,t,n){for(var r=0,a=e.length;r<a;r++)t.call(n,e[r],r)}},{}],17:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.getAttr=function(e,t){return e.getAttribute(t)}},{}],18:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.getBody=function(){var e=document,t=e.body;t||((t=e.createElement("body")).fake=!0);return t}},{}],19:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.getCssRulesLength=function(e){return("insertRule"in e?e.cssRules:e.rules).length}},{}],20:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.getEndProperty=function(e,t){var n=!1;/^Webkit/.test(e)?n="webkit"+t+"End":/^O/.test(e)?n="o"+t+"End":e&&(n=t.toLowerCase()+"end");return n}},{}],21:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.getSlideId=function(){var e=window.tnsId;return window.tnsId=e?e+1:1,"tns"+window.tnsId}},{}],22:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.getTouchDirection=function(e,t){var n=!1,r=Math.abs(90-Math.abs(e));r>=90-t?n="horizontal":r<=t&&(n="vertical");return n}},{}],23:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.has3DTransforms=function(e){if(!e)return!1;if(!window.getComputedStyle)return!1;var t,n=document,i=(0,r.getBody)(),o=(0,a.setFakeBody)(i),l=n.createElement("p"),u=e.length>9?"-"+e.slice(0,-9).toLowerCase()+"-":"";return u+="transform",i.insertBefore(l,null),l.style[e]="translate3d(1px,1px,1px)",t=window.getComputedStyle(l).getPropertyValue(u),i.fake?(0,s.resetFakeBody)(i,o):l.remove(),void 0!==t&&t.length>0&&"none"!==t};var r=e("./getBody.js"),a=e("./setFakeBody.js"),s=e("./resetFakeBody.js")},{"./getBody.js":18,"./resetFakeBody.js":38,"./setFakeBody.js":40}],24:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.hasAttr=function(e,t){return e.hasAttribute(t)}},{}],25:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.hasClass=n.classListSupport=void 0;var r=e("./classListSupport.js"),a=r.classListSupport?function(e,t){return e.classList.contains(t)}:function(e,t){return e.className.indexOf(t)>=0};n.classListSupport=r.classListSupport,n.hasClass=a},{"./classListSupport.js":11}],26:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.hideElement=function(e,t){"none"!==e.style.display&&(e.style.display="none")}},{}],27:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.isNodeList=function(e){return void 0!==e.item}},{}],28:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.isVisible=function(e){return"none"!==window.getComputedStyle(e).display}},{}],29:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.jsTransform=function(e,t,n,r,a,s,i){var o=Math.min(s,10),l=a.indexOf("%")>=0?"%":"px",a=a.replace(l,""),u=Number(e.style[t].replace(n,"").replace(r,"").replace(l,"")),c=(a-u)/s*o;setTimeout(function a(){s-=o;u+=c;e.style[t]=n+u+l+r;s>0?setTimeout(a,o):i()},o)}},{}],30:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.mediaquerySupport=function(){var e,t=document,n=(0,r.getBody)(),i=(0,a.setFakeBody)(n),o=t.createElement("div"),l=t.createElement("style"),u="@media all and (min-width:1px){.tns-mq-test{position:absolute}}";l.type="text/css",o.className="tns-mq-test",n.appendChild(l),n.appendChild(o),l.styleSheet?l.styleSheet.cssText=u:l.appendChild(t.createTextNode(u));return e=window.getComputedStyle?window.getComputedStyle(o).position:o.currentStyle.position,n.fake?(0,s.resetFakeBody)(n,i):o.remove(),"absolute"===e};var r=e("./getBody.js"),a=e("./setFakeBody.js"),s=e("./resetFakeBody.js")},{"./getBody.js":18,"./resetFakeBody.js":38,"./setFakeBody.js":40}],31:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=!1;try{var a=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("test",null,a)}catch(e){}n.passiveOption=!!r&&{passive:!0}},{}],32:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.percentageLayout=function(){var e=document,t=(0,r.getBody)(),n=(0,a.setFakeBody)(t),i=e.createElement("div"),o=e.createElement("div"),l="",u=!1;i.className="tns-t-subp2",o.className="tns-t-ct";for(var c=0;c<70;c++)l+="<div></div>";return o.innerHTML=l,i.appendChild(o),t.appendChild(i),u=Math.abs(i.getBoundingClientRect().left-o.children[67].getBoundingClientRect().left)<2,t.fake?(0,s.resetFakeBody)(t,n):i.remove(),u};var r=e("./getBody.js"),a=e("./setFakeBody.js"),s=e("./resetFakeBody.js")},{"./getBody.js":18,"./resetFakeBody.js":38,"./setFakeBody.js":40}],33:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=window;n.raf=r.requestAnimationFrame||r.webkitRequestAnimationFrame||r.mozRequestAnimationFrame||r.msRequestAnimationFrame||function(e){return setTimeout(e,16)}},{}],34:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.removeAttrs=function(e,t){e=(0,r.isNodeList)(e)||e instanceof Array?e:[e];for(var n=(t=t instanceof Array?t:[t]).length,a=e.length;a--;)for(var s=n;s--;)e[a].removeAttribute(t[s])};var r=e("./isNodeList.js")},{"./isNodeList.js":27}],35:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.removeCSSRule=function(e,t){"deleteRule"in e?e.deleteRule(t):e.removeRule(t)};e("./raf.js")},{"./raf.js":33}],36:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.removeClass=void 0;var r=e("./hasClass.js"),a=r.classListSupport?function(e,t){(0,r.hasClass)(e,t)&&e.classList.remove(t)}:function(e,t){(0,r.hasClass)(e,t)&&(e.className=e.className.replace(t,""))};n.removeClass=a},{"./hasClass.js":25}],37:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.removeEvents=function(e,t){for(var n in t){var a=["touchstart","touchmove"].indexOf(n)>=0&&r.passiveOption;e.removeEventListener(n,t[n],a)}};var r=e("./passiveOption.js")},{"./passiveOption.js":31}],38:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.resetFakeBody=function(e,t){e.fake&&(e.remove(),r.docElement.style.overflow=t,r.docElement.offsetHeight)};var r=e("./docElement.js")},{"./docElement.js":13}],39:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.setAttrs=function(e,t){if(e=(0,r.isNodeList)(e)||e instanceof Array?e:[e],"[object Object]"!==Object.prototype.toString.call(t))return;for(var n=e.length;n--;)for(var a in t)e[n].setAttribute(a,t[a])};var r=e("./isNodeList.js")},{"./isNodeList.js":27}],40:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.setFakeBody=function(e){var t="";e.fake&&(t=r.docElement.style.overflow,e.style.background="",e.style.overflow=r.docElement.style.overflow="hidden",r.docElement.appendChild(e));return t};var r=e("./docElement.js")},{"./docElement.js":13}],41:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.setLocalStorage=function(e,t,n,r){if(r)try{e.setItem(t,n)}catch(e){}return n}},{}],42:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.showElement=function(e,t){"none"===e.style.display&&(e.style.display="")}},{}],43:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.toDegree=function(e,t){return Math.atan2(e,t)*(180/Math.PI)}},{}],44:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.whichProperty=function(e){if("string"==typeof e){var t=[e],n=e.charAt(0).toUpperCase()+e.substr(1);["Webkit","Moz","ms","O"].forEach(function(r){"ms"===r&&"transform"!==e||t.push(r+n)}),e=t}for(var r=document.createElement("fakeelement"),a=(e.length,0);a<e.length;a++){var s=e[a];if(void 0!==r.style[s])return s}return!1}},{}],45:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.tns=void 0;var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};e("./helpers/Object.keys"),e("./helpers/childNode.remove");var a=e("./helpers/raf.js"),s=e("./helpers/caf.js"),i=e("./helpers/extend.js"),o=e("./helpers/checkStorageValue.js"),l=e("./helpers/setLocalStorage.js"),u=e("./helpers/getSlideId.js"),c=e("./helpers/calc.js"),d=e("./helpers/percentageLayout.js"),f=e("./helpers/mediaquerySupport.js"),p=e("./helpers/createStyleSheet.js"),v=e("./helpers/addCSSRule.js"),h=e("./helpers/removeCSSRule.js"),g=e("./helpers/getCssRulesLength.js"),m=e("./helpers/toDegree.js"),y=e("./helpers/getTouchDirection.js"),b=e("./helpers/forEach.js"),x=e("./helpers/hasClass.js"),j=e("./helpers/addClass.js"),E=e("./helpers/removeClass.js"),w=e("./helpers/hasAttr.js"),C=e("./helpers/getAttr.js"),S=e("./helpers/setAttrs.js"),A=e("./helpers/removeAttrs.js"),k=e("./helpers/arrayFromNodeList.js"),_=e("./helpers/hideElement.js"),M=e("./helpers/showElement.js"),F=e("./helpers/isVisible.js"),L=e("./helpers/whichProperty.js"),O=e("./helpers/has3DTransforms.js"),P=e("./helpers/getEndProperty.js"),T=e("./helpers/addEvents.js"),B=e("./helpers/removeEvents.js"),N=e("./helpers/events.js"),D=e("./helpers/jsTransform.js");n.tns=function e(t){t=(0,i.extend)({container:".slider",mode:"carousel",axis:"horizontal",items:1,gutter:0,edgePadding:0,fixedWidth:!1,autoWidth:!1,viewportMax:!1,slideBy:1,center:!1,controls:!0,controlsPosition:"top",controlsText:["prev","next"],controlsContainer:!1,prevButton:!1,nextButton:!1,nav:!0,navPosition:"top",navContainer:!1,navAsThumbnails:!1,arrowKeys:!1,speed:300,autoplay:!1,autoplayPosition:"top",autoplayTimeout:5e3,autoplayDirection:"forward",autoplayText:["start","stop"],autoplayHoverPause:!1,autoplayButton:!1,autoplayButtonOutput:!0,autoplayResetOnVisibility:!0,animateIn:"tns-fadeIn",animateOut:"tns-fadeOut",animateNormal:"tns-normal",animateDelay:!1,loop:!0,rewind:!1,autoHeight:!1,responsive:!1,lazyload:!1,lazyloadSelector:".tns-lazy-img",touch:!0,mouseDrag:!1,swipeAngle:15,nested:!1,preventActionWhenRunning:!1,preventScrollOnTouch:!1,freezable:!0,onInit:!1,useLocalStorage:!0},t||{});var n=document,R=window,H={ENTER:13,SPACE:32,LEFT:37,RIGHT:39},I={},q=t.useLocalStorage;if(q){var z=navigator.userAgent,$=new Date;try{(I=R.localStorage)?(I.setItem($,$),q=I.getItem($)==$,I.removeItem($)):q=!1,q||(I={})}catch(e){q=!1}q&&(I.tnsApp&&I.tnsApp!==z&&["tC","tPL","tMQ","tTf","t3D","tTDu","tTDe","tADu","tADe","tTE","tAE"].forEach(function(e){I.removeItem(e)}),localStorage.tnsApp=z)}var W=I.tC?(0,o.checkStorageValue)(I.tC):(0,l.setLocalStorage)(I,"tC",(0,c.calc)(),q),V=I.tPL?(0,o.checkStorageValue)(I.tPL):(0,l.setLocalStorage)(I,"tPL",(0,d.percentageLayout)(),q),U=I.tMQ?(0,o.checkStorageValue)(I.tMQ):(0,l.setLocalStorage)(I,"tMQ",(0,f.mediaquerySupport)(),q),Z=I.tTf?(0,o.checkStorageValue)(I.tTf):(0,l.setLocalStorage)(I,"tTf",(0,L.whichProperty)("transform"),q),G=I.t3D?(0,o.checkStorageValue)(I.t3D):(0,l.setLocalStorage)(I,"t3D",(0,O.has3DTransforms)(Z),q),Y=I.tTDu?(0,o.checkStorageValue)(I.tTDu):(0,l.setLocalStorage)(I,"tTDu",(0,L.whichProperty)("transitionDuration"),q),X=I.tTDe?(0,o.checkStorageValue)(I.tTDe):(0,l.setLocalStorage)(I,"tTDe",(0,L.whichProperty)("transitionDelay"),q),Q=I.tADu?(0,o.checkStorageValue)(I.tADu):(0,l.setLocalStorage)(I,"tADu",(0,L.whichProperty)("animationDuration"),q),J=I.tADe?(0,o.checkStorageValue)(I.tADe):(0,l.setLocalStorage)(I,"tADe",(0,L.whichProperty)("animationDelay"),q),K=I.tTE?(0,o.checkStorageValue)(I.tTE):(0,l.setLocalStorage)(I,"tTE",(0,P.getEndProperty)(Y,"Transition"),q),ee=I.tAE?(0,o.checkStorageValue)(I.tAE):(0,l.setLocalStorage)(I,"tAE",(0,P.getEndProperty)(Q,"Animation"),q),te=R.console&&"function"==typeof R.console.warn,ne=["container","controlsContainer","prevButton","nextButton","navContainer","autoplayButton"],re={};if(ne.forEach(function(e){if("string"==typeof t[e]){var r=t[e],a=n.querySelector(r);if(re[e]=r,!a||!a.nodeName)return void(te&&console.warn("Can't find",t[e]));t[e]=a}}),!(t.container.children.length<1)){var ae=t.responsive,se=t.nested,ie="carousel"===t.mode;if(ae){0 in ae&&(t=(0,i.extend)(t,ae[0]),delete ae[0]);var oe={};for(var le in ae){var ue=ae[le];ue="number"==typeof ue?{items:ue}:ue,oe[le]=ue}ae=oe,oe=null}if(ie||function e(t){for(var n in t)ie||("slideBy"===n&&(t[n]="page"),"edgePadding"===n&&(t[n]=!1),"autoHeight"===n&&(t[n]=!1)),"responsive"===n&&e(t[n])}(t),!ie){t.axis="horizontal",t.slideBy="page",t.edgePadding=!1;var ce=t.animateIn,de=t.animateOut,fe=t.animateDelay,pe=t.animateNormal}var ve,he,ge="horizontal"===t.axis,me=n.createElement("div"),ye=n.createElement("div"),be=t.container,xe=be.parentNode,je=be.outerHTML,Ee=be.children,we=Ee.length,Ce=Bn(),Se=!1;ae&&tr(),ie&&(be.className+=" tns-vpfix");var Ae,ke,_e,Me,Fe,Le=t.autoWidth,Oe=Hn("fixedWidth"),Pe=Hn("edgePadding"),Te=Hn("gutter"),Be=Dn(),Ne=Hn("center"),De=Le?1:Math.floor(Hn("items")),Re=Hn("slideBy"),He=t.viewportMax||t.fixedWidthViewportWidth,Ie=Hn("arrowKeys"),qe=Hn("speed"),ze=t.rewind,$e=!ze&&t.loop,We=Hn("autoHeight"),Ve=Hn("controls"),Ue=Hn("controlsText"),Ze=Hn("nav"),Ge=Hn("touch"),Ye=Hn("mouseDrag"),Xe=Hn("autoplay"),Qe=Hn("autoplayTimeout"),Je=Hn("autoplayText"),Ke=Hn("autoplayHoverPause"),et=Hn("autoplayResetOnVisibility"),tt=(0,p.createStyleSheet)(),nt=t.lazyload,rt=(t.lazyloadSelector,[]),at=$e?(Me=function(){if(Le||Oe&&!He)return we-1;var e=Oe?"fixedWidth":"items",n=[];if((Oe||t[e]<we)&&n.push(t[e]),ae)for(var r in ae){var a=ae[r][e];a&&(Oe||a<we)&&n.push(a)}return n.length||n.push(0),Math.ceil(Oe?He/Math.min.apply(null,n):Math.max.apply(null,n))}(),Fe=ie?Math.ceil((5*Me-we)/2):4*Me-we,Fe=Math.max(Me,Fe),Rn("edgePadding")?Fe+1:Fe):0,st=ie?we+2*at:we+at,it=!(!Oe&&!Le||$e),ot=Oe?_r():null,lt=!ie||!$e,ut=ge?"left":"top",ct="",dt="",ft=Oe?function(){return Ne&&!$e?we-1:Math.ceil(-ot/(Oe+Te))}:Le?function(){for(var e=st;e--;)if(Ae[e]>=-ot)return e}:function(){return Ne&&ie&&!$e?we-1:$e||ie?Math.max(0,st-Math.ceil(De)):st-1},pt=On(Hn("startIndex")),vt=pt,ht=(Ln(),0),gt=Le?null:ft(),mt=t.preventActionWhenRunning,yt=t.swipeAngle,bt=!yt||"?",xt=!1,jt=t.onInit,Et=new N.Events,wt=" tns-slider tns-"+t.mode,Ct=be.id||(0,u.getSlideId)(),St=Hn("disable"),At=!1,kt=t.freezable,_t=!(!kt||Le)&&er(),Mt=!1,Ft={click:Dr,keydown:function(e){e=Vr(e);var t=[H.LEFT,H.RIGHT].indexOf(e.keyCode);t>=0&&(0===t?Qt.disabled||Dr(e,-1):Jt.disabled||Dr(e,1))}},Lt={click:function(e){if(xt){if(mt)return;Br()}var t=Ur(e=Vr(e));for(;t!==nn&&!(0,w.hasAttr)(t,"data-nav");)t=t.parentNode;if((0,w.hasAttr)(t,"data-nav")){var n=on=Number((0,C.getAttr)(t,"data-nav")),r=Oe||Le?n*we/an:n*De,a=Ht?n:Math.min(Math.ceil(r),we-1);Nr(a,e),ln===n&&(vn&&zr(),on=-1)}},keydown:function(e){e=Vr(e);var t=n.activeElement;if(!(0,w.hasAttr)(t,"data-nav"))return;var r=[H.LEFT,H.RIGHT,H.ENTER,H.SPACE].indexOf(e.keyCode),a=Number((0,C.getAttr)(t,"data-nav"));r>=0&&(0===r?a>0&&Wr(tn[a-1]):1===r?a<an-1&&Wr(tn[a+1]):(on=a,Nr(a,e)))}},Ot={mouseover:function(){vn&&(Hr(),hn=!0)},mouseout:function(){hn&&(Rr(),hn=!1)}},Pt={visibilitychange:function(){n.hidden?vn&&(Hr(),mn=!0):mn&&(Rr(),mn=!1)}},Tt={keydown:function(e){e=Vr(e);var t=[H.LEFT,H.RIGHT].indexOf(e.keyCode);t>=0&&Dr(e,0===t?-1:1)}},Bt={touchstart:Xr,touchmove:Qr,touchend:Jr,touchcancel:Jr},Nt={mousedown:Xr,mousemove:Qr,mouseup:Jr,mouseleave:Jr},Dt=Rn("controls"),Rt=Rn("nav"),Ht=!!Le||t.navAsThumbnails,It=Rn("autoplay"),qt=Rn("touch"),zt=Rn("mouseDrag"),$t="tns-slide-active",Wt="tns-complete",Vt={load:function(e){cr(Ur(e))},error:function(e){t=Ur(e),(0,j.addClass)(t,"failed"),dr(t);var t}},Ut="force"===t.preventScrollOnTouch;if(Dt)var Zt,Gt,Yt=t.controlsContainer,Xt=t.controlsContainer?t.controlsContainer.outerHTML:"",Qt=t.prevButton,Jt=t.nextButton,Kt=t.prevButton?t.prevButton.outerHTML:"",en=t.nextButton?t.nextButton.outerHTML:"";if(Rt)var tn,nn=t.navContainer,rn=t.navContainer?t.navContainer.outerHTML:"",an=Le?we:ea(),sn=0,on=-1,ln=Tn(),un=ln,cn="tns-nav-active",dn="Carousel Page ",fn=" (Current Slide)";if(It)var pn,vn,hn,gn,mn,yn="forward"===t.autoplayDirection?1:-1,bn=t.autoplayButton,xn=t.autoplayButton?t.autoplayButton.outerHTML:"",jn=["<span class='tns-visually-hidden'>"," animation</span>"];if(qt||zt)var En,wn,Cn={},Sn={},An=!1,kn=ge?function(e,t){return e.x-t.x}:function(e,t){return e.y-t.y};Le||Fn(St||_t),Z&&(ut=Z,ct="translate",G?(ct+=ge?"3d(":"3d(0px, ",dt=ge?", 0px, 0px)":", 0px)"):(ct+=ge?"X(":"Y(",dt=")")),ie&&(be.className=be.className.replace("tns-vpfix","")),function(){Rn("gutter");me.className="tns-outer",ye.className="tns-inner",me.id=Ct+"-ow",ye.id=Ct+"-iw",""===be.id&&(be.id=Ct);wt+=V||Le?" tns-subpixel":" tns-no-subpixel",wt+=W?" tns-calc":" tns-no-calc",Le&&(wt+=" tns-autowidth");wt+=" tns-"+t.axis,be.className+=wt,ie?((ve=n.createElement("div")).id=Ct+"-mw",ve.className="tns-ovh",me.appendChild(ve),ve.appendChild(ye)):me.appendChild(ye);if(We){var e=ve||ye;e.className+=" tns-ah"}if(xe.insertBefore(me,be),ye.appendChild(be),(0,b.forEach)(Ee,function(e,t){(0,j.addClass)(e,"tns-item"),e.id||(e.id=Ct+"-item"+t),!ie&&pe&&(0,j.addClass)(e,pe),(0,S.setAttrs)(e,{"aria-hidden":"true",tabindex:"-1"})}),at){for(var r=n.createDocumentFragment(),a=n.createDocumentFragment(),s=at;s--;){var i=s%we,o=Ee[i].cloneNode(!0);if((0,A.removeAttrs)(o,"id"),a.insertBefore(o,a.firstChild),ie){var l=Ee[we-1-i].cloneNode(!0);(0,A.removeAttrs)(l,"id"),r.appendChild(l)}}be.insertBefore(r,be.firstChild),be.appendChild(a),Ee=be.children}}(),function(){if(!ie)for(var e=pt,n=pt+Math.min(we,De);e<n;e++){var r=Ee[e];r.style.left=100*(e-pt)/De+"%",(0,j.addClass)(r,ce),(0,E.removeClass)(r,pe)}ge&&(V||Le?((0,v.addCSSRule)(tt,"#"+Ct+" > .tns-item","font-size:"+R.getComputedStyle(Ee[0]).fontSize+";",(0,g.getCssRulesLength)(tt)),(0,v.addCSSRule)(tt,"#"+Ct,"font-size:0;",(0,g.getCssRulesLength)(tt))):ie&&(0,b.forEach)(Ee,function(e,t){e.style.marginLeft=function(e){return W?W+"("+100*e+"% / "+st+")":100*e/st+"%"}(t)}));if(U){if(Y){var a=ve&&t.autoHeight?Vn(t.speed):"";(0,v.addCSSRule)(tt,"#"+Ct+"-mw",a,(0,g.getCssRulesLength)(tt))}a=In(t.edgePadding,t.gutter,t.fixedWidth,t.speed,t.autoHeight),(0,v.addCSSRule)(tt,"#"+Ct+"-iw",a,(0,g.getCssRulesLength)(tt)),ie&&(a=ge&&!Le?"width:"+qn(t.fixedWidth,t.gutter,t.items)+";":"",Y&&(a+=Vn(qe)),(0,v.addCSSRule)(tt,"#"+Ct,a,(0,g.getCssRulesLength)(tt))),a=ge&&!Le?zn(t.fixedWidth,t.gutter,t.items):"",t.gutter&&(a+=$n(t.gutter)),ie||(Y&&(a+=Vn(qe)),Q&&(a+=Un(qe))),a&&(0,v.addCSSRule)(tt,"#"+Ct+" > .tns-item",a,(0,g.getCssRulesLength)(tt))}else{gr(),ye.style.cssText=In(Pe,Te,Oe,We),ie&&ge&&!Le&&(be.style.width=qn(Oe,Te,De));var a=ge&&!Le?zn(Oe,Te,De):"";Te&&(a+=$n(Te)),a&&(0,v.addCSSRule)(tt,"#"+Ct+" > .tns-item",a,(0,g.getCssRulesLength)(tt))}if(ae&&U)for(var s in ae){s=parseInt(s);var i=ae[s],a="",o="",l="",u="",c="",d=Le?null:Hn("items",s),f=Hn("fixedWidth",s),p=Hn("speed",s),h=Hn("edgePadding",s),m=Hn("autoHeight",s),y=Hn("gutter",s);Y&&ve&&Hn("autoHeight",s)&&"speed"in i&&(o="#"+Ct+"-mw{"+Vn(p)+"}"),("edgePadding"in i||"gutter"in i)&&(l="#"+Ct+"-iw{"+In(h,y,f,p,m)+"}"),ie&&ge&&!Le&&("fixedWidth"in i||"items"in i||Oe&&"gutter"in i)&&(u="width:"+qn(f,y,d)+";"),Y&&"speed"in i&&(u+=Vn(p)),u&&(u="#"+Ct+"{"+u+"}"),("fixedWidth"in i||Oe&&"gutter"in i||!ie&&"items"in i)&&(c+=zn(f,y,d)),"gutter"in i&&(c+=$n(y)),!ie&&"speed"in i&&(Y&&(c+=Vn(p)),Q&&(c+=Un(p))),c&&(c="#"+Ct+" > .tns-item{"+c+"}"),(a=o+l+u+c)&&tt.insertRule("@media (min-width: "+s/16+"em) {"+a+"}",tt.cssRules.length)}}(),Zn();var _n=$e?ie?function(){var e=ht,t=gt;e+=Re,t-=Re,Pe?(e+=1,t-=1):Oe&&(Be+Te)%(Oe+Te)&&(t-=1),at&&(pt>t?pt-=we:pt<e&&(pt+=we))}:function(){if(pt>gt)for(;pt>=ht+we;)pt-=we;else if(pt<ht)for(;pt<=gt-we;)pt+=we}:function(){pt=Math.max(ht,Math.min(gt,pt))},Mn=ie?function(){Ar(be,""),Y||!qe?(Lr(),qe&&(0,F.isVisible)(be)||Br()):(0,D.jsTransform)(be,ut,ct,dt,Mr(),qe,Br),ge||Kr()}:function(){rt=[];var e={};e[K]=e[ee]=Br,(0,B.removeEvents)(Ee[vt],e),(0,T.addEvents)(Ee[pt],e),Or(vt,ce,de,!0),Or(pt,pe,ce),K&&ee&&qe&&(0,F.isVisible)(be)||Br()};return{version:"2.9.2",getInfo:na,events:Et,goTo:Nr,play:function(){Xe&&!vn&&(qr(),gn=!1)},pause:function(){vn&&(zr(),gn=!0)},isOn:Se,updateSliderHeight:yr,refresh:Zn,destroy:function(){if(tt.disabled=!0,tt.ownerNode&&tt.ownerNode.remove(),(0,B.removeEvents)(R,{resize:Jn}),Ie&&(0,B.removeEvents)(n,Tt),Yt&&(0,B.removeEvents)(Yt,Ft),nn&&(0,B.removeEvents)(nn,Lt),(0,B.removeEvents)(be,Ot),(0,B.removeEvents)(be,Pt),bn&&(0,B.removeEvents)(bn,{click:$r}),Xe&&clearInterval(pn),ie&&K){var e={};e[K]=Br,(0,B.removeEvents)(be,e)}Ge&&(0,B.removeEvents)(be,Bt),Ye&&(0,B.removeEvents)(be,Nt);var a=[je,Xt,Kt,en,rn,xn];for(var s in ne.forEach(function(e,n){var s="container"===e?me:t[e];if("object"===(void 0===s?"undefined":r(s))){var i=!!s.previousElementSibling&&s.previousElementSibling,o=s.parentNode;s.outerHTML=a[n],t[e]=i?i.nextElementSibling:o.firstElementChild}}),ne=ce=de=fe=pe=ge=me=ye=be=xe=je=Ee=we=he=Ce=Le=Oe=Pe=Te=Be=De=Re=He=Ie=qe=ze=$e=We=tt=nt=Ae=rt=at=st=it=ot=lt=ut=ct=dt=ft=pt=vt=ht=gt=yt=bt=xt=jt=Et=wt=Ct=St=At=kt=_t=Mt=Ft=Lt=Ot=Pt=Tt=Bt=Nt=Dt=Rt=Ht=It=qt=zt=$t=Wt=Vt=ke=Ve=Ue=Yt=Xt=Qt=Jt=Zt=Gt=Ze=nn=rn=tn=an=sn=on=ln=un=cn=dn=fn=Xe=Qe=yn=Je=Ke=bn=xn=et=jn=pn=vn=hn=gn=mn=Cn=Sn=En=An=wn=kn=Ge=Ye=null,this)"rebuild"!==s&&(this[s]=null);Se=!1},rebuild:function(){return e((0,i.extend)(t,re))}}}function Fn(e){e&&(Ve=Ze=Ge=Ye=Ie=Xe=Ke=et=!1)}function Ln(){for(var e=ie?pt-at:pt;e<0;)e+=we;return e%we+1}function On(e){return e=e?Math.max(0,Math.min($e?we-1:we-De,e)):0,ie?e+at:e}function Pn(e){for(null==e&&(e=pt),ie&&(e-=at);e<0;)e+=we;return Math.floor(e%we)}function Tn(){var e,t=Pn();return e=Ht?t:Oe||Le?Math.ceil((t+1)*an/we-1):Math.floor(t/De),!$e&&ie&&pt===gt&&(e=an-1),e}function Bn(){return R.innerWidth||n.documentElement.clientWidth||n.body.clientWidth}function Nn(e){return"top"===e?"afterbegin":"beforeend"}function Dn(){var e=Pe?2*Pe-Te:0;return function e(t){var r,a,s=n.createElement("div");return t.appendChild(s),a=(r=s.getBoundingClientRect()).right-r.left,s.remove(),a||e(t.parentNode)}(xe)-e}function Rn(e){if(t[e])return!0;if(ae)for(var n in ae)if(ae[n][e])return!0;return!1}function Hn(e,n){if(null==n&&(n=Ce),"items"===e&&Oe)return Math.floor((Be+Te)/(Oe+Te))||1;var r=t[e];if(ae)for(var a in ae)n>=parseInt(a)&&e in ae[a]&&(r=ae[a][e]);return"slideBy"===e&&"page"===r&&(r=Hn("items")),ie||"slideBy"!==e&&"items"!==e||(r=Math.floor(r)),r}function In(e,t,n,r,a){var s="";if(void 0!==e){var i=e;t&&(i-=t),s=ge?"margin: 0 "+i+"px 0 "+e+"px;":"margin: "+e+"px 0 "+i+"px 0;"}else if(t&&!n){var o="-"+t+"px";s="margin: 0 "+(ge?o+" 0 0":"0 "+o+" 0")+";"}return!ie&&a&&Y&&r&&(s+=Vn(r)),s}function qn(e,t,n){return e?(e+t)*st+"px":W?W+"("+100*st+"% / "+n+")":100*st/n+"%"}function zn(e,t,n){var r;if(e)r=e+t+"px";else{ie||(n=Math.floor(n));var a=ie?st:n;r=W?W+"(100% / "+a+")":100/a+"%"}return r="width:"+r,"inner"!==se?r+";":r+" !important;"}function $n(e){var t="";!1!==e&&(t=(ge?"padding-":"margin-")+(ge?"right":"bottom")+": "+e+"px;");return t}function Wn(e,t){var n=e.substring(0,e.length-t).toLowerCase();return n&&(n="-"+n+"-"),n}function Vn(e){return Wn(Y,18)+"transition-duration:"+e/1e3+"s;"}function Un(e){return Wn(Q,17)+"animation-duration:"+e/1e3+"s;"}function Zn(){if(Rn("autoHeight")||Le||!ge){var e=be.querySelectorAll("img");(0,b.forEach)(e,function(e){var t=e.src;t&&t.indexOf("data:image")<0?((0,T.addEvents)(e,Vt),e.src="",e.src=t,(0,j.addClass)(e,"loading")):nt||cr(e)}),(0,a.raf)(function(){vr((0,k.arrayFromNodeList)(e),function(){ke=!0})}),!Le&&ge&&(e=fr(pt,Math.min(pt+De-1,st-1))),nt?Gn():(0,a.raf)(function(){vr((0,k.arrayFromNodeList)(e),Gn)})}else ie&&Fr(),Xn(),Qn()}function Gn(){if(Le){var e=$e?pt:we-1;!function t(){Ee[e-1].getBoundingClientRect().right.toFixed(2)===Ee[e].getBoundingClientRect().left.toFixed(2)?Yn():setTimeout(function(){t()},16)}()}else Yn()}function Yn(){ge&&!Le||(br(),Le?(ot=_r(),kt&&(_t=er()),gt=ft(),Fn(St||_t)):Kr()),ie&&Fr(),Xn(),Qn()}function Xn(){if(xr(),me.insertAdjacentHTML("afterbegin",'<div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span class="current">'+or()+"</span>  of "+we+"</div>"),_e=me.querySelector(".tns-liveregion .current"),It){var e=Xe?"stop":"start";bn?(0,S.setAttrs)(bn,{"data-action":e}):t.autoplayButtonOutput&&(me.insertAdjacentHTML(Nn(t.autoplayPosition),'<button data-action="'+e+'">'+jn[0]+e+jn[1]+Je[0]+"</button>"),bn=me.querySelector("[data-action]")),bn&&(0,T.addEvents)(bn,{click:$r}),Xe&&(qr(),Ke&&(0,T.addEvents)(be,Ot),et&&(0,T.addEvents)(be,Pt))}if(Rt){if(nn)(0,S.setAttrs)(nn,{"aria-label":"Carousel Pagination"}),tn=nn.children,(0,b.forEach)(tn,function(e,t){(0,S.setAttrs)(e,{"data-nav":t,tabindex:"-1","aria-label":dn+(t+1),"aria-controls":Ct})});else{for(var n="",r=Ht?"":'style="display:none"',a=0;a<we;a++)n+='<button data-nav="'+a+'" tabindex="-1" aria-controls="'+Ct+'" '+r+' aria-label="'+dn+(a+1)+'"></button>';n='<div class="tns-nav" aria-label="Carousel Pagination">'+n+"</div>",me.insertAdjacentHTML(Nn(t.navPosition),n),nn=me.querySelector(".tns-nav"),tn=nn.children}if(ta(),Y){var s=Y.substring(0,Y.length-18).toLowerCase(),i="transition: all "+qe/1e3+"s";s&&(i="-"+s+"-"+i),(0,v.addCSSRule)(tt,"[aria-controls^="+Ct+"-item]",i,(0,g.getCssRulesLength)(tt))}(0,S.setAttrs)(tn[ln],{"aria-label":dn+(ln+1)+fn}),(0,A.removeAttrs)(tn[ln],"tabindex"),(0,j.addClass)(tn[ln],cn),(0,T.addEvents)(nn,Lt)}Dt&&(Yt||Qt&&Jt||(me.insertAdjacentHTML(Nn(t.controlsPosition),'<div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button data-controls="prev" tabindex="-1" aria-controls="'+Ct+'">'+Ue[0]+'</button><button data-controls="next" tabindex="-1" aria-controls="'+Ct+'">'+Ue[1]+"</button></div>"),Yt=me.querySelector(".tns-controls")),Qt&&Jt||(Qt=Yt.children[0],Jt=Yt.children[1]),t.controlsContainer&&(0,S.setAttrs)(Yt,{"aria-label":"Carousel Navigation",tabindex:"0"}),(t.controlsContainer||t.prevButton&&t.nextButton)&&(0,S.setAttrs)([Qt,Jt],{"aria-controls":Ct,tabindex:"-1"}),(t.controlsContainer||t.prevButton&&t.nextButton)&&((0,S.setAttrs)(Qt,{"data-controls":"prev"}),(0,S.setAttrs)(Jt,{"data-controls":"next"})),Zt=Er(Qt),Gt=Er(Jt),Sr(),Yt?(0,T.addEvents)(Yt,Ft):((0,T.addEvents)(Qt,Ft),(0,T.addEvents)(Jt,Ft))),nr()}function Qn(){if(ie&&K){var e={};e[K]=Br,(0,T.addEvents)(be,e)}Ge&&(0,T.addEvents)(be,Bt,t.preventScrollOnTouch),Ye&&(0,T.addEvents)(be,Nt),Ie&&(0,T.addEvents)(n,Tt),"inner"===se?Et.on("outerResized",function(){Kn(),Et.emit("innerLoaded",na())}):(ae||Oe||Le||We||!ge)&&(0,T.addEvents)(R,{resize:Jn}),We&&("outer"===se?Et.on("innerLoaded",pr):St||pr()),ur(),St?sr():_t&&ar(),Et.on("indexChanged",hr),"inner"===se&&Et.emit("innerLoaded",na()),"function"==typeof jt&&jt(na()),Se=!0}function Jn(e){(0,a.raf)(function(){Kn(Vr(e))})}function Kn(e){if(Se){"outer"===se&&Et.emit("outerResized",na(e)),Ce=Bn();var r,a=he,s=!1;ae&&(tr(),(r=a!==he)&&Et.emit("newBreakpointStart",na(e)));var i,o,l=De,u=St,c=_t,d=Ie,f=Ve,p=Ze,m=Ge,y=Ye,x=Xe,w=Ke,C=et,S=pt;if(r){var A=Oe,k=We,F=Ue,L=Ne,O=Je;if(!U)var P=Te,N=Pe}if(Ie=Hn("arrowKeys"),Ve=Hn("controls"),Ze=Hn("nav"),Ge=Hn("touch"),Ne=Hn("center"),Ye=Hn("mouseDrag"),Xe=Hn("autoplay"),Ke=Hn("autoplayHoverPause"),et=Hn("autoplayResetOnVisibility"),r&&(St=Hn("disable"),Oe=Hn("fixedWidth"),qe=Hn("speed"),We=Hn("autoHeight"),Ue=Hn("controlsText"),Je=Hn("autoplayText"),Qe=Hn("autoplayTimeout"),U||(Pe=Hn("edgePadding"),Te=Hn("gutter"))),Fn(St),Be=Dn(),ge&&!Le||St||(br(),ge||(Kr(),s=!0)),(Oe||Le)&&(ot=_r(),gt=ft()),(r||Oe)&&(De=Hn("items"),Re=Hn("slideBy"),(o=De!==l)&&(Oe||Le||(gt=ft()),_n())),r&&St!==u&&(St?sr():function(){if(!At)return;if(tt.disabled=!1,be.className+=wt,Fr(),$e)for(var e=at;e--;)ie&&(0,M.showElement)(Ee[e]),(0,M.showElement)(Ee[st-e-1]);if(!ie)for(var t=pt,n=pt+we;t<n;t++){var r=Ee[t],a=t<pt+De?ce:pe;r.style.left=100*(t-pt)/De+"%",(0,j.addClass)(r,a)}rr(),At=!1}()),kt&&(r||Oe||Le)&&(_t=er())!==c&&(_t?(Lr(Mr(On(0))),ar()):(!function(){if(!Mt)return;Pe&&U&&(ye.style.margin="");if(at)for(var e="tns-transparent",t=at;t--;)ie&&(0,E.removeClass)(Ee[t],e),(0,E.removeClass)(Ee[st-t-1],e);rr(),Mt=!1}(),s=!0)),Fn(St||_t),Xe||(Ke=et=!1),Ie!==d&&(Ie?(0,T.addEvents)(n,Tt):(0,B.removeEvents)(n,Tt)),Ve!==f&&(Ve?Yt?(0,M.showElement)(Yt):(Qt&&(0,M.showElement)(Qt),Jt&&(0,M.showElement)(Jt)):Yt?(0,_.hideElement)(Yt):(Qt&&(0,_.hideElement)(Qt),Jt&&(0,_.hideElement)(Jt))),Ze!==p&&(Ze?(0,M.showElement)(nn):(0,_.hideElement)(nn)),Ge!==m&&(Ge?(0,T.addEvents)(be,Bt,t.preventScrollOnTouch):(0,B.removeEvents)(be,Bt)),Ye!==y&&(Ye?(0,T.addEvents)(be,Nt):(0,B.removeEvents)(be,Nt)),Xe!==x&&(Xe?(bn&&(0,M.showElement)(bn),vn||gn||qr()):(bn&&(0,_.hideElement)(bn),vn&&zr())),Ke!==w&&(Ke?(0,T.addEvents)(be,Ot):(0,B.removeEvents)(be,Ot)),et!==C&&(et?(0,T.addEvents)(n,Pt):(0,B.removeEvents)(n,Pt)),r){if(Oe===A&&Ne===L||(s=!0),We!==k&&(We||(ye.style.height="")),Ve&&Ue!==F&&(Qt.innerHTML=Ue[0],Jt.innerHTML=Ue[1]),bn&&Je!==O){var D=Xe?1:0,R=bn.innerHTML,H=R.length-O[D].length;R.substring(H)===O[D]&&(bn.innerHTML=R.substring(0,H)+Je[D])}}else Ne&&(Oe||Le)&&(s=!0);if((o||Oe&&!Le)&&(an=ea(),ta()),(i=pt!==S)?(Et.emit("indexChanged",na()),s=!0):o?i||hr():(Oe||Le)&&(ur(),xr(),ir()),o&&!ie&&function(){for(var e=pt+Math.min(we,De),t=st;t--;){var n=Ee[t];t>=pt&&t<e?((0,j.addClass)(n,"tns-moving"),n.style.left=100*(t-pt)/De+"%",(0,j.addClass)(n,ce),(0,E.removeClass)(n,pe)):n.style.left&&(n.style.left="",(0,j.addClass)(n,pe),(0,E.removeClass)(n,ce)),(0,E.removeClass)(n,de)}setTimeout(function(){(0,b.forEach)(Ee,function(e){(0,E.removeClass)(e,"tns-moving")})},300)}(),!St&&!_t){if(r&&!U&&(We===autoheightTem&&qe===speedTem||gr(),Pe===N&&Te===P||(ye.style.cssText=In(Pe,Te,Oe,qe,We)),ge)){ie&&(be.style.width=qn(Oe,Te,De));var I=zn(Oe,Te,De)+$n(Te);(0,h.removeCSSRule)(tt,(0,g.getCssRulesLength)(tt)-1),(0,v.addCSSRule)(tt,"#"+Ct+" > .tns-item",I,(0,g.getCssRulesLength)(tt))}We&&pr(),s&&(Fr(),vt=pt)}r&&Et.emit("newBreakpointEnd",na(e))}}function er(){if(!Oe&&!Le)return we<=(Ne?De-(De-1)/2:De);var e=Oe?(Oe+Te)*we:Ae[we],t=Pe?Be+2*Pe:Be+Te;return Ne&&(t-=Oe?(Be-Oe)/2:(Be-(Ae[pt+1]-Ae[pt]-Te))/2),e<=t}function tr(){for(var e in he=0,ae)e=parseInt(e),Ce>=e&&(he=e)}function nr(){!Xe&&bn&&(0,_.hideElement)(bn),!Ze&&nn&&(0,_.hideElement)(nn),Ve||(Yt?(0,_.hideElement)(Yt):(Qt&&(0,_.hideElement)(Qt),Jt&&(0,_.hideElement)(Jt)))}function rr(){Xe&&bn&&(0,M.showElement)(bn),Ze&&nn&&(0,M.showElement)(nn),Ve&&(Yt?(0,M.showElement)(Yt):(Qt&&(0,M.showElement)(Qt),Jt&&(0,M.showElement)(Jt)))}function ar(){if(!Mt){if(Pe&&(ye.style.margin="0px"),at)for(var e="tns-transparent",t=at;t--;)ie&&(0,j.addClass)(Ee[t],e),(0,j.addClass)(Ee[st-t-1],e);nr(),Mt=!0}}function sr(){if(!At){if(tt.disabled=!0,be.className=be.className.replace(wt.substring(1),""),(0,A.removeAttrs)(be,["style"]),$e)for(var e=at;e--;)ie&&(0,_.hideElement)(Ee[e]),(0,_.hideElement)(Ee[st-e-1]);if(ge&&ie||(0,A.removeAttrs)(ye,["style"]),!ie)for(var t=pt,n=pt+we;t<n;t++){var r=Ee[t];(0,A.removeAttrs)(r,["style"]),(0,E.removeClass)(r,ce),(0,E.removeClass)(r,pe)}nr(),At=!0}}function ir(){var e=or();_e.innerHTML!==e&&(_e.innerHTML=e)}function or(){var e=lr(),t=e[0]+1,n=e[1]+1;return t===n?t+"":t+" to "+n}function lr(e){null==e&&(e=Mr());var t,n,r,a=pt;if(Ne||Pe?(Le||Oe)&&(n=-(parseFloat(e)+Pe),r=n+Be+2*Pe):Le&&(n=Ae[pt],r=n+Be),Le)Ae.forEach(function(e,s){s<st&&((Ne||Pe)&&e<=n+.5&&(a=s),r-e>=.5&&(t=s))});else{if(Oe){var s=Oe+Te;Ne||Pe?(a=Math.floor(n/s),t=Math.ceil(r/s-1)):t=a+Math.ceil(Be/s)-1}else if(Ne||Pe){var i=De-1;if(Ne?(a-=i/2,t=pt+i/2):t=pt+i,Pe){var o=Pe*De/Be;a-=o,t+=o}a=Math.floor(a),t=Math.ceil(t)}else t=a+De-1;a=Math.max(a,0),t=Math.min(t,st-1)}return[a,t]}function ur(){nt&&!St&&fr.apply(null,lr()).forEach(function(e){if(!(0,x.hasClass)(e,Wt)){var t={};t[K]=function(e){e.stopPropagation()},(0,T.addEvents)(e,t),(0,T.addEvents)(e,Vt),e.src=(0,C.getAttr)(e,"data-src");var n=(0,C.getAttr)(e,"data-srcset");n&&(e.srcset=n),(0,j.addClass)(e,"loading")}})}function cr(e){(0,j.addClass)(e,"loaded"),dr(e)}function dr(e){(0,j.addClass)(e,"tns-complete"),(0,E.removeClass)(e,"loading"),(0,B.removeEvents)(e,Vt)}function fr(e,t){for(var n=[];e<=t;)(0,b.forEach)(Ee[e].querySelectorAll("img"),function(e){n.push(e)}),e++;return n}function pr(){var e=fr.apply(null,lr());(0,a.raf)(function(){vr(e,yr)})}function vr(e,t){return ke?t():(e.forEach(function(t,n){(0,x.hasClass)(t,Wt)&&e.splice(n,1)}),e.length?void(0,a.raf)(function(){vr(e,t)}):t())}function hr(){ur(),xr(),ir(),Sr(),function(){if(Ze&&(ln=on>=0?on:Tn(),on=-1,ln!==un)){var e=tn[un],t=tn[ln];(0,S.setAttrs)(e,{tabindex:"-1","aria-label":dn+(un+1)}),(0,E.removeClass)(e,cn),(0,S.setAttrs)(t,{"aria-label":dn+(ln+1)+fn}),(0,A.removeAttrs)(t,"tabindex"),(0,j.addClass)(t,cn),un=ln}}()}function gr(){ie&&We&&(ve.style[Y]=qe/1e3+"s")}function mr(e,t){for(var n=[],r=e,a=Math.min(e+t,st);r<a;r++)n.push(Ee[r].offsetHeight);return Math.max.apply(null,n)}function yr(){var e=We?mr(pt,De):mr(at,we),t=ve||ye;t.style.height!==e&&(t.style.height=e+"px")}function br(){Ae=[0];var e=ge?"left":"top",t=ge?"right":"bottom",n=Ee[0].getBoundingClientRect()[e];(0,b.forEach)(Ee,function(r,a){a&&Ae.push(r.getBoundingClientRect()[e]-n),a===st-1&&Ae.push(r.getBoundingClientRect()[t]-n)})}function xr(){var e=lr(),t=e[0],n=e[1];(0,b.forEach)(Ee,function(e,r){r>=t&&r<=n?(0,w.hasAttr)(e,"aria-hidden")&&((0,A.removeAttrs)(e,["aria-hidden","tabindex"]),(0,j.addClass)(e,$t)):(0,w.hasAttr)(e,"aria-hidden")||((0,S.setAttrs)(e,{"aria-hidden":"true",tabindex:"-1"}),(0,E.removeClass)(e,$t))})}function jr(e){return e.nodeName.toLowerCase()}function Er(e){return"button"===jr(e)}function wr(e){return"true"===e.getAttribute("aria-disabled")}function Cr(e,t,n){e?t.disabled=n:t.setAttribute("aria-disabled",n.toString())}function Sr(){if(Ve&&!ze&&!$e){var e=Zt?Qt.disabled:wr(Qt),t=Gt?Jt.disabled:wr(Jt),n=pt<=ht,r=!ze&&pt>=gt;n&&!e&&Cr(Zt,Qt,!0),!n&&e&&Cr(Zt,Qt,!1),r&&!t&&Cr(Gt,Jt,!0),!r&&t&&Cr(Gt,Jt,!1)}}function Ar(e,t){Y&&(e.style[Y]=t)}function kr(e){return null==e&&(e=pt),Le?(Be-(Pe?Te:0)-(Ae[e+1]-Ae[e]-Te))/2:Oe?(Be-Oe)/2:(De-1)/2}function _r(){var e=Be+(Pe?Te:0)-(Oe?(Oe+Te)*st:Ae[st]);return Ne&&!$e&&(e=Oe?-(Oe+Te)*(st-1)-kr():kr(st-1)-Ae[st-1]),e>0&&(e=0),e}function Mr(e){var t;if(null==e&&(e=pt),ge&&!Le)if(Oe)t=-(Oe+Te)*e,Ne&&(t+=kr());else{var n=Z?st:De;Ne&&(e-=kr()),t=100*-e/n}else t=-Ae[e],Ne&&Le&&(t+=kr());return it&&(t=Math.max(t,ot)),t+=!ge||Le||Oe?"px":"%"}function Fr(e){Ar(be,"0s"),Lr(e)}function Lr(e){null==e&&(e=Mr()),be.style[ut]=ct+e+dt}function Or(e,t,n,r){var a=e+De;$e||(a=Math.min(a,st));for(var s=e;s<a;s++){var i=Ee[s];r||(i.style.left=100*(s-pt)/De+"%"),fe&&X&&(i.style[X]=i.style[J]=fe*(s-e)/1e3+"s"),(0,E.removeClass)(i,t),(0,j.addClass)(i,n),r&&rt.push(i)}}function Pr(e,t){lt&&_n(),(pt!==vt||t)&&(Et.emit("indexChanged",na()),Et.emit("transitionStart",na()),We&&pr(),vn&&e&&["click","keydown"].indexOf(e.type)>=0&&zr(),xt=!0,Mn())}function Tr(e){return e.toLowerCase().replace(/-/g,"")}function Br(e){if(ie||xt){if(Et.emit("transitionEnd",na(e)),!ie&&rt.length>0)for(var t=0;t<rt.length;t++){var n=rt[t];n.style.left="",J&&X&&(n.style[J]="",n.style[X]=""),(0,E.removeClass)(n,de),(0,j.addClass)(n,pe)}if(!e||!ie&&e.target.parentNode===be||e.target===be&&Tr(e.propertyName)===Tr(ut)){if(!lt){var r=pt;_n(),pt!==r&&(Et.emit("indexChanged",na()),Fr())}"inner"===se&&Et.emit("innerLoaded",na()),xt=!1,vt=pt}}}function Nr(e,t){if(!_t)if("prev"===e)Dr(t,-1);else if("next"===e)Dr(t,1);else{if(xt){if(mt)return;Br()}var n=Pn(),r=0;if("first"===e?r=-n:"last"===e?r=ie?we-De-n:we-1-n:("number"!=typeof e&&(e=parseInt(e)),isNaN(e)||(t||(e=Math.max(0,Math.min(we-1,e))),r=e-n)),!ie&&r&&Math.abs(r)<De){var a=r>0?1:-1;r+=pt+r-we>=ht?we*a:2*we*a*-1}pt+=r,ie&&$e&&(pt<ht&&(pt+=we),pt>gt&&(pt-=we)),Pn(pt)!==Pn(vt)&&Pr(t)}}function Dr(e,t){if(xt){if(mt)return;Br()}var n;if(!t){for(var r=Ur(e=Vr(e));r!==Yt&&[Qt,Jt].indexOf(r)<0;)r=r.parentNode;var a=[Qt,Jt].indexOf(r);a>=0&&(n=!0,t=0===a?-1:1)}if(ze){if(pt===ht&&-1===t)return void Nr("last",e);if(pt===gt&&1===t)return void Nr("first",e)}t&&(pt+=Re*t,Le&&(pt=Math.floor(pt)),Pr(n||e&&"keydown"===e.type?e:null))}function Rr(){pn=setInterval(function(){Dr(null,yn)},Qe),vn=!0}function Hr(){clearInterval(pn),vn=!1}function Ir(e,t){(0,S.setAttrs)(bn,{"data-action":e}),bn.innerHTML=jn[0]+e+jn[1]+t}function qr(){Rr(),bn&&Ir("stop",Je[1])}function zr(){Hr(),bn&&Ir("start",Je[0])}function $r(){vn?(zr(),gn=!0):(qr(),gn=!1)}function Wr(e){e.focus()}function Vr(e){return Zr(e=e||R.event)?e.changedTouches[0]:e}function Ur(e){return e.target||R.event.srcElement}function Zr(e){return e.type.indexOf("touch")>=0}function Gr(e){e.preventDefault?e.preventDefault():e.returnValue=!1}function Yr(){return(0,y.getTouchDirection)((0,m.toDegree)(Sn.y-Cn.y,Sn.x-Cn.x),yt)===t.axis}function Xr(e){if(xt){if(mt)return;Br()}Xe&&vn&&Hr(),An=!0,wn&&((0,s.caf)(wn),wn=null);var t=Vr(e);Et.emit(Zr(e)?"touchStart":"dragStart",na(e)),!Zr(e)&&["img","a"].indexOf(jr(Ur(e)))>=0&&Gr(e),Sn.x=Cn.x=t.clientX,Sn.y=Cn.y=t.clientY,ie&&(En=parseFloat(be.style[ut].replace(ct,"")),Ar(be,"0s"))}function Qr(e){if(An){var t=Vr(e);Sn.x=t.clientX,Sn.y=t.clientY,ie?wn||(wn=(0,a.raf)(function(){!function e(t){if(!bt)return void(An=!1);(0,s.caf)(wn);An&&(wn=(0,a.raf)(function(){e(t)}));"?"===bt&&(bt=Yr());if(bt){!Ut&&Zr(t)&&(Ut=!0);try{t.type&&Et.emit(Zr(t)?"touchMove":"dragMove",na(t))}catch(e){}var n=En,r=kn(Sn,Cn);if(!ge||Oe||Le)n+=r,n+="px";else{var i=Z?r*De*100/((Be+Te)*st):100*r/(Be+Te);n+=i,n+="%"}be.style[ut]=ct+n+dt}}(e)})):("?"===bt&&(bt=Yr()),bt&&(Ut=!0)),Ut&&e.preventDefault()}}function Jr(e){if(An){wn&&((0,s.caf)(wn),wn=null),ie&&Ar(be,""),An=!1;var n=Vr(e);Sn.x=n.clientX,Sn.y=n.clientY;var r=kn(Sn,Cn);if(Math.abs(r)){if(!Zr(e)){var i=Ur(e);(0,T.addEvents)(i,{click:function e(t){Gr(t),(0,B.removeEvents)(i,{click:e})}})}ie?wn=(0,a.raf)(function(){if(ge&&!Le){var t=-r*De/(Be+Te);t=r>0?Math.floor(t):Math.ceil(t),pt+=t}else{var n=-(En+r);if(n<=0)pt=ht;else if(n>=Ae[st-1])pt=gt;else for(var a=0;a<st&&n>=Ae[a];)pt=a,n>Ae[a]&&r<0&&(pt+=1),a++}Pr(e,r),Et.emit(Zr(e)?"touchEnd":"dragEnd",na(e))}):bt&&Dr(e,r>0?-1:1)}}"auto"===t.preventScrollOnTouch&&(Ut=!1),yt&&(bt="?"),Xe&&!vn&&Rr()}function Kr(){(ve||ye).style.height=Ae[pt+De]-Ae[pt]+"px"}function ea(){var e=Oe?(Oe+Te)*we/Be:we/De;return Math.min(Math.ceil(e),we)}function ta(){if(Ze&&!Ht&&an!==sn){var e=sn,t=an,n=M.showElement;for(sn>an&&(e=an,t=sn,n=_.hideElement);e<t;)n(tn[e]),e++;sn=an}}function na(e){return{container:be,slideItems:Ee,navContainer:nn,navItems:tn,controlsContainer:Yt,hasControls:Dt,prevButton:Qt,nextButton:Jt,items:De,slideBy:Re,cloneCount:at,slideCount:we,slideCountNew:st,index:pt,indexCached:vt,displayIndex:Ln(),navCurrentIndex:ln,navCurrentIndexCached:un,pages:an,pagesCached:sn,sheet:tt,isOn:Se,event:e||{}}}te&&console.warn("No slides found in",t.container)}},{"./helpers/Object.keys":2,"./helpers/addCSSRule.js":3,"./helpers/addClass.js":4,"./helpers/addEvents.js":5,"./helpers/arrayFromNodeList.js":6,"./helpers/caf.js":7,"./helpers/calc.js":8,"./helpers/checkStorageValue.js":9,"./helpers/childNode.remove":10,"./helpers/createStyleSheet.js":12,"./helpers/events.js":14,"./helpers/extend.js":15,"./helpers/forEach.js":16,"./helpers/getAttr.js":17,"./helpers/getCssRulesLength.js":19,"./helpers/getEndProperty.js":20,"./helpers/getSlideId.js":21,"./helpers/getTouchDirection.js":22,"./helpers/has3DTransforms.js":23,"./helpers/hasAttr.js":24,"./helpers/hasClass.js":25,"./helpers/hideElement.js":26,"./helpers/isVisible.js":28,"./helpers/jsTransform.js":29,"./helpers/mediaquerySupport.js":30,"./helpers/percentageLayout.js":32,"./helpers/raf.js":33,"./helpers/removeAttrs.js":34,"./helpers/removeCSSRule.js":35,"./helpers/removeClass.js":36,"./helpers/removeEvents.js":37,"./helpers/setAttrs.js":39,"./helpers/setLocalStorage.js":41,"./helpers/showElement.js":42,"./helpers/toDegree.js":43,"./helpers/whichProperty.js":44}],46:[function(e,t,n){"use strict";var r=e("./modules/swDetecter"),a=c(e("./modules/topNav")),s=c(e("./modules/searchFilter")),i=c(e("./modules/youtube-video")),o=(e("../../node_modules/prismjs/prism"),c(e("./modules/tabs"))),l=c(e("./modules/accordion")),u=e("./modules/tns-slider");function c(e){return e&&e.__esModule?e:{default:e}}(0,r.swDetecter)(),(0,a.default)(),(0,o.default)(),(0,l.default)(),(0,u.tnsCarousell)(),(0,u.tnsSingle)(),(0,u.tnsVertical)(),(0,u.tnsSyncing)(),document.body.classList.contains("home")?((0,s.default)(),(0,i.default)()):document.body.classList.contains("page2")||document.body.classList.contains("page3")},{"../../node_modules/prismjs/prism":1,"./modules/accordion":47,"./modules/searchFilter":48,"./modules/swDetecter":49,"./modules/tabs":50,"./modules/tns-slider":51,"./modules/topNav":52,"./modules/youtube-video":53}],47:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.default=function(){for(var e=document.getElementsByClassName("accordion-container__btn-acc"),t=0;t<e.length;t++)e[t].addEventListener("click",function(){this.classList.toggle("active");var e=this.nextElementSibling;e.style.maxHeight?e.style.maxHeight=null:e.style.maxHeight=e.scrollHeight+"px"})}},{}],48:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.default=function(){var e,t,n,r=function(e,t,n){var r=document.querySelectorAll(t),a=document.querySelectorAll(n);r.forEach(function(t){t.textContent.toUpperCase().includes(e)?t.style.display="block":t.style.display="none"}),a.forEach(function(t){t.textContent.toUpperCase().includes(e)?t.style.display="block":t.style.display="none"})};e=document.getElementById("searchInput"),t=".class-item__fragment",n=".class-item",e.addEventListener("keyup",function(e){"Escape"===e.key&&(e.target.value=""),r(e.target.value.toUpperCase(),t,n)})}},{}],49:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.swDetecter=function(){"serviceWorker"in navigator&&navigator.serviceWorker.register("./sw.js").then(function(e){return console.log("Registro de SW exitoso",e)}).catch(function(e){return console.warn("Error al tratar de registrar el sw",e)})}},{}],50:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.default=function(){var e=document,t=Array.prototype.slice.apply(e.querySelectorAll(".tabs-container__tab")),n=Array.prototype.slice.apply(e.querySelectorAll(".tabs-container__panel"));e.getElementById("tabs").addEventListener("click",function(e){if(e.target.classList.contains("tabs-container__tab")){var r=t.indexOf(e.target);t.map(function(e){return e.classList.remove("is-active")}),t[r].classList.add("is-active"),n.map(function(e){return e.classList.remove("is-active")}),n[r].classList.add("is-active")}})}},{}],51:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.tnsSyncing=n.tnsSingle=n.tnsVertical=n.tnsCarousell=void 0;var r=e("../../../node_modules/tiny-slider/src/tiny-slider");n.tnsCarousell=function(){(0,r.tns)({container:"#tnsCarousell",items:1,slideBy:1,swipeAngle:!1,speed:400,edgePadding:40,nav:!1,mouseDrag:!0,controlsText:['<i class="tns-carousell__prev fas fa-chevron-left"></i>','<i class="tns-carousell__next fas fa-chevron-right"></i>'],responsive:{480:{items:2},640:{items:3},800:{items:4},960:{items:5},1120:{items:6},1280:{items:7}}})},n.tnsVertical=function(){(0,r.tns)({container:"#tnsVertical",items:3,axis:"vertical",swipeAngle:!1,speed:1e3,nav:!1,controlsText:['<i class="fas fa-chevron-down"></i>','<i class="fas fa-chevron-up"></i>']})},n.tnsSingle=function(){(0,r.tns)({container:"#tnsSingle",items:1,slideBy:1,speed:1e3,mode:"gallery",mouseDrag:!0,controlsText:['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>']})},n.tnsSyncing=function(){(0,r.tns)({container:"#tnsSyncingFor",items:1,mode:"gallery",speed:400,navContainer:"#tnsSyncingNav",navAsThumbnails:!0,mouseDrag:!0,controlsText:['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>'],responsive:{640:{controls:!1,mouseDrag:!1}}})}},{"../../../node_modules/tiny-slider/src/tiny-slider":45}],52:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0});n.default=function(){var e=document,t=e.querySelector(".hamburger"),n=e.querySelector(".top-nav__menu");t.addEventListener("click",function(e){e.preventDefault(),t.classList.toggle("is-active"),n.classList.toggle("is-active")})}},{}],53:[function(e,t,n){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=function(){var e=document,t=window.matchMedia("(min-width: 64em)"),n=e.querySelectorAll(".Youtube"),r=e.querySelectorAll(".Youtube-wrapper"),a=[];function s(e){e.matches?r.forEach(function(e,t){e.innerHTML='<iframe src="https://www.youtube.com/embed/'+a[t]+'" frameborder="0"></iframe>'}):r.forEach(function(e,t){e.innerHTML='<a href="https://www.youtube.com/watch?v='+a[t]+'" target="_blank"><i class="fa fa-youtube-play"></i> Ver Video</a>'})}n.forEach(function(e,t){return a[t]=e.id}),console.log(a),t.addListener(s),s(t)}},{}]},{},[46]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function (global){(function (){
+'use strict';
+
+/* **********************************************
+     Begin prism-core.js
+********************************************** */
+
+/// <reference lib="WebWorker"/>
+
+var _self = typeof window !== 'undefined' ? window // if in browser
+: typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope ? self // if in worker
+: {} // if in node js
+;
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
+var Prism = function (_self) {
+
+	// Private helper vars
+	var lang = /\blang(?:uage)?-([\w-]+)\b/i;
+	var uniqueId = 0;
+
+	var _ = {
+		/**
+   * By default, Prism will attempt to highlight all code elements (by calling {@link Prism.highlightAll}) on the
+   * current page after the page finished loading. This might be a problem if e.g. you wanted to asynchronously load
+   * additional languages or plugins yourself.
+   *
+   * By setting this value to `true`, Prism will not automatically highlight all code elements on the page.
+   *
+   * You obviously have to change this value before the automatic highlighting started. To do this, you can add an
+   * empty Prism object into the global scope before loading the Prism script like this:
+   *
+   * ```js
+   * window.Prism = window.Prism || {};
+   * Prism.manual = true;
+   * // add a new <script> to load Prism's script
+   * ```
+   *
+   * @default false
+   * @type {boolean}
+   * @memberof Prism
+   * @public
+   */
+		manual: _self.Prism && _self.Prism.manual,
+		disableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,
+
+		/**
+   * A namespace for utility methods.
+   *
+   * All function in this namespace that are not explicitly marked as _public_ are for __internal use only__ and may
+   * change or disappear at any time.
+   *
+   * @namespace
+   * @memberof Prism
+   */
+		util: {
+			encode: function encode(tokens) {
+				if (tokens instanceof Token) {
+					return new Token(tokens.type, encode(tokens.content), tokens.alias);
+				} else if (Array.isArray(tokens)) {
+					return tokens.map(encode);
+				} else {
+					return tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\u00a0/g, ' ');
+				}
+			},
+
+			/**
+    * Returns the name of the type of the given value.
+    *
+    * @param {any} o
+    * @returns {string}
+    * @example
+    * type(null)      === 'Null'
+    * type(undefined) === 'Undefined'
+    * type(123)       === 'Number'
+    * type('foo')     === 'String'
+    * type(true)      === 'Boolean'
+    * type([1, 2])    === 'Array'
+    * type({})        === 'Object'
+    * type(String)    === 'Function'
+    * type(/abc+/)    === 'RegExp'
+    */
+			type: function type(o) {
+				return Object.prototype.toString.call(o).slice(8, -1);
+			},
+
+			/**
+    * Returns a unique number for the given object. Later calls will still return the same number.
+    *
+    * @param {Object} obj
+    * @returns {number}
+    */
+			objId: function objId(obj) {
+				if (!obj['__id']) {
+					Object.defineProperty(obj, '__id', { value: ++uniqueId });
+				}
+				return obj['__id'];
+			},
+
+			/**
+    * Creates a deep clone of the given object.
+    *
+    * The main intended use of this function is to clone language definitions.
+    *
+    * @param {T} o
+    * @param {Record<number, any>} [visited]
+    * @returns {T}
+    * @template T
+    */
+			clone: function deepClone(o, visited) {
+				visited = visited || {};
+
+				var clone, id;
+				switch (_.util.type(o)) {
+					case 'Object':
+						id = _.util.objId(o);
+						if (visited[id]) {
+							return visited[id];
+						}
+						clone = /** @type {Record<string, any>} */{};
+						visited[id] = clone;
+
+						for (var key in o) {
+							if (o.hasOwnProperty(key)) {
+								clone[key] = deepClone(o[key], visited);
+							}
+						}
+
+						return (/** @type {any} */clone
+						);
+
+					case 'Array':
+						id = _.util.objId(o);
+						if (visited[id]) {
+							return visited[id];
+						}
+						clone = [];
+						visited[id] = clone;
+
+						/** @type {Array} */ /** @type {any} */o.forEach(function (v, i) {
+							clone[i] = deepClone(v, visited);
+						});
+
+						return (/** @type {any} */clone
+						);
+
+					default:
+						return o;
+				}
+			},
+
+			/**
+    * Returns the Prism language of the given element set by a `language-xxxx` or `lang-xxxx` class.
+    *
+    * If no language is set for the element or the element is `null` or `undefined`, `none` will be returned.
+    *
+    * @param {Element} element
+    * @returns {string}
+    */
+			getLanguage: function getLanguage(element) {
+				while (element && !lang.test(element.className)) {
+					element = element.parentElement;
+				}
+				if (element) {
+					return (element.className.match(lang) || [, 'none'])[1].toLowerCase();
+				}
+				return 'none';
+			},
+
+			/**
+    * Returns the script element that is currently executing.
+    *
+    * This does __not__ work for line script element.
+    *
+    * @returns {HTMLScriptElement | null}
+    */
+			currentScript: function currentScript() {
+				if (typeof document === 'undefined') {
+					return null;
+				}
+				if ('currentScript' in document && 1 < 2 /* hack to trip TS' flow analysis */) {
+						return (/** @type {any} */document.currentScript
+						);
+					}
+
+				// IE11 workaround
+				// we'll get the src of the current script by parsing IE11's error stack trace
+				// this will not work for inline scripts
+
+				try {
+					throw new Error();
+				} catch (err) {
+					// Get file src url from stack. Specifically works with the format of stack traces in IE.
+					// A stack will look like this:
+					//
+					// Error
+					//    at _.util.currentScript (http://localhost/components/prism-core.js:119:5)
+					//    at Global code (http://localhost/components/prism-core.js:606:1)
+
+					var src = (/at [^(\r\n]*\((.*):.+:.+\)$/i.exec(err.stack) || [])[1];
+					if (src) {
+						var scripts = document.getElementsByTagName('script');
+						for (var i in scripts) {
+							if (scripts[i].src == src) {
+								return scripts[i];
+							}
+						}
+					}
+					return null;
+				}
+			},
+
+			/**
+    * Returns whether a given class is active for `element`.
+    *
+    * The class can be activated if `element` or one of its ancestors has the given class and it can be deactivated
+    * if `element` or one of its ancestors has the negated version of the given class. The _negated version_ of the
+    * given class is just the given class with a `no-` prefix.
+    *
+    * Whether the class is active is determined by the closest ancestor of `element` (where `element` itself is
+    * closest ancestor) that has the given class or the negated version of it. If neither `element` nor any of its
+    * ancestors have the given class or the negated version of it, then the default activation will be returned.
+    *
+    * In the paradoxical situation where the closest ancestor contains __both__ the given class and the negated
+    * version of it, the class is considered active.
+    *
+    * @param {Element} element
+    * @param {string} className
+    * @param {boolean} [defaultActivation=false]
+    * @returns {boolean}
+    */
+			isActive: function isActive(element, className, defaultActivation) {
+				var no = 'no-' + className;
+
+				while (element) {
+					var classList = element.classList;
+					if (classList.contains(className)) {
+						return true;
+					}
+					if (classList.contains(no)) {
+						return false;
+					}
+					element = element.parentElement;
+				}
+				return !!defaultActivation;
+			}
+		},
+
+		/**
+   * This namespace contains all currently loaded languages and the some helper functions to create and modify languages.
+   *
+   * @namespace
+   * @memberof Prism
+   * @public
+   */
+		languages: {
+			/**
+    * Creates a deep copy of the language with the given id and appends the given tokens.
+    *
+    * If a token in `redef` also appears in the copied language, then the existing token in the copied language
+    * will be overwritten at its original position.
+    *
+    * ## Best practices
+    *
+    * Since the position of overwriting tokens (token in `redef` that overwrite tokens in the copied language)
+    * doesn't matter, they can technically be in any order. However, this can be confusing to others that trying to
+    * understand the language definition because, normally, the order of tokens matters in Prism grammars.
+    *
+    * Therefore, it is encouraged to order overwriting tokens according to the positions of the overwritten tokens.
+    * Furthermore, all non-overwriting tokens should be placed after the overwriting ones.
+    *
+    * @param {string} id The id of the language to extend. This has to be a key in `Prism.languages`.
+    * @param {Grammar} redef The new tokens to append.
+    * @returns {Grammar} The new language created.
+    * @public
+    * @example
+    * Prism.languages['css-with-colors'] = Prism.languages.extend('css', {
+    *     // Prism.languages.css already has a 'comment' token, so this token will overwrite CSS' 'comment' token
+    *     // at its original position
+    *     'comment': { ... },
+    *     // CSS doesn't have a 'color' token, so this token will be appended
+    *     'color': /\b(?:red|green|blue)\b/
+    * });
+    */
+			extend: function extend(id, redef) {
+				var lang = _.util.clone(_.languages[id]);
+
+				for (var key in redef) {
+					lang[key] = redef[key];
+				}
+
+				return lang;
+			},
+
+			/**
+    * Inserts tokens _before_ another token in a language definition or any other grammar.
+    *
+    * ## Usage
+    *
+    * This helper method makes it easy to modify existing languages. For example, the CSS language definition
+    * not only defines CSS highlighting for CSS documents, but also needs to define highlighting for CSS embedded
+    * in HTML through `<style>` elements. To do this, it needs to modify `Prism.languages.markup` and add the
+    * appropriate tokens. However, `Prism.languages.markup` is a regular JavaScript object literal, so if you do
+    * this:
+    *
+    * ```js
+    * Prism.languages.markup.style = {
+    *     // token
+    * };
+    * ```
+    *
+    * then the `style` token will be added (and processed) at the end. `insertBefore` allows you to insert tokens
+    * before existing tokens. For the CSS example above, you would use it like this:
+    *
+    * ```js
+    * Prism.languages.insertBefore('markup', 'cdata', {
+    *     'style': {
+    *         // token
+    *     }
+    * });
+    * ```
+    *
+    * ## Special cases
+    *
+    * If the grammars of `inside` and `insert` have tokens with the same name, the tokens in `inside`'s grammar
+    * will be ignored.
+    *
+    * This behavior can be used to insert tokens after `before`:
+    *
+    * ```js
+    * Prism.languages.insertBefore('markup', 'comment', {
+    *     'comment': Prism.languages.markup.comment,
+    *     // tokens after 'comment'
+    * });
+    * ```
+    *
+    * ## Limitations
+    *
+    * The main problem `insertBefore` has to solve is iteration order. Since ES2015, the iteration order for object
+    * properties is guaranteed to be the insertion order (except for integer keys) but some browsers behave
+    * differently when keys are deleted and re-inserted. So `insertBefore` can't be implemented by temporarily
+    * deleting properties which is necessary to insert at arbitrary positions.
+    *
+    * To solve this problem, `insertBefore` doesn't actually insert the given tokens into the target object.
+    * Instead, it will create a new object and replace all references to the target object with the new one. This
+    * can be done without temporarily deleting properties, so the iteration order is well-defined.
+    *
+    * However, only references that can be reached from `Prism.languages` or `insert` will be replaced. I.e. if
+    * you hold the target object in a variable, then the value of the variable will not change.
+    *
+    * ```js
+    * var oldMarkup = Prism.languages.markup;
+    * var newMarkup = Prism.languages.insertBefore('markup', 'comment', { ... });
+    *
+    * assert(oldMarkup !== Prism.languages.markup);
+    * assert(newMarkup === Prism.languages.markup);
+    * ```
+    *
+    * @param {string} inside The property of `root` (e.g. a language id in `Prism.languages`) that contains the
+    * object to be modified.
+    * @param {string} before The key to insert before.
+    * @param {Grammar} insert An object containing the key-value pairs to be inserted.
+    * @param {Object<string, any>} [root] The object containing `inside`, i.e. the object that contains the
+    * object to be modified.
+    *
+    * Defaults to `Prism.languages`.
+    * @returns {Grammar} The new grammar object.
+    * @public
+    */
+			insertBefore: function insertBefore(inside, before, insert, root) {
+				root = root || /** @type {any} */_.languages;
+				var grammar = root[inside];
+				/** @type {Grammar} */
+				var ret = {};
+
+				for (var token in grammar) {
+					if (grammar.hasOwnProperty(token)) {
+
+						if (token == before) {
+							for (var newToken in insert) {
+								if (insert.hasOwnProperty(newToken)) {
+									ret[newToken] = insert[newToken];
+								}
+							}
+						}
+
+						// Do not insert token which also occur in insert. See #1525
+						if (!insert.hasOwnProperty(token)) {
+							ret[token] = grammar[token];
+						}
+					}
+				}
+
+				var old = root[inside];
+				root[inside] = ret;
+
+				// Update references in other language definitions
+				_.languages.DFS(_.languages, function (key, value) {
+					if (value === old && key != inside) {
+						this[key] = ret;
+					}
+				});
+
+				return ret;
+			},
+
+			// Traverse a language definition with Depth First Search
+			DFS: function DFS(o, callback, type, visited) {
+				visited = visited || {};
+
+				var objId = _.util.objId;
+
+				for (var i in o) {
+					if (o.hasOwnProperty(i)) {
+						callback.call(o, i, o[i], type || i);
+
+						var property = o[i],
+						    propertyType = _.util.type(property);
+
+						if (propertyType === 'Object' && !visited[objId(property)]) {
+							visited[objId(property)] = true;
+							DFS(property, callback, null, visited);
+						} else if (propertyType === 'Array' && !visited[objId(property)]) {
+							visited[objId(property)] = true;
+							DFS(property, callback, i, visited);
+						}
+					}
+				}
+			}
+		},
+
+		plugins: {},
+
+		/**
+   * This is the most high-level function in Prism’s API.
+   * It fetches all the elements that have a `.language-xxxx` class and then calls {@link Prism.highlightElement} on
+   * each one of them.
+   *
+   * This is equivalent to `Prism.highlightAllUnder(document, async, callback)`.
+   *
+   * @param {boolean} [async=false] Same as in {@link Prism.highlightAllUnder}.
+   * @param {HighlightCallback} [callback] Same as in {@link Prism.highlightAllUnder}.
+   * @memberof Prism
+   * @public
+   */
+		highlightAll: function highlightAll(async, callback) {
+			_.highlightAllUnder(document, async, callback);
+		},
+
+		/**
+   * Fetches all the descendants of `container` that have a `.language-xxxx` class and then calls
+   * {@link Prism.highlightElement} on each one of them.
+   *
+   * The following hooks will be run:
+   * 1. `before-highlightall`
+   * 2. `before-all-elements-highlight`
+   * 3. All hooks of {@link Prism.highlightElement} for each element.
+   *
+   * @param {ParentNode} container The root element, whose descendants that have a `.language-xxxx` class will be highlighted.
+   * @param {boolean} [async=false] Whether each element is to be highlighted asynchronously using Web Workers.
+   * @param {HighlightCallback} [callback] An optional callback to be invoked on each element after its highlighting is done.
+   * @memberof Prism
+   * @public
+   */
+		highlightAllUnder: function highlightAllUnder(container, async, callback) {
+			var env = {
+				callback: callback,
+				container: container,
+				selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+			};
+
+			_.hooks.run('before-highlightall', env);
+
+			env.elements = Array.prototype.slice.apply(env.container.querySelectorAll(env.selector));
+
+			_.hooks.run('before-all-elements-highlight', env);
+
+			for (var i = 0, element; element = env.elements[i++];) {
+				_.highlightElement(element, async === true, env.callback);
+			}
+		},
+
+		/**
+   * Highlights the code inside a single element.
+   *
+   * The following hooks will be run:
+   * 1. `before-sanity-check`
+   * 2. `before-highlight`
+   * 3. All hooks of {@link Prism.highlight}. These hooks will be run by an asynchronous worker if `async` is `true`.
+   * 4. `before-insert`
+   * 5. `after-highlight`
+   * 6. `complete`
+   *
+   * Some the above hooks will be skipped if the element doesn't contain any text or there is no grammar loaded for
+   * the element's language.
+   *
+   * @param {Element} element The element containing the code.
+   * It must have a class of `language-xxxx` to be processed, where `xxxx` is a valid language identifier.
+   * @param {boolean} [async=false] Whether the element is to be highlighted asynchronously using Web Workers
+   * to improve performance and avoid blocking the UI when highlighting very large chunks of code. This option is
+   * [disabled by default](https://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
+   *
+   * Note: All language definitions required to highlight the code must be included in the main `prism.js` file for
+   * asynchronous highlighting to work. You can build your own bundle on the
+   * [Download page](https://prismjs.com/download.html).
+   * @param {HighlightCallback} [callback] An optional callback to be invoked after the highlighting is done.
+   * Mostly useful when `async` is `true`, since in that case, the highlighting is done asynchronously.
+   * @memberof Prism
+   * @public
+   */
+		highlightElement: function highlightElement(element, async, callback) {
+			// Find language
+			var language = _.util.getLanguage(element);
+			var grammar = _.languages[language];
+
+			// Set language on the element, if not present
+			element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+
+			// Set language on the parent, for styling
+			var parent = element.parentElement;
+			if (parent && parent.nodeName.toLowerCase() === 'pre') {
+				parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+			}
+
+			var code = element.textContent;
+
+			var env = {
+				element: element,
+				language: language,
+				grammar: grammar,
+				code: code
+			};
+
+			function insertHighlightedCode(highlightedCode) {
+				env.highlightedCode = highlightedCode;
+
+				_.hooks.run('before-insert', env);
+
+				env.element.innerHTML = env.highlightedCode;
+
+				_.hooks.run('after-highlight', env);
+				_.hooks.run('complete', env);
+				callback && callback.call(env.element);
+			}
+
+			_.hooks.run('before-sanity-check', env);
+
+			if (!env.code) {
+				_.hooks.run('complete', env);
+				callback && callback.call(env.element);
+				return;
+			}
+
+			_.hooks.run('before-highlight', env);
+
+			if (!env.grammar) {
+				insertHighlightedCode(_.util.encode(env.code));
+				return;
+			}
+
+			if (async && _self.Worker) {
+				var worker = new Worker(_.filename);
+
+				worker.onmessage = function (evt) {
+					insertHighlightedCode(evt.data);
+				};
+
+				worker.postMessage(JSON.stringify({
+					language: env.language,
+					code: env.code,
+					immediateClose: true
+				}));
+			} else {
+				insertHighlightedCode(_.highlight(env.code, env.grammar, env.language));
+			}
+		},
+
+		/**
+   * Low-level function, only use if you know what you’re doing. It accepts a string of text as input
+   * and the language definitions to use, and returns a string with the HTML produced.
+   *
+   * The following hooks will be run:
+   * 1. `before-tokenize`
+   * 2. `after-tokenize`
+   * 3. `wrap`: On each {@link Token}.
+   *
+   * @param {string} text A string with the code to be highlighted.
+   * @param {Grammar} grammar An object containing the tokens to use.
+   *
+   * Usually a language definition like `Prism.languages.markup`.
+   * @param {string} language The name of the language definition passed to `grammar`.
+   * @returns {string} The highlighted HTML.
+   * @memberof Prism
+   * @public
+   * @example
+   * Prism.highlight('var foo = true;', Prism.languages.javascript, 'javascript');
+   */
+		highlight: function highlight(text, grammar, language) {
+			var env = {
+				code: text,
+				grammar: grammar,
+				language: language
+			};
+			_.hooks.run('before-tokenize', env);
+			env.tokens = _.tokenize(env.code, env.grammar);
+			_.hooks.run('after-tokenize', env);
+			return Token.stringify(_.util.encode(env.tokens), env.language);
+		},
+
+		/**
+   * This is the heart of Prism, and the most low-level function you can use. It accepts a string of text as input
+   * and the language definitions to use, and returns an array with the tokenized code.
+   *
+   * When the language definition includes nested tokens, the function is called recursively on each of these tokens.
+   *
+   * This method could be useful in other contexts as well, as a very crude parser.
+   *
+   * @param {string} text A string with the code to be highlighted.
+   * @param {Grammar} grammar An object containing the tokens to use.
+   *
+   * Usually a language definition like `Prism.languages.markup`.
+   * @returns {TokenStream} An array of strings and tokens, a token stream.
+   * @memberof Prism
+   * @public
+   * @example
+   * let code = `var foo = 0;`;
+   * let tokens = Prism.tokenize(code, Prism.languages.javascript);
+   * tokens.forEach(token => {
+   *     if (token instanceof Prism.Token && token.type === 'number') {
+   *         console.log(`Found numeric literal: ${token.content}`);
+   *     }
+   * });
+   */
+		tokenize: function tokenize(text, grammar) {
+			var rest = grammar.rest;
+			if (rest) {
+				for (var token in rest) {
+					grammar[token] = rest[token];
+				}
+
+				delete grammar.rest;
+			}
+
+			var tokenList = new LinkedList();
+			addAfter(tokenList, tokenList.head, text);
+
+			matchGrammar(text, tokenList, grammar, tokenList.head, 0);
+
+			return toArray(tokenList);
+		},
+
+		/**
+   * @namespace
+   * @memberof Prism
+   * @public
+   */
+		hooks: {
+			all: {},
+
+			/**
+    * Adds the given callback to the list of callbacks for the given hook.
+    *
+    * The callback will be invoked when the hook it is registered for is run.
+    * Hooks are usually directly run by a highlight function but you can also run hooks yourself.
+    *
+    * One callback function can be registered to multiple hooks and the same hook multiple times.
+    *
+    * @param {string} name The name of the hook.
+    * @param {HookCallback} callback The callback function which is given environment variables.
+    * @public
+    */
+			add: function add(name, callback) {
+				var hooks = _.hooks.all;
+
+				hooks[name] = hooks[name] || [];
+
+				hooks[name].push(callback);
+			},
+
+			/**
+    * Runs a hook invoking all registered callbacks with the given environment variables.
+    *
+    * Callbacks will be invoked synchronously and in the order in which they were registered.
+    *
+    * @param {string} name The name of the hook.
+    * @param {Object<string, any>} env The environment variables of the hook passed to all callbacks registered.
+    * @public
+    */
+			run: function run(name, env) {
+				var callbacks = _.hooks.all[name];
+
+				if (!callbacks || !callbacks.length) {
+					return;
+				}
+
+				for (var i = 0, callback; callback = callbacks[i++];) {
+					callback(env);
+				}
+			}
+		},
+
+		Token: Token
+	};
+	_self.Prism = _;
+
+	// Typescript note:
+	// The following can be used to import the Token type in JSDoc:
+	//
+	//   @typedef {InstanceType<import("./prism-core")["Token"]>} Token
+
+	/**
+  * Creates a new token.
+  *
+  * @param {string} type See {@link Token#type type}
+  * @param {string | TokenStream} content See {@link Token#content content}
+  * @param {string|string[]} [alias] The alias(es) of the token.
+  * @param {string} [matchedStr=""] A copy of the full string this token was created from.
+  * @class
+  * @global
+  * @public
+  */
+	function Token(type, content, alias, matchedStr) {
+		/**
+   * The type of the token.
+   *
+   * This is usually the key of a pattern in a {@link Grammar}.
+   *
+   * @type {string}
+   * @see GrammarToken
+   * @public
+   */
+		this.type = type;
+		/**
+   * The strings or tokens contained by this token.
+   *
+   * This will be a token stream if the pattern matched also defined an `inside` grammar.
+   *
+   * @type {string | TokenStream}
+   * @public
+   */
+		this.content = content;
+		/**
+   * The alias(es) of the token.
+   *
+   * @type {string|string[]}
+   * @see GrammarToken
+   * @public
+   */
+		this.alias = alias;
+		// Copy of the full string this token was created from
+		this.length = (matchedStr || '').length | 0;
+	}
+
+	/**
+  * A token stream is an array of strings and {@link Token Token} objects.
+  *
+  * Token streams have to fulfill a few properties that are assumed by most functions (mostly internal ones) that process
+  * them.
+  *
+  * 1. No adjacent strings.
+  * 2. No empty strings.
+  *
+  *    The only exception here is the token stream that only contains the empty string and nothing else.
+  *
+  * @typedef {Array<string | Token>} TokenStream
+  * @global
+  * @public
+  */
+
+	/**
+  * Converts the given token or token stream to an HTML representation.
+  *
+  * The following hooks will be run:
+  * 1. `wrap`: On each {@link Token}.
+  *
+  * @param {string | Token | TokenStream} o The token or token stream to be converted.
+  * @param {string} language The name of current language.
+  * @returns {string} The HTML representation of the token or token stream.
+  * @memberof Token
+  * @static
+  */
+	Token.stringify = function stringify(o, language) {
+		if (typeof o == 'string') {
+			return o;
+		}
+		if (Array.isArray(o)) {
+			var s = '';
+			o.forEach(function (e) {
+				s += stringify(e, language);
+			});
+			return s;
+		}
+
+		var env = {
+			type: o.type,
+			content: stringify(o.content, language),
+			tag: 'span',
+			classes: ['token', o.type],
+			attributes: {},
+			language: language
+		};
+
+		var aliases = o.alias;
+		if (aliases) {
+			if (Array.isArray(aliases)) {
+				Array.prototype.push.apply(env.classes, aliases);
+			} else {
+				env.classes.push(aliases);
+			}
+		}
+
+		_.hooks.run('wrap', env);
+
+		var attributes = '';
+		for (var name in env.attributes) {
+			attributes += ' ' + name + '="' + (env.attributes[name] || '').replace(/"/g, '&quot;') + '"';
+		}
+
+		return '<' + env.tag + ' class="' + env.classes.join(' ') + '"' + attributes + '>' + env.content + '</' + env.tag + '>';
+	};
+
+	/**
+  * @param {string} text
+  * @param {LinkedList<string | Token>} tokenList
+  * @param {any} grammar
+  * @param {LinkedListNode<string | Token>} startNode
+  * @param {number} startPos
+  * @param {RematchOptions} [rematch]
+  * @returns {void}
+  * @private
+  *
+  * @typedef RematchOptions
+  * @property {string} cause
+  * @property {number} reach
+  */
+	function matchGrammar(text, tokenList, grammar, startNode, startPos, rematch) {
+		for (var token in grammar) {
+			if (!grammar.hasOwnProperty(token) || !grammar[token]) {
+				continue;
+			}
+
+			var patterns = grammar[token];
+			patterns = Array.isArray(patterns) ? patterns : [patterns];
+
+			for (var j = 0; j < patterns.length; ++j) {
+				if (rematch && rematch.cause == token + ',' + j) {
+					return;
+				}
+
+				var patternObj = patterns[j],
+				    inside = patternObj.inside,
+				    lookbehind = !!patternObj.lookbehind,
+				    greedy = !!patternObj.greedy,
+				    lookbehindLength = 0,
+				    alias = patternObj.alias;
+
+				if (greedy && !patternObj.pattern.global) {
+					// Without the global flag, lastIndex won't work
+					var flags = patternObj.pattern.toString().match(/[imsuy]*$/)[0];
+					patternObj.pattern = RegExp(patternObj.pattern.source, flags + 'g');
+				}
+
+				/** @type {RegExp} */
+				var pattern = patternObj.pattern || patternObj;
+
+				for ( // iterate the token list and keep track of the current token/string position
+				var currentNode = startNode.next, pos = startPos; currentNode !== tokenList.tail; pos += currentNode.value.length, currentNode = currentNode.next) {
+
+					if (rematch && pos >= rematch.reach) {
+						break;
+					}
+
+					var str = currentNode.value;
+
+					if (tokenList.length > text.length) {
+						// Something went terribly wrong, ABORT, ABORT!
+						return;
+					}
+
+					if (str instanceof Token) {
+						continue;
+					}
+
+					var removeCount = 1; // this is the to parameter of removeBetween
+
+					if (greedy && currentNode != tokenList.tail.prev) {
+						pattern.lastIndex = pos;
+						var match = pattern.exec(text);
+						if (!match) {
+							break;
+						}
+
+						var from = match.index + (lookbehind && match[1] ? match[1].length : 0);
+						var to = match.index + match[0].length;
+						var p = pos;
+
+						// find the node that contains the match
+						p += currentNode.value.length;
+						while (from >= p) {
+							currentNode = currentNode.next;
+							p += currentNode.value.length;
+						}
+						// adjust pos (and p)
+						p -= currentNode.value.length;
+						pos = p;
+
+						// the current node is a Token, then the match starts inside another Token, which is invalid
+						if (currentNode.value instanceof Token) {
+							continue;
+						}
+
+						// find the last node which is affected by this match
+						for (var k = currentNode; k !== tokenList.tail && (p < to || typeof k.value === 'string'); k = k.next) {
+							removeCount++;
+							p += k.value.length;
+						}
+						removeCount--;
+
+						// replace with the new match
+						str = text.slice(pos, p);
+						match.index -= pos;
+					} else {
+						pattern.lastIndex = 0;
+
+						var match = pattern.exec(str);
+					}
+
+					if (!match) {
+						continue;
+					}
+
+					if (lookbehind) {
+						lookbehindLength = match[1] ? match[1].length : 0;
+					}
+
+					var from = match.index + lookbehindLength,
+					    matchStr = match[0].slice(lookbehindLength),
+					    to = from + matchStr.length,
+					    before = str.slice(0, from),
+					    after = str.slice(to);
+
+					var reach = pos + str.length;
+					if (rematch && reach > rematch.reach) {
+						rematch.reach = reach;
+					}
+
+					var removeFrom = currentNode.prev;
+
+					if (before) {
+						removeFrom = addAfter(tokenList, removeFrom, before);
+						pos += before.length;
+					}
+
+					removeRange(tokenList, removeFrom, removeCount);
+
+					var wrapped = new Token(token, inside ? _.tokenize(matchStr, inside) : matchStr, alias, matchStr);
+					currentNode = addAfter(tokenList, removeFrom, wrapped);
+
+					if (after) {
+						addAfter(tokenList, currentNode, after);
+					}
+
+					if (removeCount > 1) {
+						// at least one Token object was removed, so we have to do some rematching
+						// this can only happen if the current pattern is greedy
+						matchGrammar(text, tokenList, grammar, currentNode.prev, pos, {
+							cause: token + ',' + j,
+							reach: reach
+						});
+					}
+				}
+			}
+		}
+	}
+
+	/**
+  * @typedef LinkedListNode
+  * @property {T} value
+  * @property {LinkedListNode<T> | null} prev The previous node.
+  * @property {LinkedListNode<T> | null} next The next node.
+  * @template T
+  * @private
+  */
+
+	/**
+  * @template T
+  * @private
+  */
+	function LinkedList() {
+		/** @type {LinkedListNode<T>} */
+		var head = { value: null, prev: null, next: null };
+		/** @type {LinkedListNode<T>} */
+		var tail = { value: null, prev: head, next: null };
+		head.next = tail;
+
+		/** @type {LinkedListNode<T>} */
+		this.head = head;
+		/** @type {LinkedListNode<T>} */
+		this.tail = tail;
+		this.length = 0;
+	}
+
+	/**
+  * Adds a new node with the given value to the list.
+  * @param {LinkedList<T>} list
+  * @param {LinkedListNode<T>} node
+  * @param {T} value
+  * @returns {LinkedListNode<T>} The added node.
+  * @template T
+  */
+	function addAfter(list, node, value) {
+		// assumes that node != list.tail && values.length >= 0
+		var next = node.next;
+
+		var newNode = { value: value, prev: node, next: next };
+		node.next = newNode;
+		next.prev = newNode;
+		list.length++;
+
+		return newNode;
+	}
+	/**
+  * Removes `count` nodes after the given node. The given node will not be removed.
+  * @param {LinkedList<T>} list
+  * @param {LinkedListNode<T>} node
+  * @param {number} count
+  * @template T
+  */
+	function removeRange(list, node, count) {
+		var next = node.next;
+		for (var i = 0; i < count && next !== list.tail; i++) {
+			next = next.next;
+		}
+		node.next = next;
+		next.prev = node;
+		list.length -= i;
+	}
+	/**
+  * @param {LinkedList<T>} list
+  * @returns {T[]}
+  * @template T
+  */
+	function toArray(list) {
+		var array = [];
+		var node = list.head.next;
+		while (node !== list.tail) {
+			array.push(node.value);
+			node = node.next;
+		}
+		return array;
+	}
+
+	if (!_self.document) {
+		if (!_self.addEventListener) {
+			// in Node.js
+			return _;
+		}
+
+		if (!_.disableWorkerMessageHandler) {
+			// In worker
+			_self.addEventListener('message', function (evt) {
+				var message = JSON.parse(evt.data),
+				    lang = message.language,
+				    code = message.code,
+				    immediateClose = message.immediateClose;
+
+				_self.postMessage(_.highlight(code, _.languages[lang], lang));
+				if (immediateClose) {
+					_self.close();
+				}
+			}, false);
+		}
+
+		return _;
+	}
+
+	// Get current script and highlight
+	var script = _.util.currentScript();
+
+	if (script) {
+		_.filename = script.src;
+
+		if (script.hasAttribute('data-manual')) {
+			_.manual = true;
+		}
+	}
+
+	function highlightAutomaticallyCallback() {
+		if (!_.manual) {
+			_.highlightAll();
+		}
+	}
+
+	if (!_.manual) {
+		// If the document state is "loading", then we'll use DOMContentLoaded.
+		// If the document state is "interactive" and the prism.js script is deferred, then we'll also use the
+		// DOMContentLoaded event because there might be some plugins or languages which have also been deferred and they
+		// might take longer one animation frame to execute which can create a race condition where only some plugins have
+		// been loaded when Prism.highlightAll() is executed, depending on how fast resources are loaded.
+		// See https://github.com/PrismJS/prism/issues/2102
+		var readyState = document.readyState;
+		if (readyState === 'loading' || readyState === 'interactive' && script && script.defer) {
+			document.addEventListener('DOMContentLoaded', highlightAutomaticallyCallback);
+		} else {
+			if (window.requestAnimationFrame) {
+				window.requestAnimationFrame(highlightAutomaticallyCallback);
+			} else {
+				window.setTimeout(highlightAutomaticallyCallback, 16);
+			}
+		}
+	}
+
+	return _;
+}(_self);
+
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = Prism;
+}
+
+// hack for components to work correctly in node.js
+if (typeof global !== 'undefined') {
+	global.Prism = Prism;
+}
+
+// some additional documentation/types
+
+/**
+ * The expansion of a simple `RegExp` literal to support additional properties.
+ *
+ * @typedef GrammarToken
+ * @property {RegExp} pattern The regular expression of the token.
+ * @property {boolean} [lookbehind=false] If `true`, then the first capturing group of `pattern` will (effectively)
+ * behave as a lookbehind group meaning that the captured text will not be part of the matched text of the new token.
+ * @property {boolean} [greedy=false] Whether the token is greedy.
+ * @property {string|string[]} [alias] An optional alias or list of aliases.
+ * @property {Grammar} [inside] The nested grammar of this token.
+ *
+ * The `inside` grammar will be used to tokenize the text value of each token of this kind.
+ *
+ * This can be used to make nested and even recursive language definitions.
+ *
+ * Note: This can cause infinite recursion. Be careful when you embed different languages or even the same language into
+ * each another.
+ * @global
+ * @public
+*/
+
+/**
+ * @typedef Grammar
+ * @type {Object<string, RegExp | GrammarToken | Array<RegExp | GrammarToken>>}
+ * @property {Grammar} [rest] An optional grammar object that will be appended to this grammar.
+ * @global
+ * @public
+ */
+
+/**
+ * A function which will invoked after an element was successfully highlighted.
+ *
+ * @callback HighlightCallback
+ * @param {Element} element The element successfully highlighted.
+ * @returns {void}
+ * @global
+ * @public
+*/
+
+/**
+ * @callback HookCallback
+ * @param {Object<string, any>} env The environment variables of the hook.
+ * @returns {void}
+ * @global
+ * @public
+ */
+
+/* **********************************************
+     Begin prism-markup.js
+********************************************** */
+
+Prism.languages.markup = {
+	'comment': /<!--[\s\S]*?-->/,
+	'prolog': /<\?[\s\S]+?\?>/,
+	'doctype': {
+		// https://www.w3.org/TR/xml/#NT-doctypedecl
+		pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
+		greedy: true,
+		inside: {
+			'internal-subset': {
+				pattern: /(\[)[\s\S]+(?=\]>$)/,
+				lookbehind: true,
+				greedy: true,
+				inside: null // see below
+			},
+			'string': {
+				pattern: /"[^"]*"|'[^']*'/,
+				greedy: true
+			},
+			'punctuation': /^<!|>$|[[\]]/,
+			'doctype-tag': /^DOCTYPE/,
+			'name': /[^\s<>'"]+/
+		}
+	},
+	'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
+	'tag': {
+		pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
+		greedy: true,
+		inside: {
+			'tag': {
+				pattern: /^<\/?[^\s>\/]+/,
+				inside: {
+					'punctuation': /^<\/?/,
+					'namespace': /^[^\s>\/:]+:/
+				}
+			},
+			'attr-value': {
+				pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+				inside: {
+					'punctuation': [{
+						pattern: /^=/,
+						alias: 'attr-equals'
+					}, /"|'/]
+				}
+			},
+			'punctuation': /\/?>/,
+			'attr-name': {
+				pattern: /[^\s>\/]+/,
+				inside: {
+					'namespace': /^[^\s>\/:]+:/
+				}
+			}
+
+		}
+	},
+	'entity': [{
+		pattern: /&[\da-z]{1,8};/i,
+		alias: 'named-entity'
+	}, /&#x?[\da-f]{1,8};/i]
+};
+
+Prism.languages.markup['tag'].inside['attr-value'].inside['entity'] = Prism.languages.markup['entity'];
+Prism.languages.markup['doctype'].inside['internal-subset'].inside = Prism.languages.markup;
+
+// Plugin to make entity title show the real entity, idea by Roman Komarov
+Prism.hooks.add('wrap', function (env) {
+
+	if (env.type === 'entity') {
+		env.attributes['title'] = env.content.replace(/&amp;/, '&');
+	}
+});
+
+Object.defineProperty(Prism.languages.markup.tag, 'addInlined', {
+	/**
+  * Adds an inlined language to markup.
+  *
+  * An example of an inlined language is CSS with `<style>` tags.
+  *
+  * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as
+  * case insensitive.
+  * @param {string} lang The language key.
+  * @example
+  * addInlined('style', 'css');
+  */
+	value: function addInlined(tagName, lang) {
+		var includedCdataInside = {};
+		includedCdataInside['language-' + lang] = {
+			pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,
+			lookbehind: true,
+			inside: Prism.languages[lang]
+		};
+		includedCdataInside['cdata'] = /^<!\[CDATA\[|\]\]>$/i;
+
+		var inside = {
+			'included-cdata': {
+				pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+				inside: includedCdataInside
+			}
+		};
+		inside['language-' + lang] = {
+			pattern: /[\s\S]+/,
+			inside: Prism.languages[lang]
+		};
+
+		var def = {};
+		def[tagName] = {
+			pattern: RegExp(/(<__[\s\S]*?>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function () {
+				return tagName;
+			}), 'i'),
+			lookbehind: true,
+			greedy: true,
+			inside: inside
+		};
+
+		Prism.languages.insertBefore('markup', 'cdata', def);
+	}
+});
+
+Prism.languages.html = Prism.languages.markup;
+Prism.languages.mathml = Prism.languages.markup;
+Prism.languages.svg = Prism.languages.markup;
+
+Prism.languages.xml = Prism.languages.extend('markup', {});
+Prism.languages.ssml = Prism.languages.xml;
+Prism.languages.atom = Prism.languages.xml;
+Prism.languages.rss = Prism.languages.xml;
+
+/* **********************************************
+     Begin prism-css.js
+********************************************** */
+
+(function (Prism) {
+
+	var string = /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/;
+
+	Prism.languages.css = {
+		'comment': /\/\*[\s\S]*?\*\//,
+		'atrule': {
+			pattern: /@[\w-]+[\s\S]*?(?:;|(?=\s*\{))/,
+			inside: {
+				'rule': /^@[\w-]+/,
+				'selector-function-argument': {
+					pattern: /(\bselector\s*\((?!\s*\))\s*)(?:[^()]|\((?:[^()]|\([^()]*\))*\))+?(?=\s*\))/,
+					lookbehind: true,
+					alias: 'selector'
+				},
+				'keyword': {
+					pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/,
+					lookbehind: true
+					// See rest below
+				} }
+		},
+		'url': {
+			// https://drafts.csswg.org/css-values-3/#urls
+			pattern: RegExp('\\burl\\((?:' + string.source + '|' + /(?:[^\\\r\n()"']|\\[\s\S])*/.source + ')\\)', 'i'),
+			greedy: true,
+			inside: {
+				'function': /^url/i,
+				'punctuation': /^\(|\)$/,
+				'string': {
+					pattern: RegExp('^' + string.source + '$'),
+					alias: 'url'
+				}
+			}
+		},
+		'selector': RegExp('[^{}\\s](?:[^{};"\']|' + string.source + ')*?(?=\\s*\\{)'),
+		'string': {
+			pattern: string,
+			greedy: true
+		},
+		'property': /[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i,
+		'important': /!important\b/i,
+		'function': /[-a-z0-9]+(?=\()/i,
+		'punctuation': /[(){};:,]/
+	};
+
+	Prism.languages.css['atrule'].inside.rest = Prism.languages.css;
+
+	var markup = Prism.languages.markup;
+	if (markup) {
+		markup.tag.addInlined('style', 'css');
+
+		Prism.languages.insertBefore('inside', 'attr-value', {
+			'style-attr': {
+				pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,
+				inside: {
+					'attr-name': {
+						pattern: /^\s*style/i,
+						inside: markup.tag.inside
+					},
+					'punctuation': /^\s*=\s*['"]|['"]\s*$/,
+					'attr-value': {
+						pattern: /.+/i,
+						inside: Prism.languages.css
+					}
+				},
+				alias: 'language-css'
+			}
+		}, markup.tag);
+	}
+})(Prism);
+
+/* **********************************************
+     Begin prism-clike.js
+********************************************** */
+
+Prism.languages.clike = {
+	'comment': [{
+		pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
+		lookbehind: true
+	}, {
+		pattern: /(^|[^\\:])\/\/.*/,
+		lookbehind: true,
+		greedy: true
+	}],
+	'string': {
+		pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		greedy: true
+	},
+	'class-name': {
+		pattern: /(\b(?:class|interface|extends|implements|trait|instanceof|new)\s+|\bcatch\s+\()[\w.\\]+/i,
+		lookbehind: true,
+		inside: {
+			'punctuation': /[.\\]/
+		}
+	},
+	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+	'boolean': /\b(?:true|false)\b/,
+	'function': /\w+(?=\()/,
+	'number': /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
+	'operator': /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
+	'punctuation': /[{}[\];(),.:]/
+};
+
+/* **********************************************
+     Begin prism-javascript.js
+********************************************** */
+
+Prism.languages.javascript = Prism.languages.extend('clike', {
+	'class-name': [Prism.languages.clike['class-name'], {
+		pattern: /(^|[^$\w\xA0-\uFFFF])[_$A-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\.(?:prototype|constructor))/,
+		lookbehind: true
+	}],
+	'keyword': [{
+		pattern: /((?:^|})\s*)(?:catch|finally)\b/,
+		lookbehind: true
+	}, {
+		pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|(?:get|set)(?=\s*[\[$\w\xA0-\uFFFF])|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,
+		lookbehind: true
+	}],
+	'number': /\b(?:(?:0[xX](?:[\dA-Fa-f](?:_[\dA-Fa-f])?)+|0[bB](?:[01](?:_[01])?)+|0[oO](?:[0-7](?:_[0-7])?)+)n?|(?:\d(?:_\d)?)+n|NaN|Infinity)\b|(?:\b(?:\d(?:_\d)?)+\.?(?:\d(?:_\d)?)*|\B\.(?:\d(?:_\d)?)+)(?:[Ee][+-]?(?:\d(?:_\d)?)+)?/,
+	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+	'function': /#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,
+	'operator': /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/
+});
+
+Prism.languages.javascript['class-name'][0].pattern = /(\b(?:class|interface|extends|implements|instanceof|new)\s+)[\w.\\]+/;
+
+Prism.languages.insertBefore('javascript', 'keyword', {
+	'regex': {
+		pattern: /((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)\/(?:\[(?:[^\]\\\r\n]|\\.)*]|\\.|[^/\\\[\r\n])+\/[gimyus]{0,6}(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/,
+		lookbehind: true,
+		greedy: true,
+		inside: {
+			'regex-source': {
+				pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/,
+				lookbehind: true,
+				alias: 'language-regex',
+				inside: Prism.languages.regex
+			},
+			'regex-flags': /[a-z]+$/,
+			'regex-delimiter': /^\/|\/$/
+		}
+	},
+	// This must be declared before keyword because we use "function" inside the look-forward
+	'function-variable': {
+		pattern: /#?[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|[_$a-zA-Z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/,
+		alias: 'function'
+	},
+	'parameter': [{
+		pattern: /(function(?:\s+[_$A-Za-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)?\s*\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\))/,
+		lookbehind: true,
+		inside: Prism.languages.javascript
+	}, {
+		pattern: /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=>)/i,
+		inside: Prism.languages.javascript
+	}, {
+		pattern: /(\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\)\s*=>)/,
+		lookbehind: true,
+		inside: Prism.languages.javascript
+	}, {
+		pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:[_$A-Za-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()]|\([^()]*\))+?(?=\s*\)\s*\{)/,
+		lookbehind: true,
+		inside: Prism.languages.javascript
+	}],
+	'constant': /\b[A-Z](?:[A-Z_]|\dx?)*\b/
+});
+
+Prism.languages.insertBefore('javascript', 'string', {
+	'template-string': {
+		pattern: /`(?:\\[\s\S]|\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}|(?!\${)[^\\`])*`/,
+		greedy: true,
+		inside: {
+			'template-punctuation': {
+				pattern: /^`|`$/,
+				alias: 'string'
+			},
+			'interpolation': {
+				pattern: /((?:^|[^\\])(?:\\{2})*)\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}/,
+				lookbehind: true,
+				inside: {
+					'interpolation-punctuation': {
+						pattern: /^\${|}$/,
+						alias: 'punctuation'
+					},
+					rest: Prism.languages.javascript
+				}
+			},
+			'string': /[\s\S]+/
+		}
+	}
+});
+
+if (Prism.languages.markup) {
+	Prism.languages.markup.tag.addInlined('script', 'javascript');
+}
+
+Prism.languages.js = Prism.languages.javascript;
+
+/* **********************************************
+     Begin prism-file-highlight.js
+********************************************** */
+
+(function () {
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	var Prism = window.Prism;
+
+	var LOADING_MESSAGE = 'Loading…';
+	var FAILURE_MESSAGE = function FAILURE_MESSAGE(status, message) {
+		return '✖ Error ' + status + ' while fetching file: ' + message;
+	};
+	var FAILURE_EMPTY_MESSAGE = '✖ Error: File does not exist or is empty';
+
+	var EXTENSIONS = {
+		'js': 'javascript',
+		'py': 'python',
+		'rb': 'ruby',
+		'ps1': 'powershell',
+		'psm1': 'powershell',
+		'sh': 'bash',
+		'bat': 'batch',
+		'h': 'c',
+		'tex': 'latex'
+	};
+
+	var STATUS_ATTR = 'data-src-status';
+	var STATUS_LOADING = 'loading';
+	var STATUS_LOADED = 'loaded';
+	var STATUS_FAILED = 'failed';
+
+	var SELECTOR = 'pre[data-src]:not([' + STATUS_ATTR + '="' + STATUS_LOADED + '"])' + ':not([' + STATUS_ATTR + '="' + STATUS_LOADING + '"])';
+
+	var lang = /\blang(?:uage)?-([\w-]+)\b/i;
+
+	/**
+  * Sets the Prism `language-xxxx` or `lang-xxxx` class to the given language.
+  *
+  * @param {HTMLElement} element
+  * @param {string} language
+  * @returns {void}
+  */
+	function setLanguageClass(element, language) {
+		var className = element.className;
+		className = className.replace(lang, ' ') + ' language-' + language;
+		element.className = className.replace(/\s+/g, ' ').trim();
+	}
+
+	Prism.hooks.add('before-highlightall', function (env) {
+		env.selector += ', ' + SELECTOR;
+	});
+
+	Prism.hooks.add('before-sanity-check', function (env) {
+		var pre = /** @type {HTMLPreElement} */env.element;
+		if (pre.matches(SELECTOR)) {
+			env.code = ''; // fast-path the whole thing and go to complete
+
+			pre.setAttribute(STATUS_ATTR, STATUS_LOADING); // mark as loading
+
+			// add code element with loading message
+			var code = pre.appendChild(document.createElement('CODE'));
+			code.textContent = LOADING_MESSAGE;
+
+			var src = pre.getAttribute('data-src');
+
+			var language = env.language;
+			if (language === 'none') {
+				// the language might be 'none' because there is no language set;
+				// in this case, we want to use the extension as the language
+				var extension = (/\.(\w+)$/.exec(src) || [, 'none'])[1];
+				language = EXTENSIONS[extension] || extension;
+			}
+
+			// set language classes
+			setLanguageClass(code, language);
+			setLanguageClass(pre, language);
+
+			// preload the language
+			var autoloader = Prism.plugins.autoloader;
+			if (autoloader) {
+				autoloader.loadLanguages(language);
+			}
+
+			// load file
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', src, true);
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status < 400 && xhr.responseText) {
+						// mark as loaded
+						pre.setAttribute(STATUS_ATTR, STATUS_LOADED);
+
+						// highlight code
+						code.textContent = xhr.responseText;
+						Prism.highlightElement(code);
+					} else {
+						// mark as failed
+						pre.setAttribute(STATUS_ATTR, STATUS_FAILED);
+
+						if (xhr.status >= 400) {
+							code.textContent = FAILURE_MESSAGE(xhr.status, xhr.statusText);
+						} else {
+							code.textContent = FAILURE_EMPTY_MESSAGE;
+						}
+					}
+				}
+			};
+			xhr.send(null);
+		}
+	});
+
+	Prism.plugins.fileHighlight = {
+		/**
+   * Executes the File Highlight plugin for all matching `pre` elements under the given container.
+   *
+   * Note: Elements which are already loaded or currently loading will not be touched by this method.
+   *
+   * @param {ParentNode} [container=document]
+   */
+		highlight: function highlight(container) {
+			var elements = (container || document).querySelectorAll(SELECTOR);
+
+			for (var i = 0, element; element = elements[i++];) {
+				Prism.highlightElement(element);
+			}
+		}
+	};
+
+	var logged = false;
+	/** @deprecated Use `Prism.plugins.fileHighlight.highlight` instead. */
+	Prism.fileHighlight = function () {
+		if (!logged) {
+			console.warn('Prism.fileHighlight is deprecated. Use `Prism.plugins.fileHighlight.highlight` instead.');
+			logged = true;
+		}
+		Prism.plugins.fileHighlight.highlight.apply(this, arguments);
+	};
+})();
+
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],2:[function(require,module,exports){
+'use strict';
+
+var _swDetecter = require('./modules/swDetecter');
+
+var _topNav = require('./modules/topNav');
+
+var _topNav2 = _interopRequireDefault(_topNav);
+
+var _searchFilter = require('./modules/searchFilter');
+
+var _searchFilter2 = _interopRequireDefault(_searchFilter);
+
+var _youtubeVideo = require('./modules/youtube-video');
+
+var _youtubeVideo2 = _interopRequireDefault(_youtubeVideo);
+
+var _prism = require('../../node_modules/prismjs/prism');
+
+var _tabs = require('./modules/tabs');
+
+var _tabs2 = _interopRequireDefault(_tabs);
+
+var _accordion = require('./modules/accordion');
+
+var _accordion2 = _interopRequireDefault(_accordion);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import {tnsCarousell, tnsSingle, tnsVertical, tnsSyncing} from "./modules/tns-slider";
+
+(0, _swDetecter.swDetecter)();
+
+(function () {
+	(0, _topNav2.default)();
+	// tnsCarousell();
+	// tnsSingle();
+	// tnsVertical();
+	// tnsSyncing();
+	if (document.body.classList.contains('home')) {
+		// functions here
+		(0, _youtubeVideo2.default)();
+	} else if (document.body.classList.contains('page2')) {
+		// functions here
+		(0, _searchFilter2.default)();
+	} else if (document.body.classList.contains('page3')) {
+		// functions here
+		(0, _tabs2.default)();
+		(0, _accordion2.default)();
+	} else if (document.body.classList.contains('page4')) {
+		// functions here
+	}
+})();
+
+},{"../../node_modules/prismjs/prism":1,"./modules/accordion":3,"./modules/searchFilter":4,"./modules/swDetecter":5,"./modules/tabs":6,"./modules/topNav":7,"./modules/youtube-video":8}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var accordion = function accordion() {
+    var d = document,
+        acc = document.getElementsByClassName("accordion-container__btn-acc");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+};
+
+exports.default = accordion;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var searchFilter = function searchFilter() {
+	// get the input data
+	var fnFilter = function fnFilter(inputElement, selector, selectorContainer) {
+		inputElement.addEventListener('keyup', function (e) {
+			if (e.key === 'Escape') e.target.value = '';
+			fnCompareElements(e.target.value.toUpperCase(), selector, selectorContainer);
+		});
+	};
+	var fnCompareElements = function fnCompareElements(filterText, selector, selectorContainer) {
+		var searchElements = document.querySelectorAll(selector);
+		var searchContainers = document.querySelectorAll(selectorContainer);
+		searchElements.forEach(function (el) {
+			el.textContent.toUpperCase().includes(filterText) ? el.style.display = 'block' : el.style.display = 'none';
+		});
+		searchContainers.forEach(function (el) {
+			el.textContent.toUpperCase().includes(filterText) ? el.style.display = 'block' : el.style.display = 'none';
+		});
+	};
+	fnFilter(document.getElementById('searchInput'), '.class-item__fragment', '.class-item');
+};
+
+exports.default = searchFilter;
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var swDetecter = exports.swDetecter = function swDetecter() {
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('./sw.js').then(function (reg) {
+			return console.log('Registro de SW exitoso', reg);
+		}).catch(function (err) {
+			return console.warn('Error al tratar de registrar el sw', err);
+		});
+	}
+};
+
+},{}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var tabs = function tabs() {
+    var d = document,
+        tabs = Array.prototype.slice.apply(d.querySelectorAll('.tabs-container__tab')),
+        panels = Array.prototype.slice.apply(d.querySelectorAll('.tabs-container__panel'));
+
+    d.getElementById('tabs').addEventListener('click', function (e) {
+        if (e.target.classList.contains('tabs-container__tab')) {
+            var i = tabs.indexOf(e.target);
+            tabs.map(function (tab) {
+                return tab.classList.remove('is-active');
+            });
+            tabs[i].classList.add('is-active');
+            panels.map(function (tab) {
+                return tab.classList.remove('is-active');
+            });
+            panels[i].classList.add('is-active');
+        }
+    });
+};
+
+exports.default = tabs;
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var topNav = function topNav() {
+	var d = document,
+	    headerBtn = d.querySelector('.hamburger'),
+	    menu = d.querySelector('.top-nav__menu');
+	headerBtn.addEventListener('click', function (e) {
+		e.preventDefault();
+		headerBtn.classList.toggle('is-active'), menu.classList.toggle('is-active');
+	});
+};
+
+exports.default = topNav;
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = youtubeVideo;
+/**
+*   @fileoverview
+*     Componente para incrustar un video de YouTube en nuestro sitio web cuando la resolución es mayor a 64em (1024px), cuando es menor se agrega un enlace al video
+*     Dependencias: font-awesome
+*
+*   @param {String} id, id del video de YouTube, se define en el archivo pug
+*   @param {String} $video-width, anchura del contenedor del video, se define en el archivo scss
+*
+*   @returns {void} no retorna nada
+*
+*   @author Jonathan MirCha <jonmircha@gmail.com>
+*   @version 1.0.0
+*/
+function youtubeVideo() {
+  var d = document,
+      w = window,
+      mq = w.matchMedia('(min-width: 64em)'),
+      youtube = d.querySelectorAll('.Youtube'),
+      youtubeWrapper = d.querySelectorAll('.Youtube-wrapper'),
+      youtubeIds = [],
+      youtubeIframe = [];
+
+  youtube.forEach(function (video, index) {
+    return youtubeIds[index] = video.id;
+  });
+
+  console.log(youtubeIds);
+
+  function showVideo(mq) {
+    if (mq.matches) {
+      youtubeWrapper.forEach(function (video, index) {
+        video.innerHTML = '<iframe src="https://www.youtube.com/embed/' + youtubeIds[index] + '" frameborder="0"></iframe>';
+      });
+    } else {
+      youtubeWrapper.forEach(function (video, index) {
+        video.innerHTML = '<a href="https://www.youtube.com/watch?v=' + youtubeIds[index] + '" target="_blank"><i class="fa fa-youtube-play"></i> Ver Video</a>';
+      });
+    }
+  }
+
+  mq.addListener(showVideo);
+  showVideo(mq);
+}
+
+},{}]},{},[2]);
+
 //# sourceMappingURL=scripts-min.js.map
