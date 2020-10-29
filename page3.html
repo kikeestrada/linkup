@@ -40,10 +40,10 @@
 <![endif]-->
     <script src="https://kit.fontawesome.com/20f3c29ee8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
-    <link rel="stylesheet" href="assets/css/styles.css?t=1603945114090">
-    <title>Home | Layouts</title>
+    <link rel="stylesheet" href="assets/css/styles.css?t=1603945114331">
+    <title>Page3 | Layouts</title>
   </head>
-  <body class="home" itemscope itemtype="http://schema.org/WebPage">
+  <body class="page3" itemscope itemtype="http://schema.org/WebPage">
     <header class="main-header">
       <nav class="top-nav">
         <div class="top-nav__container"><a class="top-nav__link" href="./"><img class="top-nav__logo" src="assets/img/img1.jpg" alt=""></a>
@@ -60,74 +60,89 @@
         <div class="ed-grid lg-grid-6">
           <div class="lg-cols-4 lg-x-2"><img class="main-banner__img" src="https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb"/>
             <div class="main-banner__data s-center">
-              <h1>Markdown</h1>
+              <h1>UI Components</h1>
             </div>
           </div>
         </div>
       </div>
     </header>
     <main class="main-container">
+      <!--include ../components/tns-slider-->
       <div class="ed-container">
-        <div class="ed-item"> 
-          <h1>Write Markdown in the html file</h1><ul>
-<li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
-<li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
-<li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
-<li>Lorem ipsum dolor sit amet consectetur adipisicing <code>elit</code>.</li>
-</ul>
-
+        <div class="ed-item">
+          <div class="accordion-container">
+            <button class="accordion-container__btn-acc">Section 1 </button>
+            <div class="accordion-container__panel">
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <button class="accordion-container__btn-acc">Section 2</button>
+            <div class="accordion-container__panel">
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <button class="accordion-container__btn-acc">Section 3</button>
+            <div class="accordion-container__panel">
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ed-container">
-        <div class="ed-item">			
-          <h1>Write Markdown in the html file (html)</h1><pre><code class="language-html">	&lt;!DOCTYPE html&gt;
-	&lt;html lang=&quot;en&quot;&gt;
-	&lt;head&gt;
-		&lt;title&gt;Pug&lt;/title&gt;
-		&lt;script type=&quot;text/javascript&quot;&gt;
-			foo = true;
-			bar = function () {};
-			if (foo) { bar(1 + 5) }
-		&lt;/script&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;h1&gt;Pug - node template engine&lt;/h1&gt;
-		&lt;div id=&quot;container&quot; class=&quot;col&quot;&gt;
-		&lt;p&gt;You are amazing&lt;/p&gt;
-		&lt;p&gt; Lorem ipsum.&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-	&lt;/html&gt;
-</code></pre>
-
+        <div class="ed-item">
+          <div class="tabs-container">
+            <ul class="tabs-container__tabs" id="tabs">
+              <li class="tabs-container__tab is-active">Tab 1</li>
+              <li class="tabs-container__tab">Tab 2</li>
+              <li class="tabs-container__tab">Tab 3</li>
+              <li class="tabs-container__tab">Tab 4</li>
+              <li class="tabs-container__tab">Tab 5</li>
+            </ul>
+            <div class="tabs-container__panels">
+              <div class="tabs-container__panel is-active">
+                <h2>Opcion 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur </p>
+              </div>
+              <div class="tabs-container__panel">
+                <h2>Opcion 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur </p>
+              </div>
+              <div class="tabs-container__panel">
+                <h2>Opcion 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur </p>
+              </div>
+              <div class="tabs-container__panel">
+                <h2>Opcion 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur </p>
+              </div>
+              <div class="tabs-container__panel">
+                <h2>Opcion 5</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ed-container">
-        <div class="ed-item">			
-          <h1>Importing Markdown files in the html </h1><h1>This is a Markdown Example</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-<pre><code class="language-html">&lt;a class=&quot;button&quot;&gt;.button.first-color&lt;/a&gt;
-&lt;a class=&quot;button second-color&quot;&gt;.button.second-color&lt;/a&gt;
-&lt;a class=&quot;button third-color&quot;&gt;.button.third-color&lt;/a&gt;
-&lt;a class=&quot;button accent-color&quot;&gt;.button.accent-color&lt;/a&gt;
-&lt;a class=&quot;button dark-color&quot;&gt;.button.dark-color&lt;/a&gt;
-&lt;a class=&quot;button text-color&quot;&gt;.button.text-color&lt;/a&gt;
-&lt;a class=&quot;button light-color&quot;&gt;.button.light-color&lt;/a&gt;
-
-</code></pre>
-<pre><code class="language-javascript">alert('Hola Mundo')
-
-</code></pre>
-<pre><code class="language-css">body{
-	background: red;
-}
-</code></pre>
-
+        <div class="ed-item">
+          <h1>HTML Accordion Details Component</h1>
+        </div>
+        <div class="ed-container">
+          <details>
+            <summary>Lorem</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, iure modi molestiae omnis optio quas</p>
+          </details>
+          <details>
+            <summary>Lorem</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, iure modi molestiae omnis optio quas</p>
+          </details>
+          <details>
+            <summary>Lorem</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, iure modi molestiae omnis optio quas</p>
+          </details>
         </div>
       </div>
     </main>
     <footer class="main-footer">
     </footer>
-    <script src="assets/js/scripts-min.js?t=1603945114090"></script>
+    <script src="assets/js/scripts-min.js?t=1603945114331"></script>
   </body>
 </html>
