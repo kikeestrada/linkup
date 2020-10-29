@@ -3,10 +3,10 @@
 const CACHE_NAME = 'v1_cache_myStyleGuide',
 	urlsToCache = [
 		'./',
-		'./assets/css/styles.css',
-		'./assets/js/scripts.js',
-		'./assets/img/icon_1024.png',
-		'./assets/img/favicon.png'
+		'.assets/css/styles.css',
+		'.assets/js/scripts.js',
+		'.https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/icon_1024.png',
+		'.https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/favicon.png'
 	]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
