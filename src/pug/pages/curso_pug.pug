@@ -1,0 +1,80 @@
+extends ../config/template
+append config
+	-currentPage		= "Curso"
+	-siteName			= 'Pug'
+	-content			= 'content'
+	-pageDescription	= 'Pagina inicial de MyBoilerplate'
+block main-header
+	+banner(
+		"https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+		'Curso Nombre',
+		''
+	)
+	.ed-grid
+		div
+			h2 Description
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus, est eum, excepturi facilis
+				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
+				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
+				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
+				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
+				| Consequatur exercitationem numquam optio?
+	.ed-grid.l-grid-2
+		div
+			h2 Que aprenderas?
+			ul.feature-list
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+			h2 Que necesitas saber?
+			ul.feature-list
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+				li Lorem ipsum dolor sit amet.
+		div
+			h2 Temario
+			details
+				summary Clase 1
+				ul.feature-list
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+			details
+				summary Clase 2
+				ul.feature-list
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+			details
+				summary Clase 3
+				ul.feature-list
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+			details
+				summary Clase 4
+				ul.feature-list
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+
+block main-container
+block main-footer
+block scripts
+

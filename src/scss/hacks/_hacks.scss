@@ -43,4 +43,21 @@ a {
 	padding-left: 0;
 	padding-right: 0;
   }
-  
+
+
+.search-style{
+	line-height: 0;
+	font-size: 0;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+input{
+	width: 100%;
+	height: 30px;
+	padding: 0 15px;
+}
+.banner-curso{
+	padding: 15px;
+	background: #22303a;
+	color: white;
+}

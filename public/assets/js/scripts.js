@@ -1663,10 +1663,6 @@ var _topNav = require('./modules/topNav');
 
 var _topNav2 = _interopRequireDefault(_topNav);
 
-var _searchFilter = require('./modules/searchFilter');
-
-var _searchFilter2 = _interopRequireDefault(_searchFilter);
-
 var _youtubeVideo = require('./modules/youtube-video');
 
 var _youtubeVideo2 = _interopRequireDefault(_youtubeVideo);
@@ -1680,6 +1676,8 @@ var _tabs2 = _interopRequireDefault(_tabs);
 var _accordion = require('./modules/accordion');
 
 var _accordion2 = _interopRequireDefault(_accordion);
+
+var _searchFilter = require('./modules/searchFilter');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1696,9 +1694,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	if (document.body.classList.contains('home')) {
 		// functions here
 		(0, _youtubeVideo2.default)();
+		(0, _searchFilter.searchFilter)();
 	} else if (document.body.classList.contains('page2')) {
 		// functions here
-		(0, _searchFilter2.default)();
 	} else if (document.body.classList.contains('page3')) {
 		// functions here
 		(0, _tabs2.default)();
@@ -1738,7 +1736,7 @@ exports.default = accordion;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var searchFilter = function searchFilter() {
+var searchFilter = exports.searchFilter = function searchFilter() {
 	// get the input data
 	var fnFilter = function fnFilter(inputElement, selector, selectorContainer) {
 		inputElement.addEventListener('keyup', function (e) {
@@ -1758,8 +1756,6 @@ var searchFilter = function searchFilter() {
 	};
 	fnFilter(document.getElementById('searchInput'), '.class-item__fragment', '.class-item');
 };
-
-exports.default = searchFilter;
 
 },{}],5:[function(require,module,exports){
 'use strict';

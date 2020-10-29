@@ -1,4 +1,4 @@
-const searchFilter = () => {
+export const searchFilter = () => {
 	// get the input data
 	const fnFilter = (inputElement, selector, selectorContainer) =>{
 		inputElement.addEventListener('keyup', e =>{
@@ -11,8 +11,8 @@ const searchFilter = () => {
 		let searchContainers = document.querySelectorAll(selectorContainer);
 		searchElements.forEach(el =>{
 			el.textContent.toUpperCase().includes(filterText)
-			? el.style.display = 'block'
-			: el.style.display = 'none'
+				? el.style.display = 'block'
+				: el.style.display = 'none'
 		});
 		searchContainers.forEach(el =>{
 			el.textContent.toUpperCase().includes(filterText)
@@ -22,5 +22,3 @@ const searchFilter = () => {
 	};
 	fnFilter(document.getElementById('searchInput'), '.class-item__fragment', '.class-item');
 };
-
-export default searchFilter

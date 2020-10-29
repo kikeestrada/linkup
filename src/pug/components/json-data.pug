@@ -1,7 +1,19 @@
-mixin card(cardImage, cardTitle)
-	div
-		img(src=cardImage, style='width:100px')
-		p=cardTitle
--for (var i = 0; i < casos.length; i++)
-	-var caso = casos[i]
-	+card(caso.img, caso.title)
+mixin card(cardImage, cardTitle, description, link)
+	article(class='card class-item')
+		div(class='img-container s-ratio-16-9 s-radius-tr s-radius-tl')
+			a(href=link): img(src=cardImage)
+		div(class='card__data s-border s-radius-br s-radius-bl s-pxy-2')
+			div(class='t5'): h3(class='search-style')=cardTitle
+			div(class='s-justify'): p=description
+section(class='ed-container item-search')
+	div(class='ed-item')
+		h1 Search Filter
+	div(class='ed-item m-50 l-40')
+		input(type='search', id='searchInput', placeholder='search')
+div(class='ed-container')
+	div(class='ed-item')
+
+div(class='ed-grid m-grid-2 l-grid-3 lg-grid-4 row-gap l-big-section')
+	-for(var i = 0; i < casos.length ; i++)
+		-var caso = casos[i]
+		+card(caso.img, caso.title, caso.description, caso.link)

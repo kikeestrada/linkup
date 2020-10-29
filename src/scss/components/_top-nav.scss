@@ -22,9 +22,12 @@
 		align-self: center;
 	}
 	&__logo{
-		height: 2rem;
+		height: 1rem;
 		width: auto;
 		display: block;
+		@include from(l){
+			height: 1.5rem;
+		}
 	}
 	&__menu{
 		@include fromTo(s,l){

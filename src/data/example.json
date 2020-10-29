@@ -1,21 +1,244 @@
 {
 	"casos":
-		[
-			{
-				"img": "assets/img/img1.jpg",
-				"title": "Company"
-			},
-			{
-				"img": "assets/img/img2.jpg",
-				"title": "Company"
-			},
-			{ 
-				"img": "assets/img/img3.jpg",
-				"title": "Company"
-			},
-			{
-				"img": "assets/img/img4.jpg",
-				"title": "Company"
-			}
-		]
+	[
+		{
+			"img"			: "assets/img/curso_ajax.jpg",
+			"title"			: "ajax",
+			"description"	: "jax es una tecnologia que nos permite consumir e imprimir información sin recargar la página.",
+			"link"			: "./curso_ajax.html"
+		},
+		{
+			"img"			: "assets/img/curso_css_animaciones.jpg",
+			"title"			: "css animaciones",
+			"description"	: "Aprende a hacer animaciones para la web usando sólo CSS que generen impacto (sin tener conocimientos de Javascript).",
+			"link"			: "./curso_css_animaciones.html"
+		},
+		{
+			"img"			: "assets/img/curso_css_avanzado.jpg",
+			"title"			: "css avanzado",
+			"description"	: "Con este curso lograrás entender de forma detallada cómo funcionan algunos de los módulos más importantes de CSS.",
+			"link"			: "./curso_css_avanzado.html"
+		},
+		{
+			"img"			: "assets/img/curso_css_desde_cero.jpg",
+			"title"			: "css desde cero",
+			"description"	: "CSS es un lenguaje creado para diseñar la web, cuando ves una web hermosa es por lo que CSS puede hacer. ",
+			"link"			: "./curso_css_desde_cero.html"
+		},
+		{
+			"img"			: "assets/img/curso_css_variables.jpg",
+			"title"			: "css variables",
+			"description"	: "¡CSS al fin tiene variables de forma nativa! ¡Y con soporte total de los navegadores! entra a esta nueva revolucion",
+			"link"			: "./curso_css_variables.html"
+		},
+		{
+			"img"			: "assets/img/curso_figma.jpg",
+			"title"			: "figma",
+			"description"	: "Figma es la mayor revolución en el diseño porque permite trabajar en equipo, en tiempo real y sobre un mismo producto.",
+			"link"			: "./curso_figma.html"
+		},
+		{
+			"img"			: "assets/img/curso_firebase.jpg",
+			"title"			: "firebase",
+			"description"	: "Firebase es una completa plataforma de Google que ofrece todo lo necesario para el desarrollo web",
+			"link"			: "./curso_firebase.html"
+		},
+		{
+			"img"			: "assets/img/curso_flex_grid.jpg",
+			"title"			: "css flex grid",
+			"description"	: "Flexbox es un modelo de Layout CSS que permite distribuir los elementos a través de un eje horizontal o vertical. ",
+			"link"			: "./curso_css_flex_grid.html"
+		},
+		{
+			"img"			: "assets/img/curso_fundamentos_disenno.jpg",
+			"title"			: "fundamentos diseño",
+			"description"	: "El diseño es un componente transversal en nuestras vidas, está presente en los objetos que usamos a diario.",
+			"link"			: "./curso_fundamentos_disenno.html"
+		},
+		{
+			"img"			: "assets/img/curso_git.jpg",
+			"title"			: "git",
+			"description"	: "GIT es un sistema de control de versiones que nos ayuda a llevar el historial completo de modificaciones de un proyecto.",
+			"link"			: "./curso_git.html"
+		},
+		{
+			"img"			: "assets/img/curso_graphql.jpg",
+			"title"			: "graphql",
+			"description"	: "Graphql es un lenguaje de consultas para APIs que permite al cliente poder solicitar la información que necesita",
+			"link"			: "./curso_graphql.html"
+		},
+		{
+			"img"			: "assets/img/curso_html.jpg",
+			"title"			: "HTML",
+			"description"	: "HTML es el lenguaje sobre el que está construida toda la web y en todo el mundo haciendo del navegador el mas usado.",
+			"link"			: "./curso_html5.html"
+		},
+		{
+			"img"			: "assets/img/curso_ilustrador.jpg",
+			"title"			: "ilustrador",
+			"description"	: "Illustrator es el software lider en el mundo del diseño vectorial y el preferido por los expertos e ideal para el diseño.",
+			"link"			: "./curso_ilustrador.html"
+		},
+		{
+			"img"			: "assets/img/curso_js_avanzado.jpg",
+			"title"			: "js avanzado paradigmas",
+			"description"	: "Aprende Programación orientada a objectos, programación asincróna, funcional, reactiva y desarrollo isomórfico.",
+			"link"			: "./curso_js_avanzado.html"
+		},
+		{
+			"img"			: "assets/img/curso_js_desde_cero.jpg",
+			"title"			: "js desde cero",
+			"description"	: "JavaScript es el único lenguaje que te ofrece utilizar tus conocimientos tanto en el frontend como en el backend.",
+			"link"			: "./curso_js_desde_cero.html"
+		},
+		{
+			"img"			: "assets/img/curso_js_en_el_navegador.jpg",
+			"title"			: "js en el navegador",
+			"description"	: "Aprende a manipular todo lo que aparece en la pantalla del navegador (DOM) y responder a la interacción del usuario.",
+			"link"			: "./curso_js_navegador.html"
+		},
+		{
+			"img"			: "assets/img/curso_js_poo.jpg",
+			"title"			: "js poo",
+			"description"	: "La programación orientada a objetos es un paradigma que desde la versión ES6 puede usarse en JavaScript a través de clases.",
+			"link"			: "./curso_js_poo.html"
+		},
+		{
+			"img"			: "assets/img/curso_markdown.jpg",
+			"title"			: "markdown",
+			"description"	: "Escribe código HTML limpio sin preocuparte de las etiquetas ni aprender HTML. Markdown es el lenguaje de marcado rapido y eficaz",
+			"link"			: "./curso_markdown.html"
+		},
+		{
+			"img"			: "assets/img/curso_nextjs.jpg",
+			"title"			: "nextjs",
+			"description"	: "Next.js es un framework que integra a varios artífices del ecosistema Javascript para poder crear aplicaciones web SPA desde el servidor.",
+			"link"			: "./curso_nextjs.html"
+		},
+		{
+			"img"			: "assets/img/curso_photoshop.jpg",
+			"title"			: "adobe photoshop",
+			"description"	: "Photoshop es el estándar mundial de diseño y retoque fotográfico. Los principales profesionales del mundo lo usan en sus trabajos de diseño.",
+			"link"			: "./curso_photoshop.html"
+		},
+		{
+			"img"			: "assets/img/curso_pug.jpg",
+			"title"			: "pug",
+			"description"	: "prende a manejar más eficiente tu código HTML con el motor de plantillas Pug y a crear modulos reutilizables haciendo tu codigo mas eficiente",
+			"link"			: "./curso_pug.html"
+		},
+		{
+			"img"			: "assets/img/curso_pwa.jpg",
+			"title"			: "title",
+			"description"	: "Moderniza y lleva tu sitio web al siguiente nivel, implementando lo mejor de las apps modernas. Usa lo mejor de los dos mundos web y nativo",
+			"link"			: "./curso_pwa.html"
+		},
+		{
+			"img"			: "assets/img/curso_react_desde_cero.jpg",
+			"title"			: "react js desde cero",
+			"description"	: "React.js es la librería frontend con la que están construidas las dos redes sociales más grandes: Facebook e Instagram non la sintaxis JSX.",
+			"link"			: "./curso_reactjs_desde_cero.html"
+		},
+		{
+			"img"			: "assets/img/curso_react_manejo_estado.jpg",
+			"title"			: "react js estado",
+			"description"	: "Aprende a manejar un estado global para toda tu aplicación para controlar el estado de los componentes e las diferentes etapas de la aplicacion.",
+			"link"			: "./curso_reactjs_estado.html"
+		},
+		{
+			"img"			: "assets/img/curso_react_proyecto.jpg",
+			"title"			: "react js proyecto",
+			"description"	: "Aprende a crear tu propia aplicación de cursos con React.js y basada en la experiencia aprendida en los primeros cursos podras hacer tu primer proyecto.",
+			"link"			: "./curso_reactjs_proyecto.html"
+		},
+		{
+			"img"			: "assets/img/curso_react_ts.jpg",
+			"title"			: "react js ts",
+			"description"	: "Potencia tus proyectos React.js con las cualidades más destacadas de TypeScript. Un Lenguage creado por Microsoft para darle poderes a JS.",
+			"link"			: "./curso_reactjs_ts.html"
+		},
+		{
+			"img"			: "assets/img/curso_rwd.jpg",
+			"title"			: "responsive web design",
+			"description"	: "Diseña sitios web y aplicaciones que se vean perfectas en cualquier tamaño de pantalla. con las mejores tecnicas que haran tu web adaptable",
+			"link"			:  "./curso_rwd.html"
+		},
+		{
+			"img"			: "assets/img/curso_sass.jpg",
+			"title"			: "sass",
+			"description"	: "CSS no es un lenguaje de programación y esto hace que proyectos medianos a grandes sean imposibles o muy dificiles de manejar.",
+			"link"			: "./curso_sass.html"
+		},
+		{
+			"img"			: "assets/img/curso_typescript.jpg",
+			"title"			: "typescript",
+			"description"	: "ypeScript es un lenguaje de programación basado en JavaScript que le añade soporte a nuevas funcionalidades.",
+			"link"			: "./curso_ts.html"
+		},
+		{
+			"img"			: "assets/img/curso_ui.jpg",
+			"title"			: "diseño ui",
+			"description"	: "Aprende las técnicas y buenas prácticas para crear diseños de interfaces hermosos, funcionales e impactantes.",
+			"link"			: "./curso_ui.html"
+		},
+		{
+			"img"			: "assets/img/curso_webpack.jpg",
+			"title"			: "webpack",
+			"description"	: "Aprende a automatizar tus tareas con una herramienta que te hara la vifda mas facil al tomar tu codigo y complilarlo",
+			"link"			: "./curso_webpack.html"
+		},
+		{
+			"img"			: "assets/img/curso_xd.jpg",
+			"title"			: "adobe xd",
+			"description"	: "Aprende las técnicas y buenas prácticas para crear diseños de interfaces hermosos, funcionales e impactantes.",
+			"link"			: "./curso_adobexd.html",
+			"dataDescription": "adobe XD"
+		}
+	],
+	"especialidades":
+	[
+		{
+			"img"			: "assets/img/esp_intro_desarrollo_web.jpg",
+			"title"			: "introducion al desarrollo web",
+			"description"	: "introducion al desarrollo web",
+			"link"			: "./esp_intro_desarrollo_web.html"
+		},
+		{
+			"img"			: "assets/img/esp_desarrollo_web_intermedio.jpg",
+			"title"			: "desarrollo web intermedio",
+			"description"	: "Desarrollo web intermedio",
+			"link"			: "./esp_desarrollo_web_intermedio.html"
+		},
+		{
+			"img"			: "assets/img/esp_desarrollo_web_intermedio.jpg",
+			"title"			: "desarrollo web avanzado",
+			"description"	: "Desarrollo web avanzado",
+			"link"			: "./esp_desarrollo_web_avanzado.html"
+		},
+		{
+			"img"			: "assets/img/esp_css.jpg",
+			"title"			: "diseño web CSS",
+			"description"	: "Diseño web CSS",
+			"link"			: "./esp_disenno_web_css.html"
+		},
+		{
+			"img"			: "assets/img/esp_disenno_web1.jpg",
+			"title"			: "diseño web 1",
+			"description"	: "Diseño web 1",
+			"link"			: "./esp_disenno_web1.html"
+		},
+		{
+			"img"			: "assets/img/esp_disenno_web2.jpg",
+			"title"			: "diseño web 2",
+			"description"	: "Diseño web 2",
+			"link"			: "./esp_disenno_web2.html"
+		},
+		{
+			"img"			: "assets/img/esp_react.jpg",
+			"title"			: "Desarrollo web React",
+			"description"	: "Desarrollo web React",
+			"link"			: "./esp_desarrollo_web_react.html"
+		}
+
+	]
 }

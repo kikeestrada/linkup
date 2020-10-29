@@ -12,5 +12,5 @@ Instructions:
 * ```gulp build``` before deployment
 * ```npm run deploy``` to publish the site in gh pages
 
-## gh-pages link: https://kikeestrada.github.io/myStyleGuide2020/
+## gh-pages link: https://kikeestrada.github.io/linkup/
 

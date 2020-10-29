@@ -1,0 +1,59 @@
+extends ../config/template
+append config
+	-currentPage		= "Curso"
+	-siteName			= 'Diseño Web 1'
+	-content			= 'content'
+	-pageDescription	= 'Pagina inicial de MyBoilerplate'
+block main-header
+	section.l-section.s-py-4.banner-curso
+		// Separación del contenido en columnas
+		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
+			// Contenido de la columna 1
+			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
+				h1 Diseño Web 1
+				p Lorem ipsum dolor sit amet.
+			// Contenido de la columna 2
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="assets/img/esp_disenno_web1.jpg")
+	div(class='ed-container')
+		div(class='ed-item l-75')
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_html5.html')
+							img(src='./assets/img/curso_fundamentos_disenno.jpg')
+				div(class='ed-item m-50')
+					ul.feature-list
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_css_desde_cero.html')
+							img(src='./assets/img/curso_photoshop.jpg')
+				div(class='ed-item m-50')
+					ul.feature-list
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_css_avanzado.html')
+							img(src='./assets/img/curso_ilustrador.jpg')
+				div(class='ed-item m-50')
+					ul.feature-list
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+						li Lorem ipsum dolor sit amet.
+block main-container
+block main-footer
+block scripts
+
+
+
