@@ -5,11 +5,17 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	+banner(
-		"https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
-		'Curso Nombre',
-		''
-	)
+	section.l-section.s-py-4.banner-curso
+		// Separación del contenido en columnas
+		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
+			// Contenido de la columna 1
+			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
+				h1 GraphQL
+				p Lorem ipsum dolor sit amet.
+			// Contenido de la columna 2
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="/assets/img/curso_graphql.jpg")
 	.ed-grid
 		div
 			h2 Description

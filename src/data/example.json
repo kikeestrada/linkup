@@ -238,7 +238,12 @@
 			"title"			: "Desarrollo web React",
 			"description"	: "Desarrollo web React",
 			"link"			: "./esp_desarrollo_web_react.html"
+		},
+		{
+			"img"			: "assets/img/esp_js.jpg",
+			"title"			: "Desarrollo web JS",
+			"description"	: "Desarrollo web JS",
+			"link"			: "./esp_desarrollo_web_js.html"
 		}
-
 	]
 }
