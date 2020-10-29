@@ -17,7 +17,7 @@
 	"dependencies": {
 		"animate.css": "^3.7.2",
 		"blueimp-md5": "^2.10.0",
-		"ed-grid": "^2.8.1",
+		"ed-grid": "^3.0.2",
 		"ed-ui": "0.0.5",
 		"edteam-style-guides": "0.0.3",
 		"firebase": "^7.14.2",

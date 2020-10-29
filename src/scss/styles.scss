@@ -19,7 +19,8 @@ $breakpoints 		:
 // Config
 @import "config/functions"; 
 @import "config/vars";
-@import "config/mixins"; 
+@import "config/mixins";
+@import "config/typography";
 
 
 // LAYOUT
@@ -27,11 +28,25 @@ $breakpoints 		:
 @import "layout/layout";
 
 // MODULES (SMACSS) O COMPONENTS (ITCSS)
-@import "components/components"; 
+@import "components/components";
 
 
 // Utilities (hacks)
 @import "hacks/hacks";
-.banner2{
-	background: #22303a;
+
+
+@import "theme/colors";
+.my-grid{
+	opacity: 0;
+	transition: opacity 0.5s linear 1s;
+	&.my-grid-visible{
+		opacity: 1;
+	}
 }
+.item{
+	&.hide{}
+	&.show{}
+}
+
+
+

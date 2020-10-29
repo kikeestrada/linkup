@@ -2,3 +2,7 @@
 @function rem($px) {
     @return ($px / 16px) * 1rem;
   }
+
+@function img($img) {
+	@return url(#{$images-path}/#{$img});
+}
