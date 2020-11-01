@@ -5,24 +5,39 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 Diseño Web 1
-				p Cursos de Actualizacion en Tecnologia
+				p El primer paso en el mundo del diseño web es la correcta orientacion del uso de herramientas
+					| que en un inicio fueron creadas para el diseño grafico pero que posteriormente llegaron a ser usadas en el deiseño web.
+					| Aqui eprenderas todo lo relacionado al nuevo lienzo sobre el cual trabajaremos: Navegadores we y aplicaciones mobiles.
 			// Contenido de la columna 2
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_disenno_web1.jpg")
 	div(class='ed-container')
+		div(class='ed-item l-50')
+			h2 Descripcion
+			p Comprender el diseño nos permite crear mejores productos, mejor software y mejores aplicaciones. Además
+				| nos ayuda a posicionar mejor nuestras marcas haciéndolas atractivas y reconocibles para el público.
+				| Sin importar el tipo de área a la que se dedique una empresa, siempre requerirá de diseñadores.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 cuatrimestre.
+				li 64 horas - 1 clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 		div(class='ed-item l-75')
 			div(class='ed-container full s-mb-2')
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
 						a(href='./curso_fundamentos_disenno.html')
-							img(src='.https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_fundamentos_disenno.jpg')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_fundamentos_disenno.jpg')
 				div(class='ed-item m-50')
 					h3 Temario
 					ul.feature-list
@@ -33,7 +48,7 @@ block main-header
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
 						a(href='./curso_photoshop.html')
-							img(src='.https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_photoshop.jpg')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_photoshop.jpg')
 				div(class='ed-item m-50')
 					h3 Temario
 					ul.feature-list
@@ -44,7 +59,7 @@ block main-header
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
 						a(href='./curso_ilustrador.html')
-							img(src='.https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_ilustrador.jpg')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_ilustrador.jpg')
 				div(class='ed-item m-50')
 					h3 Temario
 					ul.feature-list

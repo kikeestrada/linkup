@@ -172,7 +172,7 @@
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_typescript.jpg",
 			"title"			: "typescript",
-			"description"	: "ypeScript es un lenguaje de programación basado en JavaScript que le añade soporte a nuevas funcionalidades.",
+			"description"	: "TypeScript es un lenguaje de programación basado en JavaScript que le añade soporte a nuevas funcionalidades.",
 			"link"			: "./curso_ts.html"
 		},
 		{
@@ -199,50 +199,44 @@
 	[
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_intro_desarrollo_web.jpg",
-			"title"			: "introducion al desarrollo web",
-			"description"	: "introducion al desarrollo web",
+			"title"			: "Desarrollo Wen Introductorio",
+			"description"	: "Desarrollo Wen Introductorio",
 			"link"			: "./esp_intro_desarrollo_web.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg",
-			"title"			: "desarrollo web intermedio",
-			"description"	: "Desarrollo web intermedio",
-			"link"			: "./esp_desarrollo_web_intermedio.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg",
-			"title"			: "desarrollo web avanzado",
-			"description"	: "Desarrollo web avanzado",
+			"title"			: "Desarrollo Web Avanzado",
+			"description"	: "Desarrollo Web Avanzado",
 			"link"			: "./esp_desarrollo_web_avanzado.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_css.jpg",
-			"title"			: "diseño web CSS",
-			"description"	: "Diseño web CSS",
+			"title"			: "Diseño Web con CSS",
+			"description"	: "Diseño Web con CSS",
 			"link"			: "./esp_disenno_web_css.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_disenno_web1.jpg",
-			"title"			: "diseño web 1",
-			"description"	: "Diseño web 1",
+			"title"			: "Diseño Web 1",
+			"description"	: "Diseño Web 1",
 			"link"			: "./esp_disenno_web1.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_disenno_web2.jpg",
-			"title"			: "diseño web 2",
-			"description"	: "Diseño web 2",
+			"title"			: "Diseño Web 2",
+			"description"	: "Diseño Web 2",
 			"link"			: "./esp_disenno_web2.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_react.jpg",
-			"title"			: "Desarrollo web React",
-			"description"	: "Desarrollo web React",
+			"title"			: "Desarrollo Web con React",
+			"description"	: "Desarrollo Web con React",
 			"link"			: "./esp_desarrollo_web_react.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_js.jpg",
-			"title"			: "Desarrollo web JS",
-			"description"	: "Desarrollo web JS",
+			"title"			: "Desarrollo Web JS",
+			"description"	: "Desarrollo Web JS",
 			"link"			: "./esp_desarrollo_web_js.html"
 		}
 	]
