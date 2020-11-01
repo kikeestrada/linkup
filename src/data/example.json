@@ -2,9 +2,15 @@
 	"casos":
 	[
 		{
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_svg.jpg",
+			"title"			: "svg",
+			"description"	: "Crea gráficos vectoriales para la web usando código e interactua con ellos con CSS y JavaScript con tecnologias de Punta",
+			"link"			: "./curso_svg.html"
+		},
+		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_ajax.jpg",
 			"title"			: "ajax",
-			"description"	: "jax es una tecnologia que nos permite consumir e imprimir información sin recargar la página.",
+			"description"	: "Ajax es una tecnologia que nos permite consumir e imprimir información sin recargar la página.",
 			"link"			: "./curso_ajax.html"
 		},
 		{
@@ -82,7 +88,7 @@
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_js_avanzado.jpg",
 			"title"			: "js avanzado paradigmas",
-			"description"	: "Aprende Programación orientada a objectos, programación asincróna, funcional, reactiva y desarrollo isomórfico.",
+			"description"	: "Aprende Programación orientada a objectos, programación asincróna, funcional, reactiva e isomórfico.",
 			"link"			: "./curso_js_avanzado.html"
 		},
 		{
@@ -94,7 +100,7 @@
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_js_en_el_navegador.jpg",
 			"title"			: "js en el navegador",
-			"description"	: "Aprende a manipular todo lo que aparece en la pantalla del navegador (DOM) y responder a la interacción del usuario.",
+			"description"	: "Aprende a manipular todo lo que aparece en la pantalla del navegador (DOM) y (BOM) responder a las interacciónes del usuario.",
 			"link"			: "./curso_js_navegador.html"
 		},
 		{
@@ -148,7 +154,7 @@
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_proyecto.jpg",
 			"title"			: "react js proyecto",
-			"description"	: "Aprende a crear tu propia aplicación de cursos con React.js y basada en la experiencia aprendida en los primeros cursos podras hacer tu primer proyecto.",
+			"description"	: "Aprende a crear tu propia aplicación de cursos con React.js y basada en la experiencia aprendida en los primeros en tu primer proyecto.",
 			"link"			: "./curso_reactjs_proyecto.html"
 		},
 		{
