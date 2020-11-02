@@ -5,7 +5,7 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
@@ -16,13 +16,21 @@ block main-header
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_animaciones.jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
 			p Aprende a hacer animaciones para la web usando sólo CSS que generen impacto (sin tener conocimientos
 				| de Javascript) . Potencia la interacción con el usuario y aumenta la usabilidad de tus proyectos.
 				| Las animaciones convierten un proyecto aburrido en uno lleno de vida y que los usuarios y clientes aman,
 				| aprende con el mejor profesor de CSS en habla hispana.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?
@@ -89,15 +97,6 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 			details
 				summary Animaciones CSS y SVG
-				ul.feature-list
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-			details
-				summary Clase 8
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.

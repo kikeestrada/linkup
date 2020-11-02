@@ -5,7 +5,7 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
@@ -16,14 +16,22 @@ block main-header
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_js_avanzado.jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
 			p JavaScript es un lenguaje multiparadigma, lo que significa que se puede programar con distintos estilos
-			| (paradigmas). Incluso podemos usar más de uno en un mismo proyecto según nuestras necesidades. En este curso
-			| avanzado de JavaScript aprenderás como trabajar con los paradigmas de Orientación a Objetos, Funcional,
-			| Reactivo y Asíncrono mientras aprendes conceptos más profundos del lenguaje. Se recomienda haber tomado
-			| primero el curso JavaScript Desde Cero.
+				| (paradigmas). Incluso podemos usar más de uno en un mismo proyecto según nuestras necesidades. En este curso
+				| avanzado de JavaScript aprenderás como trabajar con los paradigmas de Orientación a Objetos, Funcional,
+				| Reactivo y Asíncrono mientras aprendes conceptos más profundos del lenguaje. Se recomienda haber tomado
+				| primero el curso JavaScript Desde Cero.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?

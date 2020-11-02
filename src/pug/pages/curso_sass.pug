@@ -5,46 +5,45 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 SASS
-				p Lorem ipsum dolor sit amet.
+				p Convierte tu estilos CSS en un lenguaje de programación con Sass
 			// Contenido de la columna 2
 			div
 				.img-container.s-ratio-16-9
-					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_html.jpg")
-	.ed-grid
-		div
+					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_sass.jpg")
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus, est eum, excepturi facilis
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| Consequatur exercitationem numquam optio?
+			p CSS no es un lenguaje de programación y esto hace que proyectos medianos a grandes sean imposibles o muy
+				| dificiles de manejar. Los diseñadores se sobreescriben estilos unos a otros, se repiten declaraciones,
+				| la cascada y especifidad son un infierno y modificar componentes puede tirar abajo todo el proyecto.
+				| Sass resuelve estos problemas dándole a CSS las características de un lenguaje de programación
+				| y permitiendo modularizar el código.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?
 			ul.feature-list
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-			h2 Que necesitas saber?
-			ul.feature-list
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
+				li Sintaxis de Sass.
+				li Mixins y funciones.
+				li Modularizar tu código.
+				li Debug de errores Sass.
 		div
 			h2 Temario
 			details
-				summary Clase 1
+				summary Sintaxis
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -53,7 +52,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 2
+				summary Ciclos y Condicionales
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -62,7 +61,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 3
+				summary Mixins
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -71,7 +70,25 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 4
+				summary Funciones
+				ul.feature-list
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+			details
+				summary Color
+				ul.feature-list
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+					li Lorem ipsum dolor sit amet.
+			details
+				summary Debugging
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.

@@ -5,46 +5,42 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 React JS Proyecto
-				p Lorem ipsum dolor sit amet.
+				p Aprende a crear tu propia aplicación de cursos con React.js.
 			// Contenido de la columna 2
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_proyecto.jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus, est eum, excepturi facilis
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| Consequatur exercitationem numquam optio?
+			p En este Workshop aplicarás los conceptos de React.js para desarrollar desde cero tu propia aplicación de
+				| educación online como la de EDteam. Iremos desde la planificación hasta el despliegue de la aplicación en producción.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?
 			ul.feature-list
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-			h2 Que necesitas saber?
-			ul.feature-list
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
+				li Planificar y estructurar un proyecto
+				li Escribir componentes según atomic design
+				li Utilizar el estado global
+				li Desplegar tu app en un servidor
 		div
 			h2 Temario
 			details
-				summary Clase 1
+				summary Estructura, Librerias y dependencias
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -53,7 +49,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 2
+				summary Configurar nuestro Store con Redux
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -62,7 +58,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 3
+				summary Rutas y Sistema de Autenticacion
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -71,7 +67,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 4
+				summary Deployment
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.

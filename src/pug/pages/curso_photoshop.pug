@@ -5,7 +5,7 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
@@ -17,8 +17,8 @@ block main-header
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_photoshop" +
 					".jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
 			p Photoshop es el estándar mundial de diseño y retoque fotográfico. Los principales profesionales del mundo
 				| lo usan en sus trabajos y existe muchísimo material en internet como plugins, freebies, templates, etc.
@@ -26,6 +26,14 @@ block main-header
 				| manejo de herramientas, filtros, ediciones no destructivas, capas, fusiones, estilos, etc. Y terminaremos
 				| el curso con tres proyectos (no uno, ¡sino tres!): el diseño de una tarjeta de presentación,
 				| un montaje fotográfico y el diseño de un website.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?

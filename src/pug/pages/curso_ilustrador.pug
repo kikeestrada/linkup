@@ -5,7 +5,7 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
@@ -16,13 +16,21 @@ block main-header
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_ilustrador.jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
 			p Illustrator es el software lider en el mundo del diseño vectorial y el preferido por los expertos.
 				| Illustrator es el programa ideal para el diseño de afiches, pancartas, comics, logotipos, identidad
 				| corporativa e incluso mockups de interfaces. Para tomar este curso no necesitas conocimientos previos,
 				| iremos completamente desde cero hasta crear tu primer proyecto.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?

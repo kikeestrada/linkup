@@ -5,7 +5,7 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
@@ -16,8 +16,9 @@ block main-header
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_figma.jpg")
-	.ed-grid
-		div
+
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
 			p El diseño es hoy en día uno de los requerimientos más importantes en el desarrollo de software y producto.
 				| Pero el solo mantenimiento de un sistema de diseño puede tomar más tiempo que el diseño mismo: control de
@@ -25,7 +26,15 @@ block main-header
 				| porque permite trabajar en equipo, en tiempo real y sobre un mismo producto. No más carpetas compartidas,
 				| archivos adjuntos o reuniones de consolidación. Figma es el futuro del diseño de interfaces y probablemente
 				| del diseño gráfico en general. Este es el curso de Figma más completo que encontrarás en español y te llevará
-				| desde lo más básico hasta crear tus propios sistemas de diseño y tu primer prototipo de aplicación: EDmovies.
+				| desde lo más básico hasta crear tus propios sistemas de diseño y tu primer prototipo de aplicación: Appmovies.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 
 	.ed-grid.l-grid-2
 		div

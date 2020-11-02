@@ -5,7 +5,7 @@ append config
 	-content = 'content'
 	-pageDescription = 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
@@ -16,12 +16,21 @@ block main-header
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_desde_cero.jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
+			h2 Description
 			p ¿Sabías que se puede diseñar solo con código? ¿Sin programas de diseño como Photoshop o Illustrator? CSS
 				| es un lenguaje creado para diseñar la web, cuando ves una web hermosa, con animaciones y efectos, estos
 				| se crearon con CSS. Este curso te enseñará desde cero a escribir código CSS con buenas prácticas e iniciar
 				| tu carrera como diseñador web.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?

@@ -11,40 +11,36 @@ block main-header
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 React JS Manejo del Estado
-				p Lorem ipsum dolor sit amet.
+				p Aprende a manejar un estado global para toda tu aplicación para controlar el estado de los componentes
 			// Contenido de la columna 2
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_manejo_estado.jpg")
-	.ed-grid
-		div
+	div(class='ed-container')
+		div(class='ed-item l-50')
 			h2 Description
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ducimus, est eum, excepturi facilis
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| impedit magni modi mollitia non numquam praesentium quaerat quidem sequi voluptate voluptatibus!
-				| Consequatur exercitationem numquam optio?
+			p Los componentes tienen su propio estado que no es compartido con otros. El estado global resuelve este
+				| inconveniente permitiendo que todos los componentes estén suscritos a él y se actualicen cuando sea modificado.
+		div(class='ed-item l-50')
+			h2 Detalles
+			ul
+				li Duraccion: 1 Mes.
+				li Horas: 16 - una clase semanal de 4 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
 	.ed-grid.l-grid-2
 		div
 			h2 Que aprenderas?
 			ul.feature-list
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-			h2 Que necesitas saber?
-			ul.feature-list
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
-				li Lorem ipsum dolor sit amet.
+				li Conceptos del estado global
+				li Integración de Redux a tu app
+				li Uso de Context API
+				li Diferencias y ventajas entre las varias soluciones
 		div
 			h2 Temario
 			details
-				summary Clase 1
+				summary Estado de la aplicacion
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -53,7 +49,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 2
+				summary Redux
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -62,7 +58,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 3
+				summary Constext API
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
@@ -71,7 +67,7 @@ block main-header
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
 			details
-				summary Clase 4
+				summary MOBX
 				ul.feature-list
 					li Lorem ipsum dolor sit amet.
 					li Lorem ipsum dolor sit amet.
