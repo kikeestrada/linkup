@@ -204,22 +204,28 @@
 	"especialidades":
 	[
 		{
-			"img",			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_intro_desarrollo_web.jpg",
-			"title"			: "Desarrollo Wen Introductorio",
-			"description"	: "Desarrollo Wen Introductorio",
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_intro_desarrollo_web.jpg",
+			"title"			: "Desarrollo Web Introductorio",
+			"description"	: "Desarrollo Web Introductorio",
 			"link"			: "./esp_desarrollo_web_introductorio.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg",
 			"title"			: "Desarrollo Web Intermedio",
 			"description"	: "Desarrollo Web Intermedio",
-			"link"			: "./esp_desarrollo_web_avanzado.html"
+			"link"			: "./esp_desarrollo_web_intermedio.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg",
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_avanzado.jpg",
 			"title"			: "Desarrollo Web Avanzado",
 			"description"	: "Desarrollo Web Avanzado",
 			"link"			: "./esp_desarrollo_web_avanzado.html"
+		},
+		{
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_experto.jpg",
+			"title"			: "Desarrollo Web Experto",
+			"description"	: "Desarrollo Web Experto",
+			"link"			: "./esp_desarrollo_web_experto.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_css.jpg",
