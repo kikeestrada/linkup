@@ -5,25 +5,22 @@ append config
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
-	section.l-section.s-py-4.banner-curso
+	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
-				h1 SVG Desde Cero
-				p Crea gráficos vectoriales para la web usando código e interactua con ellos con CSS y JavaScript
+				h1 Descripción
+				p SVG (Scalable Vector Graphics) es un formato de imágenes vectoriales para web en formato XML. Es decir,
+					| puedes crearlas con programas como Illustrator o Sketch pero también directamente con código. Es más,
+					| crearlas en illustrator y luego manipularlas por código, animándolas con CSS o creando interacciones
+					| con JavaScript. SVG es un estándar de la W3C y tiene soporte completo por todos los navegadores.
+					| Pre-requisitos para tomar el curso: Conocimientos en HTML, CSS Y JS.
 			// Contenido de la columna 2
 			div
 				.img-container.s-ratio-16-9
 					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_svg.jpg")
 	div(class='ed-container')
-		div(class='ed-item l-50')
-			h2 Description
-			p SVG (Scalable Vector Graphics) es un formato de imágenes vectoriales para web en formato XML. Es decir,
-				| puedes crearlas con programas como Illustrator o Sketch pero también directamente con código. Es más,
-				| crearlas en illustrator y luego manipularlas por código, animándolas con CSS o creando interacciones
-				| con JavaScript. SVG es un estándar de la W3C y tiene soporte completo por todos los navegadores.
-				| Pre-requisitos para tomar el curso: Conocimientos en HTML, CSS Y JS.
 		div(class='ed-item l-50')
 			h2 Detalles
 			ul
@@ -32,14 +29,18 @@ block main-header
 				li Workshop - Proyecto Final.
 				li Costo: $ 000.000 ivi.
 				li Consulte nuestras facilidades de pago.
-	.ed-grid.l-grid-2
-		div
 			h2 Que aprenderas?
-			ul.feature-list
+			ul
 				li Exportar gráficos SVG desde Illustrator y manipularlos por CSS y JavaScript.
 				li Comprender el sistema de coordenadas y la sintaxis de SVG.
 				li Crear efectos y gráficos SVG con código e integrarlos a proyectos web
-		div
+			h2 Objetivo
+			p lorem
+			h2 Requisitos
+			p lorem
+			h2 A quien va dirigido?
+			p lorem
+		div(class='ed-item l-50')
 			h2 Temario
 			details
 				summary Que es SVG?
