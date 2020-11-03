@@ -8,107 +8,73 @@ block main-header
 	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg")
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 Desarrollo Web Avanzado
 				p Este es el siguinete paso que das para convertirte en un experto en desarrollo Web Front End.
 			// Contenido de la columna 2
-			div
-				.img-container.s-ratio-16-9
-					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg")
+
 	div(class='ed-container')
-		div(class='ed-item l-50')
-			h2 Descripcion
-			p Esta especialidad donde ya tienes los conocimientos basicos en desarrollo web orientado al Front End
-				| te incitamos a ir al siguiente nivel adquiriendo conocimientos mas profundos con los cuales puedes automatizar
-				| las tareas entrando al mundo de los preprocesadores como Pug y SASS, ademas podras entender como funciona el DOM y el BOM.
-		div(class='ed-item l-50')
+		div(class='ed-item l-60')
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_html5.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_pug.jpg')
+				div(class='ed-item m-50')
+					ul
+						li Prepros
+						li Node JS
+						li Gulp
+						li WebPack
+						li Yarn
+						li Yeoman
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_css_desde_cero.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_sass.jpg')
+				div(class='ed-item m-50')
+					ul
+						li Flex box
+						li CSS Grid
+						li CSS Animaciones
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_js_desde_cero.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_ajax.jpg')
+				div(class='ed-item m-50')
+					ul
+						li DOM
+						li BOM
+						li Nodos
+						li Eventos
+						li CSSOM (CSS)
+						li Templates
+		div(class='ed-item l-40')
 			h2 Detalles
 			ul
-				li Numero de Cursos: 7
+				li Numero de Cursos: 3
 				li Duraccion: 1 cuatrimestre.
-				li 128 horas - 2 clases semanales de 4 horas
+				li 96 horas - 2 clases semanales de 3 horas.
 				li Workshop - Proyecto Final.
 				li Costo: $ 000.000 ivi.
 				li Consulte nuestras facilidades de pago.
-		div(class='ed-item l-75')
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_js_navegador.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_js_en_el_navegador.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li El DOM
-						li Los eventos
-						li El navegador
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_pug.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_pug.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li ¿Que es Pug?
-						li Sintaxis de Pug
-						li Implementación de codigo Javascript
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_markdown.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_markdown.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li Encabezados, parrafos y listas
-						li Imagenes y enlaces
-						li Apliaciones de notas
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_sass.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_sass.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li Sintaxis
-						li Ciclos y condicionales
-						li Debugging
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_css_animaciones.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_animaciones.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li Transiciones
-						li Transformaciones
-						li Animaciones CSS y SVG
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_css_flex_grid.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_flex_grid.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li Flex container
-						li Grid container
-						li CSS grid a fondo
-			div(class='ed-container full s-mb-2')
-				div(class='ed-item m-50')
-					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_svg.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_svg.jpg')
-				div(class='ed-item m-50')
-					h3 Temario
-					ul.feature-list
-						li Mapa de bits vs Graficos Vectoriales
-						li Filtros
-						li animaciones
+			h2 Objetivo
+			p Dar continuidad a la especialidad introductoria con temas mas avanzados que profundizan mucho mas en el
+				| entendimiento del comportamiento del navegador
+			h2 Requisitos
+			p Para esta especialidad es obligatorio tener aprobados los primeros tres cursos introductorios:
+			ul
+				li HTML introductorio
+				li Diseño CSS Introductorio
+				li JavaScript Introductorio
+			h2 A quien va dirigido?
+			p lorem
 block main-container
 block main-footer
 block scripts
