@@ -207,7 +207,7 @@
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_intro_desarrollo_web.jpg",
 			"title"			: "Desarrollo Wen Introductorio",
 			"description"	: "Desarrollo Wen Introductorio",
-			"link"			: "./esp_intro_desarrollo_web.html"
+			"link"			: "./esp_desarrollo_web_introductorio.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg",
