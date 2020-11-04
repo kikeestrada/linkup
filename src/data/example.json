@@ -222,6 +222,18 @@
 			"link"			: "./esp_desarrollo_web_avanzado.html"
 		},
 		{
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_experto.jpg",
+			"title"			: "Desarrollo Web Experto",
+			"description"	: "Desarrollo Web Experto",
+			"link"			: "./esp_desarrollo_web_experto.html"
+		},
+		{
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_css.jpg",
+			"title"			: "Diseño Web con CSS",
+			"description"	: "Diseño Web con CSS",
+			"link"			: "./esp_disenno_web_css.html"
+		},
+		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_disenno_web1.jpg",
 			"title"			: "Diseño Web 1",
 			"description"	: "Diseño Web 1",
@@ -238,6 +250,12 @@
 			"title"			: "Desarrollo Web con React",
 			"description"	: "Desarrollo Web con React",
 			"link"			: "./esp_desarrollo_web_react.html"
+		},
+		{
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_js.jpg",
+			"title"			: "Desarrollo Web JS",
+			"description"	: "Desarrollo Web JS",
+			"link"			: "./esp_desarrollo_web_js.html"
 		}
 	]
 }
