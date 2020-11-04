@@ -8,6 +8,9 @@ block main-header
 	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_react.jpg")
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 Desarrollo Web React JS
@@ -15,31 +18,12 @@ block main-header
 					| de cursos que preparamos para darle las herramientas que necesitas para crecer profesionalmente
 					| en esta tecnologia de alta dmeanda laboral
 			// Contenido de la columna 2
-			div
-				.img-container.s-ratio-16-9
-					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_react.jpg")
 	div(class='ed-container')
-		div(class='ed-item l-50')
-			h2 Descripcion
-			p En esta especialidad aprenderás lo necesario para entender desde las bases de React, pasando por las
-				| integraciones con otras librerías y extensiones hasta poder construir tu primera aplicación real.
-				| Iremos paso a paso desde React del lado del Front End hasta React del lado del servidor y tambien
-				| integrando Typescript a nuestros proyectos
-
-
-		div(class='ed-item l-50')
-			h2 Detalles
-			ul
-				li Duraccion: 1 cuatrimestre.
-				li 96 horas - 2 clases semanales de 3 horas
-				li Workshop - Proyecto Final.
-				li Costo: $ 000.000 ivi.
-				li Consulte nuestras facilidades de pago.
-		div(class='ed-item l-75')
+		div(class='ed-item l-60')
 			div(class='ed-container full s-mb-2')
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_reactjs_desde_cero.html')
+						a(href='./curso_reactjs_introductorio.html')
 							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_introductorio.jpg')
 				div(class='ed-item m-50')
 					ul
@@ -49,7 +33,7 @@ block main-header
 			div(class='ed-container full s-mb-2')
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_reactjs_estado.html')
+						a(href='./curso_reactjs_intermedio.html')
 							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_intermedio.jpg')
 				div(class='ed-item m-50')
 					ul
@@ -60,12 +44,28 @@ block main-header
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
 						a(href='./curso_reactjs_avanzado.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_avanzado.jpg')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_avanzado.jpg')
 				div(class='ed-item m-50')
 					ul
-						li Estructura, librerías y dependencias
-						li Páginas específicas y Build de la aplicación
-						li Deployment
+						li React Js con TypeScript
+		div(class='ed-item l-40 item-shadow')
+			h2 Detalles
+			ul
+				li Duraccion: 1 cuatrimestre.
+				li 96 horas - 2 clases semanales de 3 horas
+				li Workshop - Proyecto Final.
+				li Costo: $ 000.000 ivi.
+				li Consulte nuestras facilidades de pago.
+			h2 Objetivo
+			p Dar las herramientas necesarias tanto teoricas como practicas para adentrarse en una de las libreiras de front end mas populares del mercado
+				| como lo es React JS
+			p Para este curso no requieres tener conocimientos en Photoshop pero es escencial tener los conocimientos adquiridos en los Módulos:
+			ul
+				li Desarrollo Web Introductorio
+				li Desarrollo Web Intermedio
+				li Desarrollo Web Avanzado
+			h2 A quien va dirigido?
+			p A todo a aquel que desee adentrarse y actualizarse en el mundo de la tecnologia web.
 block main-container
 block main-footer
 block scripts

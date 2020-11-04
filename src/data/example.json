@@ -14,12 +14,6 @@
 			"link"			: "./curso_ajax.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_animaciones.jpg",
-			"title"			: "css animaciones",
-			"description"	: "Aprende a hacer animaciones para la web usando sólo CSS que generen impacto (sin tener conocimientos de Javascript).",
-			"link"			: "./curso_css_animaciones.html"
-		},
-		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_avanzado.jpg",
 			"title"			: "css avanzado",
 			"description"	: "Con este curso lograrás entender de forma detallada cómo funcionan algunos de los módulos más importantes de CSS.",
@@ -32,12 +26,6 @@
 			"link"			: "./curso_css_desde_cero.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_variables.jpg",
-			"title"			: "css variables",
-			"description"	: "¡CSS al fin tiene variables de forma nativa! ¡Y con soporte total de los navegadores! entra a esta nueva revolucion",
-			"link"			: "./curso_css_variables.html"
-		},
-		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_figma.jpg",
 			"title"			: "figma",
 			"description"	: "Figma es la mayor revolución en el diseño porque permite trabajar en equipo, en tiempo real y sobre un mismo producto.",
@@ -48,12 +36,6 @@
 			"title"			: "firebase",
 			"description"	: "Firebase es una completa plataforma de Google que ofrece todo lo necesario para el desarrollo web",
 			"link"			: "./curso_firebase.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_flex_grid.jpg",
-			"title"			: "css flex grid",
-			"description"	: "Flexbox es un modelo de Layout CSS que permite distribuir los elementos a través de un eje horizontal o vertical. ",
-			"link"			: "./curso_css_flex_grid.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_fundamentos_disenno.jpg",
@@ -104,12 +86,6 @@
 			"link"			: "./curso_js_navegador.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_js_poo.jpg",
-			"title"			: "js poo",
-			"description"	: "La programación orientada a objetos es un paradigma que desde la versión ES6 puede usarse en JavaScript a través de clases.",
-			"link"			: "./curso_js_poo.html"
-		},
-		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_markdown.jpg",
 			"title"			: "markdown",
 			"description"	: "Escribe código HTML limpio sin preocuparte de las etiquetas ni aprender HTML. Markdown es el lenguaje de marcado rapido y eficaz",
@@ -140,34 +116,22 @@
 			"link"			: "./curso_pwa.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_desde_cero.jpg",
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_introductorio.jpg",
 			"title"			: "react js desde cero",
 			"description"	: "React.js es la librería frontend con la que están construidas las dos redes sociales más grandes: Facebook e Instagram non la sintaxis JSX.",
-			"link"			: "./curso_reactjs_desde_cero.html"
+			"link"			: "./curso_reactjs_introductorio.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_manejo_estado.jpg",
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_intermedio.jpg",
 			"title"			: "react js estado",
 			"description"	: "Aprende a manejar un estado global para toda tu aplicación para controlar el estado de los componentes e las diferentes etapas de la aplicacion.",
-			"link"			: "./curso_reactjs_estado.html"
+			"link"			: "./curso_reactjs_intermedio.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_proyecto.jpg",
-			"title"			: "react js proyecto",
-			"description"	: "Aprende a crear tu propia aplicación de cursos con React.js y basada en la experiencia aprendida en los primeros en tu primer proyecto.",
-			"link"			: "./curso_reactjs_proyecto.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_ts.jpg",
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_react_avanzado.jpg",
 			"title"			: "react js ts",
 			"description"	: "Potencia tus proyectos React.js con las cualidades más destacadas de TypeScript. Un Lenguage creado por Microsoft para darle poderes a JS.",
-			"link"			: "./curso_reactjs_ts.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_rwd.jpg",
-			"title"			: "responsive web design",
-			"description"	: "Diseña sitios web y aplicaciones que se vean perfectas en cualquier tamaño de pantalla. con las mejores tecnicas que haran tu web adaptable",
-			"link"			:  "./curso_rwd.html"
+			"link"			: "./curso_reactjs_avanzado.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_sass.jpg",
@@ -186,12 +150,6 @@
 			"title"			: "diseño ui",
 			"description"	: "Aprende las técnicas y buenas prácticas para crear diseños de interfaces hermosos, funcionales e impactantes.",
 			"link"			: "./curso_ui.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_webpack.jpg",
-			"title"			: "webpack",
-			"description"	: "Aprende a automatizar tus tareas con una herramienta que te hara la vifda mas facil al tomar tu codigo y complilarlo",
-			"link"			: "./curso_webpack.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_xd.jpg",
