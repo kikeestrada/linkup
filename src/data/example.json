@@ -8,12 +8,6 @@
 			"link"			: "./curso_svg.html"
 		},
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_ajax.jpg",
-			"title"			: "ajax",
-			"description"	: "Ajax es una tecnologia que nos permite consumir e imprimir información sin recargar la página.",
-			"link"			: "./curso_ajax.html"
-		},
-		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_avanzado.jpg",
 			"title"			: "css avanzado",
 			"description"	: "Con este curso lograrás entender de forma detallada cómo funcionan algunos de los módulos más importantes de CSS.",
