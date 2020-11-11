@@ -157,26 +157,26 @@
 	[
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_intro_desarrollo_web.jpg",
-			"title"			: "Desarrollo Front End Introductorio",
-			"description"	: "Desarrollo Front End Introductorio",
+			"title"			: "Front End Introductorio",
+			"description"	: "Front End Introductorio",
 			"link"			: "./esp_desarrollo_web_introductorio.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_intermedio.jpg",
-			"title"			: "Desarrollo Front End Intermedio",
-			"description"	: "Desarrollo Front End Intermedio",
+			"title"			: "Front End Intermedio",
+			"description"	: "Front End Intermedio",
 			"link"			: "./esp_desarrollo_web_intermedio.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_avanzado.jpg",
-			"title"			: "Desarrollo Front End Avanzado",
-			"description"	: "Desarrollo Front End Avanzado",
+			"title"			: "Front End Avanzado",
+			"description"	: "Front End Avanzado",
 			"link"			: "./esp_desarrollo_web_avanzado.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_desarrollo_web_experto.jpg",
-			"title"			: "Desarrollo Front End Experto",
-			"description"	: "Desarrollo Front End Experto",
+			"title"			: "Front End Experto",
+			"description"	: "Front End Experto",
 			"link"			: "./esp_desarrollo_web_experto.html"
 		},
 		{
