@@ -8,6 +8,9 @@ block main-header
 	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
 		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_nextjs.jpg")
 			// Contenido de la columna 1
 			.s-column.s-main-center.lx-main-start.lx-cross-start.s-center
 				h1 Descripción
@@ -15,15 +18,13 @@ block main-header
 					| aplicaciones web SPA que se rendericen desde el lado del servidor mejorando el rendimiento y ayudándonos
 					| en el SEO de nuestros proyectos basados en React.
 			// Contenido de la columna 2
-			div
-				.img-container.s-ratio-16-9
-					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_nextjs.jpg")
+
 	div(class='ed-container')
 		div(class='ed-item l-50')
 			h2 Detalles
 			ul
 				li Duraccion: 1 Mes.
-				li Horas: 16 - una clase semanal de 4 horas
+				li Horas: 16 - una clase semanal de 4 horas.
 				li Workshop - Proyecto Final.
 				li Costo: $ 000.000 ivi.
 				li Consulte nuestras facilidades de pago.
@@ -34,9 +35,12 @@ block main-header
 				li SEO con Next.js
 				li Despliegue del proyecto
 			h2 Objetivo
-			p lorem
+			p Capacitar al estudiante en una tecnologia basada en React JS pero del lado del servidor
 			h2 Requisitos
-			p lorem
+			p Para este curso debe tener todos los conocimientos adquiridos en los cursos:
+				ul
+					li react Introductorio
+					li React Intermedio
 			h2 A quien va dirigido?
 			p lorem
 		div(class='ed-item l-50')
@@ -44,48 +48,44 @@ block main-header
 			details
 				summary Server Side Render
 				ul.feature-list
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
+					li Introducción
+					li React del lado del cliente
+					li React del lado del Servidor
+					li renderizado estatico con Node JS
+					li Primer Proyecto con Next JS
+					li Routing con Next JS
 			details
 				summary Estructura de NextJS
 				ul.feature-list
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
+					li JSON Place Holder
+					li Iniciando el proyecto
+					li Variables de entorno
+					li Componentes comunes
+					li Componentes App
+					li Componente Document
 			details
 				summary Data Fetching
 				ul.feature-list
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
+					li Versionamiento del codigo
+					li Data Fetching
+					li Get Static props
+					li Get initial props
+					li CSS y SASS
+					li Manejo de archivos estáticos
 			details
 				summary SEO
 				ul.feature-list
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
+					li Custom 404
+					li Usando Referencia en Next
+					li Peticiones del lado del Cliente
+					li Libreria Next Seo
+
 			details
 				summary Deployment
 				ul.feature-list
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
-					li Lorem ipsum dolor sit amet.
+					li Conociento Zeit now
+					li Subiendo a producción
+					li Deployment desde Github
 
 block main-container
 block main-footer
