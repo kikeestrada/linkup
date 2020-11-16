@@ -2,12 +2,6 @@
 	"casos":
 	[
 		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_svg.jpg",
-			"title"			: "svg",
-			"description"	: "Crea gráficos vectoriales para la web usando código e interactua con ellos con CSS y JavaScript con tecnologias de Punta",
-			"link"			: "./curso_svg.html"
-		},
-		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_css_avanzado.jpg",
 			"title"			: "css avanzado",
 			"description"	: "Con este curso lograrás entender de forma detallada cómo funcionan algunos de los módulos más importantes de CSS.",
@@ -78,12 +72,6 @@
 			"title"			: "js en el navegador",
 			"description"	: "Aprende a manipular todo lo que aparece en la pantalla del navegador (DOM) y (BOM) responder a las interacciónes del usuario.",
 			"link"			: "./curso_js_navegador.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_markdown.jpg",
-			"title"			: "markdown",
-			"description"	: "Escribe código HTML limpio sin preocuparte de las etiquetas ni aprender HTML. Markdown es el lenguaje de marcado rapido y eficaz",
-			"link"			: "./curso_markdown.html"
 		},
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/curso_nextjs.jpg",
