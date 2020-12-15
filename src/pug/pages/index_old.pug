@@ -1,17 +1,19 @@
 extends ../config/template
 append config
 	-currentPage		= "home"
-	-siteName			= 'Módulos'
+	-siteName			= 'Cursos'
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
 block main-header
 	+banner(
 		"https://images.pexels.com/photos/265614/pexels-photo-265614.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
-		'Módulos',
+		'Cursos',
 		'' 
 	)
+
+
 block main-container
-	include ../components/json-data-especialidades
+	include ../components/json-data
 block main-footer
 block scripts 
 

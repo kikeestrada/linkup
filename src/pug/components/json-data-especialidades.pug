@@ -5,13 +5,6 @@ mixin card(cardImage, cardTitle, description, link)
 		div(class='card__data s-border s-radius-br s-radius-bl s-pxy-2')
 			div(class='t5'): h3(class='search-style')=cardTitle
 			div(class='s-justify'): p=description
-section(class='ed-container item-search')
-	div(class='ed-item')
-		h1 Search Filter
-	div(class='ed-item m-50 l-40')
-		input(type='search', id='searchInput', class='searchInput',  placeholder='search')
-div(class='ed-container')
-	div(class='ed-item')
 
 div(class='ed-grid m-grid-2 l-grid-3 lg-grid-4 row-gap l-big-section')
 	-for(var i = 0; i < especialidades.length; i++)
