@@ -44,11 +44,23 @@ strong {
 }
 
 .main-footer {
+	h2{ 
+		color: #FFF;
+	}
 	background 			: var(--color-first);
 	color      			: #FFF;
 	padding    			: 2rem 0;
 	font-size  			: fontSize(small);
 	margin-top 			: auto;
+
+	ul{
+		li{
+			list-style: none;
+			a{
+				padding-left: 15px;
+			}
+		}
+	}
 }
 
 // ----- Títulos del foro ----- //
