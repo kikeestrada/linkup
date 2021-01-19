@@ -189,7 +189,7 @@
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/especialidad_programacion.jpg",
 			"title"			: "Especialidad en Programacion",
 			"description"	: "Especialidad en Programacion",
-			"link"			: "./esp_programacion.httml"
+			"link"			: "./esp_programacion.html"
 		}
 	]
 }

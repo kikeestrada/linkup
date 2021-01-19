@@ -1,0 +1,64 @@
+extends ../config/template
+append config
+	-currentPage		= "Curso"
+	-siteName			= 'HTML Introductorio'
+	-content			= 'content'
+	-pageDescription	= 'Pagina inicial de MyBoilerplate'
+block main-header
+	section.s-py-4.banner-curso
+		// Separación del contenido en columnas
+		.ed-grid.l-grid-2.row-gap.s-gap-2.m-gap-4
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/intro_progra.jpg")
+			// Contenido de la columna 1
+			.s-column.s-main-center.lx-main-start.lx-cross-start
+				h1 Que aprenderas?
+				ul
+					li Logica y Algoritmos
+					li Variables y funciones
+					li Orientacion a Objetos
+			// Contenido de la columna 2
+
+	div(class='ed-container')
+		div(class='ed-item l-50')
+			h2 Objetivo
+			p Dar las herramientas necesarias tanto teoricas como practicas para adentrarse en el mundo de la tecnologia web
+				| para las personas que no tienen ningun conocimiento en programacion el cual es necesario para poder llevar nuestro programa de desarrollo Web.
+			h2 Requisitos
+			p No requieres tener ningún conocimiento ya que este curso la base para los siguientes que son mas avanzados, sin embargo 
+				| es importante aclarar que debes tener conocimientos sólidos en computación y manejo de Internet.
+			h2 A quien va dirigido?
+			p A todo a aquel que desee adentrarse en el mundo de la tecnologia web, pueden venir del area de diseño
+				| como de la parte de desarrollo ó no saber absolutamente nada ya que el curso es desde cero.
+		div(class='ed-item l-50')
+			h2 Temario
+			details
+				summary Algoritmos
+				ul.feature-list
+					li Condicionales
+					li Ciclos
+					li Estructura de Datos
+					li Funciones
+
+			details
+				summary Introduccion a la Programación
+				ul.feature-list
+					li Introducción
+					li Algoritmos
+					li Variables y tipos de datos
+					li Operadores
+
+			details
+				summary Programacion Orientada a Objetos
+				ul.feature-list
+					li Conceptos Básicos
+					li Características de la POO
+					li Tipos de Clases
+block main-container
+block main-footer
+block scripts 
+
+
+
+
