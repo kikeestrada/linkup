@@ -1,7 +1,7 @@
 .main-banner {
 	//mobile-first settings
 	color       			: var(--color-text-white);
-	background  			: var(--color-first);
+	background  			: var(--color-first); 
 	--padding   			: 2rem;
 
 	&.main-banner--secondary { background : var(--color-second	)	}

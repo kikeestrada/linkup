@@ -1,17 +1,13 @@
 .tns-single{
-    & > div:nth-child(odd){
-      background        : var(--color-first);
-    }
-    & > div:nth-child(even){
-      background        :var(--color-third);
-    }
+    & > div:nth-child(odd){ background        : var(--color-first); }
+    & > div:nth-child(even){ background        :var(--color-third); }
     &__content{
-      height            : 70vh;
-      background        : transparent;
-      display           : flex;
-      justify-content   : center;
-      flex-direction    : column;
-      align-items       : center;
-      span{color        : white;}
+		height            : 70vh;
+		background        : transparent;
+		display           : flex;
+		justify-content   : center;
+		flex-direction    : column;
+		align-items       : center;
+		span{color        : white;}
     }
-  }
+}
