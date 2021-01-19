@@ -1,0 +1,72 @@
+extends ../config/template
+append config
+	-currentPage		= "Curso"
+	-siteName			= 'Desarrollo Web Introductorio'
+	-content			= 'content'
+	-pageDescription	= 'Pagina inicial de MyBoilerplate'
+block main-header 
+	section.s-py-4.banner-curso
+		// Separación del contenido en columnas
+		.ed-grid.m-grid-2.row-gap.s-gap-2.m-gap-4
+			div
+				.img-container.s-ratio-16-9
+					img.s-radius-1(src="https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/especialidad_programacion.jpg")
+			// Contenido de la columna 1
+			.s-column.s-main-center.lx-main-start.lx-cross-start
+				h1 Introduccion a la Programacion
+				ul
+					li Numero de Cursos: 1
+					li Duración: 15 Semanas
+					li 120 horas / 2 clases semanales de 4 horas.
+					li Workshop - Proyecto Final.
+					li Costo: $1500 + 2$ IVA
+					li Consulte nuestras facilidades de pago.
+			// Contenido de la columna 2
+
+	div(class='ed-container')
+		div(class='ed-item l-60')
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_intro_progra.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/intro_progra.jpg')
+				div(class='ed-item m-50')
+					h2 Logica Y Algoritmos
+					p Aprenderemos los ejercicios de pensamiento logico necesarios para comprender que la programacion 
+						| requiere pensar estrategicamente las solucones antes de implementarlas.
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_intro_progra.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/intro_progra.jpg')
+				div(class='ed-item m-50')
+					h2 Introduccion a la Programacion
+					p Codificando con las diferentes sintaxis de los lenguajes de programacion 
+						| pondremos en practica lo aprendido en el primer curso de Logica y Algoritmos.
+			div(class='ed-container full s-mb-2')
+				div(class='ed-item m-50')
+					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
+						a(href='./curso_intro_progra.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/poo.png')
+				div(class='ed-item m-50')
+					h2 Programacion Orientada a Objetos
+					p La POO es uno de los paradigmas mas usados en el mundo y es obligatorio conocerlo.
+					
+		div(class='ed-item l-40')
+			h2 Descripcion
+			p Este es un curso intensivo y muy bien desarrollado como una herramineta de nivelacion para aquellas personas que no pueden optar por 
+				| nuestro programa de desarrollo web porque sus conocimientos son muy basicos y no tienen ningun conocimiento en programacion.
+			h2 Objetivo
+			p Dar las herramientas necesarias tanto teoricas como practicas para adentrarse en el mundo de la tecnologia web
+				| coo es un curso introductorio enseñaremos a programar con un minimo de tres lenguajes diferentes: Java, JavaScript, C#.
+			h2 Requisitos
+			p Este curso no requiere conocimientos previos pero requiere que tengas conocimientos sólidos en computacion basica y el uso de Internet.
+			h2 A quien va dirigido?
+			p A todo a aquel que desee adentrarse en el mundo de la tecnologia web y que necesite nivelar sus conociminetos los cuales seran necesarios
+				| para poder llevar nuestros programas y especialidades en Desarrollo Web.
+block main-container
+block main-footer
+block scripts
+
+
+
