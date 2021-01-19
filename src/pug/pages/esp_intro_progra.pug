@@ -1,9 +1,9 @@
 extends ../config/template
 append config
 	-currentPage		= "Curso"
-	-siteName			= 'Desarrollo Web Introductorio'
+	-siteName			= 'Introduccion a la Programacion'
 	-content			= 'content'
-	-pageDescription	= 'Pagina inicial de MyBoilerplate'
+	-pageDescription	= 'Introduccion a la Programacion'
 block main-header 
 	section.s-py-4.banner-curso
 		// Separación del contenido en columnas
@@ -18,7 +18,6 @@ block main-header
 					li Numero de Cursos: 1
 					li Duración: 15 Semanas
 					li 120 horas / 2 clases semanales de 4 horas.
-					li Workshop - Proyecto Final.
 					li Costo: $1500 + 2$ IVA
 					li Consulte nuestras facilidades de pago.
 			// Contenido de la columna 2
@@ -28,8 +27,8 @@ block main-header
 			div(class='ed-container full s-mb-2')
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_intro_progra.html')
-							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/intro_progra.jpg')
+						a(href='./curso_logica.html')
+							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/logica.jpg')
 				div(class='ed-item m-50')
 					h2 Logica Y Algoritmos
 					p Aprenderemos los ejercicios de pensamiento logico necesarios para comprender que la programacion 
@@ -46,7 +45,7 @@ block main-header
 			div(class='ed-container full s-mb-2')
 				div(class='ed-item m-50')
 					div(class='s-ratio-16-9 img-container s-radius-tl s-radius-tr lg-radius speciality-course__poster')
-						a(href='./curso_intro_progra.html')
+						a(href='./curso_poo.html')
 							img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/poo.png')
 				div(class='ed-item m-50')
 					h2 Programacion Orientada a Objetos
