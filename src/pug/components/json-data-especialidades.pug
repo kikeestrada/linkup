@@ -6,7 +6,28 @@ mixin card(cardImage, cardTitle, description, link)
 			div(class='t5'): h3(class='search-style')=cardTitle
 			div(class='s-justify'): p=description
 
+div(class='ed-grid')
+	h1(class='main-text-color') Especialidad en Programación
 div(class='ed-grid m-grid-2 l-grid-3 lg-grid-4 row-gap l-big-section')
-	-for(var i = 0; i < especialidades.length; i++)
-		-var especialidad = especialidades[i]
+	-for(var i = 0; i < programacion.length; i++)
+		-var especialidad = programacion[i]
+		+card(especialidad.img, especialidad.title, especialidad.description, especialidad.link)
+
+div(class='ed-grid')
+	h1(class='main-text-color') Especialidad en Front End
+div(class='ed-grid m-grid-2 l-grid-3 lg-grid-4 row-gap l-big-section')
+	-for(var i = 0; i < frontend.length; i++)
+		-var especialidad = frontend[i]
+		+card(especialidad.img, especialidad.title, especialidad.description, especialidad.link)
+div(class='ed-grid')
+	h1(class='main-text-color') Especialidad en Diseño Web
+div(class='ed-grid m-grid-2 l-grid-3 lg-grid-4 row-gap l-big-section')
+	-for(var i = 0; i < disenno.length; i++)
+		-var especialidad = disenno[i]
+		+card(especialidad.img, especialidad.title, especialidad.description, especialidad.link)
+div(class='ed-grid')
+	h1(class='main-text-color') Frameworks JavaScript	
+div(class='ed-grid m-grid-2 l-grid-3 lg-grid-4 row-gap l-big-section')
+	-for(var i = 0; i < jsframeworks.length; i++)
+		-var especialidad = jsframeworks[i]
 		+card(especialidad.img, especialidad.title, especialidad.description, especialidad.link)

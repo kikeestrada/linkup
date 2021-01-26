@@ -141,7 +141,16 @@
 			"dataDescription": "adobe XD"
 		}
 	],
-	"especialidades":
+	"programacion":
+	[
+		{
+			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/especialidad_programacion.jpg",
+			"title"			: "Introduccion a la Programacion",
+			"description"	: "Introduccion a la Programacion",
+			"link"			: "./esp_intro_progra.html"
+		}
+	],
+	"frontend":
 	[
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_intro_desarrollo_web.jpg",
@@ -166,7 +175,10 @@
 			"title"			: "Front End Experto",
 			"description"	: "Front End Experto",
 			"link"			: "./esp_desarrollo_web_experto.html"
-		},
+		}
+	],
+	"disenno":
+	[
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_disenno_web1.jpg",
 			"title"			: "Diseño Web 1",
@@ -178,18 +190,15 @@
 			"title"			: "Diseño Web 2",
 			"description"	: "Diseño Web 2",
 			"link"			: "./esp_disenno_web2.html"
-		},
+		}
+	],
+	"jsframeworks":
+	[
 		{
 			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/esp_react.jpg",
 			"title"			: "Desarrollo Web con React",
 			"description"	: "Desarrollo Web con React",
 			"link"			: "./esp_desarrollo_web_react.html"
-		},
-		{
-			"img"			: "https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/especialidad_programacion.jpg",
-			"title"			: "Introduccion a la Programacion",
-			"description"	: "Introduccion a la Programacion",
-			"link"			: "./esp_intro_progra.html"
 		}
 	]
 }
