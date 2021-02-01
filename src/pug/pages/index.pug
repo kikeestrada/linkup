@@ -1,15 +1,21 @@
 extends ../config/template
+
 append config
 	-currentPage		= "home" 
 	-siteName			= 'Programa Front End'
 	-content			= 'content'
 	-pageDescription	= 'Pagina inicial de MyBoilerplate'
-block main-header
-	+banner(
-		"https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/main_bg.png",
-		'Front End',
-		'' 
-	)
+block main-header 
+	.main-banner.img-container.diagonal.mb_2.main-banner--
+		.ed-grid.lg-grid-6
+			.lg-cols-4.lg-x-2
+				img.main-banner__img(src='https://raw.githubusercontent.com/kikeestrada/linkup/master/public/assets/img/main_bg.png')
+				.main-banner__data.s-center
+					h1 
+						|Programa Técnico en 
+						br
+						| Desarrollo y Diseño Web 
+
 block main-container
 	include ../components/json-data-especialidades 
 block main-footer
